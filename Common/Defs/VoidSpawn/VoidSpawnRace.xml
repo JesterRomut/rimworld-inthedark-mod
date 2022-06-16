@@ -4,14 +4,13 @@
 	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
 		<defName>VoidSpawn_Race</defName>
 		<label>Void Spawn</label>
-		<description>Sirenidae-like race. They are pure spiritualized entities and don't affect by physical forces.</description>
+		<description>A sirenidae-like race. Originally controlled by gestalt consciousness. They are pure spiritualized entities and don't affect by physical forces.</description>
 		<statBases>
-			<PsychicSensitivity>1.5</PsychicSensitivity>
+			<PsychicSensitivity>2</PsychicSensitivity>
 			<ComfyTemperatureMin>-6666</ComfyTemperatureMin>
 			<ComfyTemperatureMax>6666</ComfyTemperatureMax>
 			<MeleeDodgeChance>666</MeleeDodgeChance>
 			<MeleeHitChance>666</MeleeHitChance>
-			<Cleanliness>10</Cleanliness>
 			<MarketValue>0</MarketValue>
 			<Mass>0</Mass>
 			<HungerRateMultiplier>0</HungerRateMultiplier>
@@ -19,19 +18,11 @@
 			<Flammability>0</Flammability>
 			<MeatAmount>0</MeatAmount>
 			<LeatherAmount>0</LeatherAmount>
-			<CarryingCapacity>66666</CarryingCapacity>
+			<CarryingCapacity>40</CarryingCapacity>
 			<ToxicSensitivity>0</ToxicSensitivity>
-			<ImmunityGainSpeed>6666666</ImmunityGainSpeed>
-			<EatingSpeed>5</EatingSpeed>
-			<IncomingDamageFactor>0</IncomingDamageFactor>
+			<IncomingDamageFactor>0.3</IncomingDamageFactor>
 
 			<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0</PsychicEntropyGain>
-			<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">666.666</MeditationFocusGain>
-
-			<MedicalTendSpeed>4</MedicalTendSpeed>
-			<MedicalTendQuality>3</MedicalTendQuality>
-			<MedicalOperationSpeed>2</MedicalOperationSpeed>
-			<MedicalSurgerySuccessChance>3</MedicalSurgerySuccessChance>
 		</statBases>
 		<tools>
 			<li>
@@ -77,6 +68,16 @@
 				<rateInTicks>20</rateInTicks>
 			</li>-->
 			<li Class="InTheDark.CompProperties_VoidSpawn">
+				<immnunity>
+					<li>GutWorms</li>
+					<li>MuscleParasites</li>
+					<li>WoundInfection</li>
+					<li>Flu</li>
+					<li>Plague</li>
+					<li>Malaria</li>
+					<li>SleepingSickness</li>
+					<li></li>
+				</immnunity>
 			</li>
 		</comps>
 		<alienRace>

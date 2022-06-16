@@ -5,7 +5,12 @@
 ![Sirenidae.png](About/Preview.png)
 
 Mod Including:
-- A new race with initial hediff & ability (OVER-POWERED)
+- A new race (OVER-POWERED)
+    - initial hediff
+    - initial ability 
+    - disease immunity
+    - learning restriction (only learn skills with passion)
+
 - And more (WIP)
 
 Mod Dependencies:
@@ -13,5 +18,11 @@ Mod Dependencies:
 - Humanoid Alien Races Framework
 
 Notes:
-- Do not use this mod in normal game if you don't want break the balance! (above mentioned)
+- Do not use this mod in normal game if you don't want to break the balance! (above mentioned)
 - Do not use any design (textures/characters/backstories/etc.) unless my permit! These are my oc, you can't steal them.
+
+***
+TODO
+- [ ] Psychic Drone Weakness
+- [x] Disease Immunity
+- [ ] \(Maybe) new coooool item
