@@ -1,7 +1,9 @@
 *A RimWorld mod with c# for a coding reference.*
 
 **!!! DO NOT USE THIS IN NORMAL GAME, IT'S OVER-POWERED AND WILL BREAK THE BALANCE !!!**
-##
+***
+![Sirenidae.png](About/Preview.png)
+
 Mod Including:
 - A new race with initial hediff & ability (OVER-POWERED)
 - And more (WIP)
