@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
+		<defName>VoidSpawn_Race</defName>
+		<label>Void Spawn</label>
+		<description>Sirenidae-like race. They are pure spiritualized entities and don't affect by physical forces.</description>
+		<statBases>
+			<PsychicSensitivity>1.5</PsychicSensitivity>
+			<ComfyTemperatureMin>-6666</ComfyTemperatureMin>
+			<ComfyTemperatureMax>6666</ComfyTemperatureMax>
+			<MeleeDodgeChance>666</MeleeDodgeChance>
+			<MeleeHitChance>666</MeleeHitChance>
+			<Cleanliness>10</Cleanliness>
+			<MarketValue>0</MarketValue>
+			<Mass>0</Mass>
+			<HungerRateMultiplier>0</HungerRateMultiplier>
+			<MoveSpeed>666666</MoveSpeed>
+			<Flammability>0</Flammability>
+			<MeatAmount>0</MeatAmount>
+			<LeatherAmount>0</LeatherAmount>
+			<CarryingCapacity>66666</CarryingCapacity>
+			<ToxicSensitivity>0</ToxicSensitivity>
+			<ImmunityGainSpeed>6666666</ImmunityGainSpeed>
+			<EatingSpeed>5</EatingSpeed>
+			<IncomingDamageFactor>0</IncomingDamageFactor>
+
+			<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0</PsychicEntropyGain>
+			<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">666.666</MeditationFocusGain>
+
+			<MedicalTendSpeed>4</MedicalTendSpeed>
+			<MedicalTendQuality>3</MedicalTendQuality>
+			<MedicalOperationSpeed>2</MedicalOperationSpeed>
+			<MedicalSurgerySuccessChance>3</MedicalSurgerySuccessChance>
+		</statBases>
+		<tools>
+			<li>
+				<label>left tentacle</label>
+				<capacities>
+					<li>Void_Tentacletox</li>
+				</capacities>
+				<power>1</power>
+				<armorPenetration>666</armorPenetration>
+				<cooldownTime>0.000001</cooldownTime>
+				<linkedBodyPartsGroup>Tentacles</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>66</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>right tentacle</label>
+				<capacities>
+					<li>Void_Tentacletox</li>
+				</capacities>
+				<power>1</power>
+				<armorPenetration>666</armorPenetration>
+				<cooldownTime>0.000001</cooldownTime>
+				<linkedBodyPartsGroup>Tentacles</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>66</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+		</tools>
+		<comps>
+			<!--<li Class="AnimalBehaviours.CompProperties_Floating"/>
+			<li Class="AnimalBehaviours.CompProperties_Regeneration">
+				<rateInTicks>20</rateInTicks>
+			</li>-->
+			<li Class="InTheDark.CompProperties_VoidSpawn">
+			</li>
+		</comps>
+		<alienRace>
+			<generalSettings>
+				<factionRelations>
+					<li>
+						<factions>
+							<li>OutlanderCivil</li>
+							<li>TribeCivil</li>
+						</factions>
+						<goodwill>
+							<min>-20</min>
+							<max>-20</max>
+						</goodwill>
+					</li>
+					<li>
+						<factions>
+							<li>Empire</li>
+						</factions>
+						<goodwill>
+							<min>-100</min>
+							<max>-100</max>
+						</goodwill>
+					</li>
+				</factionRelations>
+				<immuneToAge>true</immuneToAge>
+				<maxDamageForSocialfight>1</maxDamageForSocialfight>
+				<humanRecipeImport>true</humanRecipeImport>
+				<alienPartGenerator>
+					<!--<customDrawSize>(0.7,0.7)</customDrawSize>-->
+					<customHeadDrawSize>(1,1)</customHeadDrawSize>
+					<customPortraitHeadDrawSize>(1, 1)</customPortraitHeadDrawSize>
+					<!--<customPortraitDrawSize>(0.7, 0.7)</customPortraitDrawSize>-->
+					<alienbodytypes>
+						<li>Thin</li>
+					</alienbodytypes>
+					<aliencrowntypes>
+						<!--<li>VoidSpawnBald</li>-->
+						<li>VoidSpawnCommon</li>
+					</aliencrowntypes>
+					<useGenderedHeads>false</useGenderedHeads>
+					<colorChannels>
+						<li>
+							<name>skin</name>
+							<first Class="ColorGenerator_Options">
+								<options>
+
+									<li>
+										<weight>10</weight>
+										<only>RGBA(1, 1, 1, 0.85)</only>
+									</li>
+
+								</options>
+							</first>
+
+							<second Class="ColorGenerator_Options">
+								<options>
+									<!--honestly i dont know what channels do -->
+									<!-- red-->
+									<li>
+										<weight>10</weight>
+										<only>RGBA(245, 58, 58 )</only>
+									</li>
+									<!-- chartruse-->
+									<li>
+										<weight>10</weight>
+										<only>RGBA(193, 246, 112)</only>
+									</li>
+								</options>
+							</second>
+
+						</li>
+						<!--<li>
+							<name>gill</name>
+							<first Class="AlienRace.ColorGenerator_CustomAlienChannel">
+								<colorChannel>skin_2</colorChannel>
+							</first>
+							<second Class="ColorGenerator_Options">
+								<options>
+									<li>
+										<weight>10</weight>
+										<only>RGBA(1.000, 1.000, 0.000, 0.500)</only>
+									</li>
+								</options>
+							</second>
+						</li>-->
+					</colorChannels>
+					<!--<bodyAddons>
+						<li>
+							<path>VoidSpawn/Gill/VoidSpawnGill</path>
+							<bodyPart>left external gill</bodyPart>
+							<inFrontOfBody>false</inFrontOfBody>
+							<colorChannel>gill</colorChannel>
+							<defaultOffset>Tail</defaultOffset>
+							<shaderType>Cutout</shaderType>
+							<drawSize>1</drawSize>
+							<angle>0</angle>
+							<offsets>
+								<south>
+									<bodyTypes>
+										<Thin>(-0.415,0.51)</Thin>
+									</bodyTypes>
+								</south>
+								<north>
+									<bodyTypes>
+										<Thin>(-0.0,0.78)</Thin>
+									</bodyTypes>
+								</north>
+								<east>
+									<bodyTypes>
+										<Thin>(-0.52,0.50)</Thin>
+									</bodyTypes>
+								</east>
+							</offsets>
+						</li>
+					</bodyAddons>-->
+				</alienPartGenerator>
+			</generalSettings>
+			<graphicPaths>
+				<li>
+					<headOffset>(0,	-0.1)</headOffset>
+					<head>VoidSpawn/Head/</head>
+					<body>VoidSpawn/Body/</body>
+					<!--<skull>Things/Creature/Dessicated/skull/moonjelly_skull</skull>-->
+					<skinShader>Transparent</skinShader>
+				</li>
+			</graphicPaths>
+			<styleSettings>
+				<li>
+					<key>HairDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>BeardDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>TattooDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+			</styleSettings>
+			<thoughtSettings>
+				<cannotReceiveThoughts>
+					<li>Pain</li>
+					<li>EnvironmentDark</li>
+					<li>ApparelDamaged</li>
+					<li>Sick</li>
+					<li>Naked</li>
+					<li>AteWithoutTable</li>
+					<li>SoakingWet</li>
+				</cannotReceiveThoughts>
+				<replacerList>
+					<li>
+						<original>HumanLeatherApparelSad</original>
+						<replacer>HumanLeatherApparelHappy</replacer>
+					</li>
+				</replacerList>
+			</thoughtSettings>
+			<relationSettings>
+				<relationChanceModifierLover>0</relationChanceModifierLover>
+				<relationChanceModifierExLover>0</relationChanceModifierExLover>
+
+				<relationChanceModifierFiance>0</relationChanceModifierFiance>
+				<relationChanceModifierSpouse>0</relationChanceModifierSpouse>
+				<relationChanceModifierExSpouse>0</relationChanceModifierExSpouse>
+
+				<relationChanceModifierParent>0</relationChanceModifierParent>
+				<relationChanceModifierChild>0</relationChanceModifierChild>
+				<relationChanceModifierSibling>0</relationChanceModifierSibling>
+			</relationSettings>
+			<raceRestriction>
+				<petList>
+					<!--<li>Void_Ouroboros</li>-->
+				</petList>
+			</raceRestriction>
+		</alienRace>
+
+		<race>
+			<thinkTreeMain>Humanlike</thinkTreeMain>
+			<baseBodySize>0.7</baseBodySize>
+			<hasGenders>false</hasGenders>
+			<needsRest>false</needsRest>
+			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+			<intelligence>Humanlike</intelligence>
+			<makesFootprints>false</makesFootprints>
+			<!--<nameGenerator>NamerPersonMoonjelly</nameGenerator>-->
+			<lifeExpectancy>666</lifeExpectancy>
+			<bloodDef>Filth_Slime</bloodDef>
+			<useMeatFrom>Human</useMeatFrom>
+			<leatherDef>Leather_Human</leatherDef>
+			<nameCategory>HumanStandard</nameCategory>
+			<body>VoidSpawn</body>
+			<baseHealthScale>0.5</baseHealthScale>
+			<baseHungerRate>0</baseHungerRate>
+			<foodType>None</foodType>
+			<gestationPeriodDays>20</gestationPeriodDays>
+
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(1.01, 0.02)</li>
+					<li>(3.5, 0)</li>
+				</points>
+			</litterSizeCurve>
+
+			<lifeStageAges>
+				<!--<li>
+					<def>HumanlikeBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>HumanlikeToddler</def>
+					<minAge>2</minAge>
+				</li>
+				<li>
+					<def>HumanlikeChild</def>
+					<minAge>12</minAge>
+				</li>
+				<li>
+					<def>HumanlikeTeenager</def>
+					<minAge>13</minAge>
+				</li>-->
+				<li>
+					<def>HumanlikeAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_GuineaPig_Wounded</soundWounded>
+					<soundDeath>Pawn_GuineaPig_Death</soundDeath>
+					<soundCall>Pawn_GuineaPig_Call</soundCall>
+					<soundAngry>Pawn_GuineaPig_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+
+			<ageGenerationCurve>
+				<points>
+					<li>(12,0)</li>
+					<li>(14,30)</li>
+					<li>(16,100)</li>
+					<li>(18,0)</li>
+					<!--<li>(70,18)</li>
+                <li>(80,10)</li>
+                <li>(90,3)</li>
+                <li>(100,0)</li>-->
+				</points>
+			</ageGenerationCurve>
+			<!--<fleshType>Void_Flesh</fleshType>-->
+		</race>
+		<tradeTags>
+			<li MayRequire="kentington.saveourship2">AnimalInsectSpace</li>
+		</tradeTags>
+		<butcherProducts>
+			<!--<VoidNightmareFuel>32</VoidNightmareFuel>-->
+		</butcherProducts>
+
+
+	</AlienRace.ThingDef_AlienRace>
+
+	<DamageDef Name="Void_TentacleStrikeDmg">
+		<defName>Void_TentacleStrikeDmg</defName>
+		<label>Tentacle Strike</label>
+		<additionalHediffs>
+			<li>
+				<hediff>Anesthetic</hediff>
+				<severityPerDamageDealt>0.33</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
+		<workerClass>DamageWorker_Scratch</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stung to death.</deathMessage>
+		<hediff>ChemicalBurn</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Toxic</impactSoundType>
+		<armorCategory>Blunt</armorCategory>
+		<overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+		<scratchSplitPercentage>0.67</scratchSplitPercentage>
+	</DamageDef>
+
+
+
+	<ToolCapacityDef>
+		<defName>Void_Tentacletox</defName>
+		<label>tentacle strike</label>
+	</ToolCapacityDef>
+
+
+	<ManeuverDef>
+		<defName>Void_TentacleStrike</defName>
+		<requiredCapacity>Void_Tentacletox</requiredCapacity>
+		<verb>
+			<verbClass>Verb_MeleeAttackDamage</verbClass>
+			<meleeDamageDef>Void_TentacleStrikeDmg</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Poke_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Poke_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Poke_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Poke_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+
+
+	<!--<tools>
+		<li>
+			<label>head</label>
+			<labelUsedInLogging>false</labelUsedInLogging>
+			<capacities>
+				<li>Void_Tentacletox</li>
+			</capacities>
+			<power>1</power>
+			<cooldownTime>2.15</cooldownTime>
+		</li>
+	</tools>-->
+
+</Defs>
+
+
+

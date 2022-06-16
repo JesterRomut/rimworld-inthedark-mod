@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AbilityDef Abstract="True" Name="VoidSpawnBase">
+		<hotKey>Misc12</hotKey>
+		<gizmoClass>Command_Ability</gizmoClass>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<targetRequired>True</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>-1</range>
+		</verbProperties>
+		<comps>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="VoidSpawnBase">
+		<defName>VoidSpawnSkip</defName>
+		<label>teleport</label>
+		<description>Teleport self to a desired position.</description>
+		<level>0</level>
+		<iconPath>UI/Abilities/Skip</iconPath>
+		<writeCombatLog>True</writeCombatLog>
+		<showPsycastEffects>False</showPsycastEffects>
+		<hotKey>Misc9</hotKey>
+		<statBases>
+			<!--<Ability_EntropyGain>25</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>-->
+		</statBases>
+		<verbProperties>
+			<warmupTime>0</warmupTime>
+			<range>30</range>
+			<targetParams>
+				<canTargetPawns>False</canTargetPawns>
+				<canTargetBuildings>False</canTargetBuildings>
+				<canTargetLocations>True</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class = "InTheDark.CompProperties_AbilityVoidSpawnTeleport">
+				<!--<compClass>InTheDark.CompAbilityEffect_VoidSpawnTeleport</compClass>-->
+				<destination>Caster</destination>
+				<requiresLineOfSight>False</requiresLineOfSight>
+				<range>30</range>
+				<clamorType>Ability</clamorType>
+				<clamorRadius>10</clamorRadius>
+				<destClamorType>Ability</destClamorType>
+				<destClamorRadius>10</destClamorRadius>
+				<applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+			</li>
+		</comps>
+	</AbilityDef>
+</Defs>
