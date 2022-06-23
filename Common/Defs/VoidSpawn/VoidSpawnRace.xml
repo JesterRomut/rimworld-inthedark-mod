@@ -202,7 +202,7 @@
 					<head>VoidSpawn/Head/</head>
 					<body>VoidSpawn/Body/</body>
 					<!--<skull>Things/Creature/Dessicated/skull/moonjelly_skull</skull>-->
-					<skinShader>Transparent</skinShader>
+					<!--<skinShader>Transparent</skinShader>-->
 				</li>
 			</graphicPaths>
 			<styleSettings>
@@ -235,12 +235,6 @@
 					<li>AteWithoutTable</li>
 					<li>SoakingWet</li>
 				</cannotReceiveThoughts>
-				<replacerList>
-					<li>
-						<original>HumanLeatherApparelSad</original>
-						<replacer>HumanLeatherApparelHappy</replacer>
-					</li>
-				</replacerList>
 			</thoughtSettings>
 			<relationSettings>
 				<relationChanceModifierLover>0</relationChanceModifierLover>
@@ -258,6 +252,15 @@
 				<petList>
 					<!--<li>Void_Ouroboros</li>-->
 				</petList>
+				<researchList>
+					<li>
+						<projects>
+							<li>VoidDimensionControl</li>
+						</projects>
+						<apparelList>
+						</apparelList>
+					</li>
+				</researchList>
 			</raceRestriction>
 		</alienRace>
 
@@ -333,7 +336,7 @@
                 <li>(100,0)</li>-->
 				</points>
 			</ageGenerationCurve>
-			<!--<fleshType>Void_Flesh</fleshType>-->
+			<fleshType>VoidSpawnFlesh</fleshType>
 		</race>
 		<tradeTags>
 			<li MayRequire="kentington.saveourship2">AnimalInsectSpace</li>

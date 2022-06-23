@@ -6,7 +6,7 @@
 		<defName>VoidSpawn</defName>
 		<label>Void Spawn</label>
 		<corePart>
-			<def>Torso</def>
+			<def>VoidSpawnTorso</def>
 			<customLabel>torso</customLabel>
 
 			<height>Middle</height>
@@ -17,7 +17,7 @@
 			<parts>
 				<li>
 					<def>VoidSpawnCore</def>
-					<coverage>0.01</coverage>
+					<coverage>0.02</coverage>
 					<depth>Inside</depth>
 					<groups>
 						<li>Torso</li>
@@ -25,7 +25,7 @@
 				</li>
 
 				<li>
-					<def>Shoulder</def>
+					<def>VoidSpawnShoulder</def>
 					<customLabel>left shoulder</customLabel>
 					<coverage>0.12</coverage>
 					<woundAnchorTag>LeftShoulder</woundAnchorTag>
@@ -34,7 +34,7 @@
 					</groups>
 					<parts>
 						<li>
-							<def>Arm</def>
+							<def>VoidSpawnArm</def>
 							<customLabel>left arm</customLabel>
 							<coverage>0.77</coverage>
 							<groups>
@@ -42,7 +42,7 @@
 							</groups>
 							<parts>
 								<li>
-									<def>Hand</def>
+									<def>VoidSpawnHand</def>
 									<customLabel>left hand</customLabel>
 									<coverage>0.14</coverage>
 									<height>Bottom</height>
@@ -51,7 +51,7 @@
 									</groups>
 									<parts>
 										<li>
-											<def>Finger</def>
+											<def>VoidSpawnFinger</def>
 											<customLabel>left ring finger</customLabel>
 											<coverage>0.07</coverage>
 											<groups>
@@ -60,7 +60,7 @@
 											</groups>
 										</li>
 										<li>
-											<def>Finger</def>
+											<def>VoidSpawnFinger</def>
 											<customLabel>left middle finger</customLabel>
 											<coverage>0.08</coverage>
 											<groups>
@@ -70,7 +70,7 @@
 											</groups>
 										</li>
 										<li>
-											<def>Finger</def>
+											<def>VoidSpawnFinger</def>
 											<customLabel>left index finger</customLabel>
 											<coverage>0.07</coverage>
 											<groups>
@@ -79,7 +79,7 @@
 											</groups>
 										</li>
 										<li>
-											<def>Finger</def>
+											<def>VoidSpawnFinger</def>
 											<customLabel>left thumb</customLabel>
 											<coverage>0.08</coverage>
 											<groups>
@@ -94,7 +94,7 @@
 					</parts>
 				</li>
 				<li>
-					<def>Shoulder</def>
+					<def>VoidSpawnShoulder</def>
 					<customLabel>right shoulder</customLabel>
 					<coverage>0.12</coverage>
 					<woundAnchorTag>RightShoulder</woundAnchorTag>
@@ -103,7 +103,7 @@
 					</groups>
 					<parts>
 						<li>
-							<def>Arm</def>
+							<def>VoidSpawnArm</def>
 							<customLabel>right arm</customLabel>
 							<coverage>0.77</coverage>
 							<groups>
@@ -111,7 +111,7 @@
 							</groups>
 							<parts>
 								<li>
-									<def>Hand</def>
+									<def>VoidSpawnHand</def>
 									<customLabel>right hand</customLabel>
 									<coverage>0.14</coverage>
 									<height>Bottom</height>
@@ -120,7 +120,7 @@
 									</groups>
 									<parts>
 										<li>
-											<def>Finger</def>
+											<def>VoidSpawnFinger</def>
 											<customLabel>right ring finger</customLabel>
 											<coverage>0.07</coverage>
 											<groups>
@@ -129,7 +129,7 @@
 											</groups>
 										</li>
 										<li>
-											<def>Finger</def>
+											<def>VoidSpawnFinger</def>
 											<customLabel>right middle finger</customLabel>
 											<coverage>0.08</coverage>
 											<groups>
@@ -139,7 +139,7 @@
 											</groups>
 										</li>
 										<li>
-											<def>Finger</def>
+											<def>VoidSpawnFinger</def>
 											<customLabel>right index finger</customLabel>
 											<coverage>0.07</coverage>
 											<groups>
@@ -148,7 +148,7 @@
 											</groups>
 										</li>
 										<li>
-											<def>Finger</def>
+											<def>VoidSpawnFinger</def>
 											<customLabel>right thumb</customLabel>
 											<coverage>0.08</coverage>
 											<groups>
@@ -164,7 +164,7 @@
 				</li>
 
 				<li>
-					<def>Head</def>
+					<def>VoidSpawnHead</def>
 					<coverage>0.075</coverage>
 					<height>Top</height>
 					<groups>

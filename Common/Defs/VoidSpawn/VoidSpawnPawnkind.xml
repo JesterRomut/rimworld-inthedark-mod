@@ -4,7 +4,7 @@
 	<PawnKindDef>
 		<defName>BaseVoidSpawn</defName>
 		<label>Void Spawn</label>
-		<defaultFactionType>PlayerColony</defaultFactionType>
+		<defaultFactionType>PlayerGestaltVoid</defaultFactionType>
 		<race>VoidSpawn_Race</race>
 
 		<apparelTags>
