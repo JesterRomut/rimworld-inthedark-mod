@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<BodyPartDef>
-		<defName>VoidSpawnTorso</defName>
-		<label>torso</label>
-		<hitPoints>40</hitPoints>
-		<skinCovered>true</skinCovered>
-		<canScarify>true</canScarify>
-		<canSuggestAmputation>false</canSuggestAmputation>
-		<bleedRate>0</bleedRate>
-		<frostbiteVulnerability>0</frostbiteVulnerability>
-		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
-	</BodyPartDef>
-	<BodyPartDef>
 		<defName>VoidSpawnCore</defName>
 		<label>core</label>
 		<hitPoints>30</hitPoints>
@@ -19,7 +8,6 @@
 		<permanentInjuryChanceFactor>1145141919810</permanentInjuryChanceFactor>
 		<skinCovered>false</skinCovered>
 		<solid>false</solid>
-		<bleedRate>0</bleedRate>
 		<delicate>true</delicate>
 		<tags>
 			<li>BreathingSourceCage</li>
@@ -38,7 +26,7 @@
 	</BodyPartDef>
 	<BodyPartDef>
 		<defName>VoidSpawnGill</defName>
-		<label>gill</label>
+		<label>external gill</label>
 		<beautyRelated>true</beautyRelated>
 		<hitPoints>25</hitPoints>
 		<skinCovered>true</skinCovered>
@@ -51,8 +39,6 @@
 		<label>tail</label>
 		<hitPoints>30</hitPoints>
 		<skinCovered>true</skinCovered>
-		<bleedRate>0</bleedRate>
-		<frostbiteVulnerability>0</frostbiteVulnerability>
 		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
 		<tags>
 			<li>MovingLimbCore</li>
@@ -62,8 +48,6 @@
 		<defName>VoidSpawnTentacle</defName>
 		<label>tentacle</label>
 		<hitPoints>30</hitPoints>
-		<bleedRate>0</bleedRate>
-		<frostbiteVulnerability>0</frostbiteVulnerability>
 		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
 		<skinCovered>true</skinCovered>
 		<canSuggestAmputation>true</canSuggestAmputation>
@@ -71,70 +55,6 @@
 		<tags>
 			<li>ManipulationLimbCore</li>
 		</tags>
-	</BodyPartDef>
-	<BodyPartDef>
-		<defName>VoidSpawnShoulder</defName>
-		<label>shoulder</label>
-		<hitPoints>30</hitPoints>
-		<skinCovered>true</skinCovered>
-		<tags>
-			<li>ManipulationLimbSegment</li>
-		</tags>
-		<bleedRate>0</bleedRate>
-		<frostbiteVulnerability>0</frostbiteVulnerability>
-		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
-	</BodyPartDef>
-
-	<BodyPartDef>
-		<defName>VoidSpawnArm</defName>
-		<label>arm</label>
-		<hitPoints>30</hitPoints>
-		<skinCovered>true</skinCovered>
-		<canScarify>true</canScarify>
-		<tags>
-			<li>ManipulationLimbCore</li>
-		</tags>
-		<bleedRate>0</bleedRate>
-		<frostbiteVulnerability>0</frostbiteVulnerability>
-		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
-	</BodyPartDef>
-
-	<BodyPartDef>
-		<defName>VoidSpawnHand</defName>
-		<label>hand</label>
-		<hitPoints>20</hitPoints>
-		<skinCovered>true</skinCovered>
-		<tags>
-			<li>ManipulationLimbSegment</li>
-		</tags>
-		<bleedRate>0</bleedRate>
-		<frostbiteVulnerability>0</frostbiteVulnerability>
-		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
-	</BodyPartDef>
-
-	<BodyPartDef>
-		<defName>VoidSpawnFinger</defName>
-		<label>finger</label>
-		<hitPoints>8</hitPoints>
-		<pawnGeneratorCanAmputate>true</pawnGeneratorCanAmputate>
-		<skinCovered>true</skinCovered>
-		<tags>
-			<li>ManipulationLimbDigit</li>
-		</tags>
-		<bleedRate>0</bleedRate>
-		<frostbiteVulnerability>0.1</frostbiteVulnerability>
-		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
-	</BodyPartDef>
-	<BodyPartDef>
-		<defName>VoidSpawnHead</defName>
-		<label>head</label>
-		<hitPoints>25</hitPoints>
-		<skinCovered>true</skinCovered>
-		<canScarify>true</canScarify>
-		<canSuggestAmputation>false</canSuggestAmputation>
-		<bleedRate>0</bleedRate>
-		<frostbiteVulnerability>0</frostbiteVulnerability>
-		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
 	</BodyPartDef>
 	
 	<BodyPartGroupDef>
