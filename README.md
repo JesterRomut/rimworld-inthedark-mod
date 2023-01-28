@@ -8,4 +8,5 @@
 TODO
 - [ ] Psychic Drone Weakness
 - [x] Disease Immunity
+- [ ] Reproduction
 - [ ] \(Maybe) new coooool item

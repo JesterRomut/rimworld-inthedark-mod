@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AlienRace.AlienBackstoryDef>
+		<defName>BaseVoidSpawn</defName>
+		<title>Immoral Fabrication</title>
+		<titleShort>Sirenidae</titleShort>
+		<baseDesc>[PAWN_nameDef] is a void spawn. The source of [PAWN_nameDef] has been forgotten.</baseDesc>
+
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>VoidSpawn</li>
+		</spawnCategories>
+		<skillGains>
+		</skillGains>
+		<forcedTraits>
+		</forcedTraits>
+	</AlienRace.AlienBackstoryDef>
+
+	<!--Adulthood-->
+	<AlienRace.AlienBackstoryDef>
+		<defName>VoidSpawnKrypton</defName>
+		<title>Empty Bliss</title>
+		<titleShort>Krypton</titleShort>
+		<!--世界之外空虚的幸福-->
+		<baseDesc>"An empty bliss beyond this world"\n\nWhen [PAWN_nameDef] pay for a illusory thing, it will trigger a deep internal emptiness in someone.</baseDesc>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>VoidSpawn</li>
+			<li>VoidSpawnDoppelganger</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+	<AlienRace.AlienBackstoryDef>
+		<defName>VoidSpawnTachyon</defName>
+		<title>Blurring Nebula</title>
+		<titleShort>Tachyon</titleShort>
+		<!--一种超越光速的速度-->
+		<baseDesc>"A speed even further beyond light"\n\nWe have a internal craving of conquering more and more places. Soon [PAWN_nameDef] will fly, faster than light.</baseDesc>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>VoidSpawn</li>
+			<li>VoidSpawnDoppelganger</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+	<AlienRace.AlienBackstoryDef>
+		<defName>VoidSpawnGraviton</defName>
+		<title>Burning Aches</title>
+		<titleShort>Graviton</titleShort> <!--无名画家的劣等造物-->
+		<baseDesc>"A inferior fabrication by nameless painters"\n\nA nameless painter looked at [PAWN_nameDef] and said: All works which not famous, are just wastepapers... Then he commited suicide.</baseDesc>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>VoidSpawn</li>
+			<li>VoidSpawnDoppelganger</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+</Defs>

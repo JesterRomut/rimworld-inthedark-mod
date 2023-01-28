@@ -1,0 +1,11 @@
+<Defs>
+	<PawnRelationDef>
+		<defName>VoidSpawnDoppelganger</defName>
+		<!--<workerClass>PawnRelationWorker_ExLover</workerClass>-->
+		<label>doppelgänger</label>
+		<importance>125</importance>
+		<opinionOffset>-100</opinionOffset>
+		<implied>false</implied>
+		<reflexive>true</reflexive>
+	</PawnRelationDef>
+</Defs>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<AbilityDef Abstract="True" Name="VoidSpawnBase">
+	<AbilityDef Abstract="True" Name="VoidSpawnAbilityBase">
 		<hotKey>Misc12</hotKey>
 		<gizmoClass>Command_Ability</gizmoClass>
 		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
@@ -13,7 +13,7 @@
 		<comps>
 		</comps>
 	</AbilityDef>
-	<AbilityDef ParentName="VoidSpawnBase">
+	<AbilityDef ParentName="VoidSpawnAbilityBase">
 		<defName>VoidSpawnSkip</defName>
 		<label>teleport</label>
 		<description>Teleport self to a desired position.</description>

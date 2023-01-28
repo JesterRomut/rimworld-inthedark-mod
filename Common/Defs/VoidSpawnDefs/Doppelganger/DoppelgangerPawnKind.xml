@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="VoidSpawnPawnKindBase">
+		<defName>VoidSpawnDoppelganger</defName>
+		<label>Void Spawn Doppelgänger</label>
+		<defaultFactionType>PlayerGestaltVoid</defaultFactionType>
+		<backstoryFiltersOverride Inherit="false">
+			<li>
+				<categories>
+					<li>VoidSpawnDoppelganger</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+	</PawnKindDef>
+</Defs>

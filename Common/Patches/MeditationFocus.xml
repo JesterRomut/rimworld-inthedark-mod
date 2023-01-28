@@ -8,6 +8,10 @@
 					<categoryName>VoidSpawn</categoryName>
 					<slot>Childhood</slot>
 				</li>
+				<li>
+					<categoryName>VoidSpawnDoppelganger</categoryName>
+					<slot>Childhood</slot>
+				</li>
 			</requiredBackstoriesAny>
 		</value>
 	</Operation>

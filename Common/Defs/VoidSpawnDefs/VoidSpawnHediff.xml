@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<HediffDef>
-		<defName>VoidSpawn</defName>
+		<defName>VoidSpawnEthereal</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
 		<initialSeverity>1</initialSeverity>
@@ -11,14 +11,20 @@
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<isBad>false</isBad>
 		<priceOffset>0</priceOffset>
+		<everCurableByItem>false</everCurableByItem>
 		<disablesNeeds>
 			<li>Outdoors</li>
+			<li>DrugDesire</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology">Indoors</li>
 		</disablesNeeds>
 		<comps>
 			<li Class="HediffCompProperties_HealPermanentWounds" />
 			<li Class="HediffCompProperties">
 				<compClass>HediffComp_Invisibility</compClass>
+			</li>
+			<li Class="HediffCompProperties_PsychicHarmonizer">
+				<range>30</range>
+				<thought>VoidSpawnThoughtSync</thought>
 			</li>
 		</comps>
 		<stages>
@@ -33,4 +39,18 @@
 			</li>
 		</stages>
 	</HediffDef>
+
+	<ThoughtDef>
+		<defName>VoidSpawnThoughtSync</defName>
+		<thoughtClass>Thought_PsychicHarmonizer</thoughtClass>
+		<stackLimit>100</stackLimit>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>thought sync: {HARMONIZER_labelShort}</label>
+				<description>We are one. We are all.</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>

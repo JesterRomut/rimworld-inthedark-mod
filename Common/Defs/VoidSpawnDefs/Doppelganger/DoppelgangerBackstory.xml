@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AlienRace.AlienBackstoryDef>
+		<defName>BaseVoidSpawnDoppelganger</defName>
+		<title>Immoral Doppelgänger</title>
+		<titleShort>Doppelgänger</titleShort>
+		<baseDesc>[PAWN_nameDef] is a void spawn doppelganger from a victim who got injected.</baseDesc>
+
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>VoidSpawnDoppelganger</li>
+		</spawnCategories>
+		<skillGains>
+		</skillGains>
+		<forcedTraits>
+		</forcedTraits>
+	</AlienRace.AlienBackstoryDef>
+	<!--<AlienRace.AlienBackstoryDef>
+		<defName>VoidSpawnDoppelgangerCommon</defName>
+		<title>Immoral Doppelgänger</title>
+		<titleShort>Doppelgänger</titleShort>
+		<baseDesc>[PAWN_nameDef] is a void spawn doppelganger from a victim who got injected.</baseDesc>
+
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>VoidSpawnDoppelganger</li>
+		</spawnCategories>
+		<skillGains>
+		</skillGains>
+		<forcedTraits>
+		</forcedTraits>
+	</AlienRace.AlienBackstoryDef>-->
+</Defs>

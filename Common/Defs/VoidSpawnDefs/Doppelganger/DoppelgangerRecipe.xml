@@ -1,0 +1,33 @@
+<Defs>
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>VoidSpawnMakeDoppelganger</defName>
+		<label>inject immoral essence</label>
+		<description>Turn a human into a void spawn doppelgänger by injecting a void spawn's essence. This can only be done by a void spawn.</description>
+		<workerClass>Recipe_AddHediff</workerClass>
+		<jobString>Injecting immoral essence.</jobString>
+		<workAmount>100</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<surgerySuccessChanceFactor>6</surgerySuccessChanceFactor>
+		<addsHediff>VoidSpawnCorruption</addsHediff>
+		<anesthetize>false</anesthetize>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VoidNightmareFuel</li>
+					</thingDefs>
+				</filter>
+				<count>6</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>VoidNightmareFuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+</Defs>

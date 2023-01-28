@@ -34,10 +34,4 @@ namespace InTheDark
         }
     }
 
-    [DefOf]
-    public static class VoidSpawnAbilityDefOf
-    {
-        public static AbilityDef VoidSpawnSkip;
-    }
-
 }

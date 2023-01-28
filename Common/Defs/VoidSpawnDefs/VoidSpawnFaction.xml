@@ -14,7 +14,7 @@
     <label>New Gestalt</label>
     <description>A gestalt of recently-arrived void spawns.</description>
     <isPlayer>true</isPlayer>
-    <basicMemberKind>BaseVoidSpawn</basicMemberKind>
+    <basicMemberKind>VoidSpawnColonist</basicMemberKind>
     <pawnSingular>drone</pawnSingular>
     <pawnsPlural>drones</pawnsPlural>
     <techLevel>Ultra</techLevel>
@@ -29,14 +29,13 @@
       </li>
     </backstoryFilters>
     <factionIconPath>World/WorldObjects/Expanding/Insects</factionIconPath>
-    <geneticVariance>1</geneticVariance>
     <startingResearchTags>
       <li>ClassicStart</li>
-	  <li>VoidSpawnStart</li>
+	  <!--<li>VoidSpawnStart</li>-->
     </startingResearchTags>
     <startingTechprintsResearchTags>
       <li>ClassicStart</li>
-	  <li>VoidSpawnStart</li>
+	  <!--<li>VoidSpawnStart</li>-->
       <li>ClassicStartTechprints</li>
     </startingTechprintsResearchTags>
     <apparelStuffFilter>

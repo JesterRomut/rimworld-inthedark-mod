@@ -22,7 +22,18 @@
 					<groups>
 						<li>Torso</li>
 					</groups>
+					<parts>
+						<li>
+							<def>Brain</def>
+							<coverage>0.1</coverage>
+							<depth>Inside</depth>
+							<groups>
+								<li>Torso</li>
+							</groups>
+						</li>
+					</parts>
 				</li>
+				
 
 				<li>
 					<def>Shoulder</def>

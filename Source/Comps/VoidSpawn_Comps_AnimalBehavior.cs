@@ -10,6 +10,9 @@ namespace InTheDark
     public class CompProperties_VoidSpawn : CompProperties
     {
         public List<string> immnunity = null;
+        public int gatheringIntervalTicks = 30000;
+        public ThingDef productDef = null;
+        public int productAmount = 1;
         public CompProperties_VoidSpawn()
         {
             this.compClass = typeof(CompVoidSpawn);
@@ -23,7 +26,7 @@ namespace InTheDark
             //modify hediff
             if (pawn.health != null && pawn.health.hediffSet != null)
             {
-                HediffDef hediffdef = HediffDef.Named("VoidSpawn");
+                HediffDef hediffdef = VoidSpawnHediffDefOf.VoidSpawnEthereal;
                 if (pawn.health.hediffSet.GetFirstHediffOfDef(hediffdef) == null)
                 {
                     pawn.health.AddHediff(hediffdef);
@@ -41,6 +44,22 @@ namespace InTheDark
             }
             //add ability
             pawn.abilities?.GainAbility(VoidSpawnAbilityDefOf.VoidSpawnSkip);
+        }
+        private void GatherProduct()
+        {
+            Pawn pawn = this.parent as Pawn;
+            Thing thing = ThingMaker.MakeThing(Props.productDef);
+            thing.stackCount = Props.productAmount;
+            if (pawn.IsCaravanMember())
+            {
+                Caravan caravan = pawn.GetCaravan();
+                CaravanInventoryUtility.GiveThing(caravan, thing);
+            }
+            else
+            {
+                GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                //pawn.inventory.TryAddItemNotForSale(thing);
+            }
         }
         public CompProperties_VoidSpawn Props
         {
@@ -64,7 +83,15 @@ namespace InTheDark
         {
             VoidSpawnCollectionClass.RemoveVoidSpawnToList(this.parent);
         }
+        public override void CompTick()
+        {
+            base.CompTick();
 
+            if (parent.IsHashIntervalTick(Props.gatheringIntervalTicks))
+            {
+                GatherProduct();
+            }
+        }
         public override void CompTickRare()
         {
 
@@ -73,4 +100,5 @@ namespace InTheDark
             AddVoidHediffAndMore();
         }
     }
+
 }

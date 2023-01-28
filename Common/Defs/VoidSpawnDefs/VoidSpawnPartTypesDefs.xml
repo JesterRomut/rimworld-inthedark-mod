@@ -1,0 +1,14 @@
+<Defs>
+	<HeadTypeDef>
+		<defName>Sirenidae_Common</defName>
+		<graphicPath>VoidSpawn/Head/VoidSpawnCommon</graphicPath>
+		<gender>None</gender>
+	</HeadTypeDef>
+	<!--<BodyTypeDef>
+		<defName>Sirenidae_Body</defName>
+		<headOffset>(0.09, 0.34)</headOffset>
+		<bodyNakedGraphicPath>VoidSpawn/Body/Naked_Thin</bodyNakedGraphicPath>
+		<bodyDessicatedGraphicPath>VoidSpawn/Body/Naked_Thin</bodyDessicatedGraphicPath>
+		<bodyGraphicScale>(0.6, 1)</bodyGraphicScale>
+	</BodyTypeDef>-->
+</Defs>

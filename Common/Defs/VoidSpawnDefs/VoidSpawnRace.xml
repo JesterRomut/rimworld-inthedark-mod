@@ -4,7 +4,7 @@
 	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
 		<defName>VoidSpawn_Race</defName>
 		<label>Void Spawn</label>
-		<description>A sirenidae-like race. Originally controlled by gestalt consciousness. They are pure spiritualized entities and don't affect by physical forces.</description>
+		<description>//IMMORAL FABRICATIONS//\n\nA sirenidae-like race. Originally controlled by a gestalt consciousness who want to replace human by creating doppelgängers.\n\n They are pure spiritualized entities and don't affect by physical forces, and they can only learn skill with passion.</description>
 		<statBases>
 			<PsychicSensitivity>2</PsychicSensitivity>
 			<ComfyTemperatureMin>-6666</ComfyTemperatureMin>
@@ -13,15 +13,15 @@
 			<MeleeHitChance>666</MeleeHitChance>
 			<MarketValue>0</MarketValue>
 			<Mass>0</Mass>
-			<HungerRateMultiplier>0</HungerRateMultiplier>
 			<MoveSpeed>666666</MoveSpeed>
 			<Flammability>0</Flammability>
 			<MeatAmount>0</MeatAmount>
 			<LeatherAmount>0</LeatherAmount>
 			<CarryingCapacity>40</CarryingCapacity>
-			<ToxicSensitivity>0</ToxicSensitivity>
-			<IncomingDamageFactor>0.3</IncomingDamageFactor>
-
+			<IncomingDamageFactor>0</IncomingDamageFactor>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<StaggerDurationFactor>0</StaggerDurationFactor>
 			<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0</PsychicEntropyGain>
 		</statBases>
 		<tools>
@@ -67,7 +67,15 @@
 			<li Class="AnimalBehaviours.CompProperties_Regeneration">
 				<rateInTicks>20</rateInTicks>
 			</li>-->
+			<!--<li Class="CompProperties_Shearable">
+				<woolDef>VoidNightmareFuel</woolDef>
+				<shearIntervalDays>2</shearIntervalDays>
+				<woolAmount>3</woolAmount>
+			</li>-->
 			<li Class="InTheDark.CompProperties_VoidSpawn">
+				<gatheringIntervalTicks>60000</gatheringIntervalTicks>
+				<productDef>VoidNightmareFuel</productDef>
+				<productAmount>3</productAmount>
 				<immnunity>
 					<li>GutWorms</li>
 					<li>MuscleParasites</li>
@@ -76,23 +84,21 @@
 					<li>Plague</li>
 					<li>Malaria</li>
 					<li>SleepingSickness</li>
-					<li></li>
+					<li>Malnutrition</li>
+					<li>LungRotExposure</li>
+					<li>LungRot</li>
+					<li>FoodPoisoning</li>
+					<li>ToxicBuildup</li>
+					<li>Pregnant</li>
+					<li>HeartAttack</li>
+					<li>ResurrectionPsychosis</li>
+					<li>VoidSpawnCorruption</li>
 				</immnunity>
 			</li>
 		</comps>
 		<alienRace>
 			<generalSettings>
 				<factionRelations>
-					<li>
-						<factions>
-							<li>OutlanderCivil</li>
-							<li>TribeCivil</li>
-						</factions>
-						<goodwill>
-							<min>-20</min>
-							<max>-20</max>
-						</goodwill>
-					</li>
 					<li>
 						<factions>
 							<li>Empire</li>
@@ -103,107 +109,95 @@
 						</goodwill>
 					</li>
 				</factionRelations>
+				<growthAges>
+					<li>1</li>
+					<li>3</li>
+				</growthAges>
 				<immuneToAge>true</immuneToAge>
 				<maxDamageForSocialfight>1</maxDamageForSocialfight>
 				<humanRecipeImport>true</humanRecipeImport>
+				<allowHumanBios>false</allowHumanBios>
 				<alienPartGenerator>
 					<!--<customDrawSize>(0.7,0.7)</customDrawSize>-->
 					<customHeadDrawSize>(1,1)</customHeadDrawSize>
 					<customPortraitHeadDrawSize>(1, 1)</customPortraitHeadDrawSize>
 					<!--<customPortraitDrawSize>(0.7, 0.7)</customPortraitDrawSize>-->
-					<alienbodytypes>
+					<bodyTypes>
 						<li>Thin</li>
-					</alienbodytypes>
-					<aliencrowntypes>
+						<!--<li MayRequire="Ludeon.RimWorld.Biotech">Baby</li>
+						<li MayRequire="Ludeon.RimWorld.Biotech">Child</li>-->
+					</bodyTypes>
+					<headOffset>(0,	-0.1)</headOffset>
+					<headTypes>
 						<!--<li>VoidSpawnBald</li>-->
-						<li>VoidSpawnCommon</li>
-					</aliencrowntypes>
-					<useGenderedHeads>false</useGenderedHeads>
-					<colorChannels>
+						<li>Sirenidae_Common</li>
+					</headTypes>
+					<colorChannels Inherit="false">
 						<li>
 							<name>skin</name>
+							<first Class="ColorGenerator_Single">
+								<color>RGBA(1.000, 1.000, 1.000, 0.850)</color>
+							</first>
+							<second Class="ColorGenerator_Single">
+								<color>RGBA(1.000, 1.000, 1.000, 0.850)</color>
+							</second>
+						</li>
+						<li>
+							<name>hair</name>
 							<first Class="ColorGenerator_Options">
 								<options>
-
 									<li>
 										<weight>10</weight>
-										<only>RGBA(1, 1, 1, 0.85)</only>
+										<only>RGBA(1.000, 1.000, 1.000, 0.850)</only>
 									</li>
-
 								</options>
 							</first>
-
-							<second Class="ColorGenerator_Options">
-								<options>
-									<!--honestly i dont know what channels do -->
-									<!-- red-->
-									<li>
-										<weight>10</weight>
-										<only>RGBA(245, 58, 58 )</only>
-									</li>
-									<!-- chartruse-->
-									<li>
-										<weight>10</weight>
-										<only>RGBA(193, 246, 112)</only>
-									</li>
-								</options>
+							<second Class="ColorGenerator_Single">
+								<color>RGBA(1.000, 1.000, 1.000, 0.850)</color>
 							</second>
-
 						</li>
-						<!--<li>
-							<name>gill</name>
-							<first Class="AlienRace.ColorGenerator_CustomAlienChannel">
-								<colorChannel>skin_2</colorChannel>
-							</first>
-							<second Class="ColorGenerator_Options">
-								<options>
-									<li>
-										<weight>10</weight>
-										<only>RGBA(1.000, 1.000, 0.000, 0.500)</only>
-									</li>
-								</options>
-							</second>
-						</li>-->
 					</colorChannels>
-					<!--<bodyAddons>
-						<li>
-							<path>VoidSpawn/Gill/VoidSpawnGill</path>
-							<bodyPart>left external gill</bodyPart>
-							<inFrontOfBody>false</inFrontOfBody>
-							<colorChannel>gill</colorChannel>
-							<defaultOffset>Tail</defaultOffset>
-							<shaderType>Cutout</shaderType>
-							<drawSize>1</drawSize>
-							<angle>0</angle>
-							<offsets>
-								<south>
-									<bodyTypes>
-										<Thin>(-0.415,0.51)</Thin>
-									</bodyTypes>
-								</south>
-								<north>
-									<bodyTypes>
-										<Thin>(-0.0,0.78)</Thin>
-									</bodyTypes>
-								</north>
-								<east>
-									<bodyTypes>
-										<Thin>(-0.52,0.50)</Thin>
-									</bodyTypes>
-								</east>
-							</offsets>
-						</li>
-					</bodyAddons>-->
 				</alienPartGenerator>
+				<reproduction>
+					<!-- Reproduction settings are listed here -->
+				</reproduction>
+				<disallowedTraits>
+					<li>
+						<defName>AnnoyingVoice</defName>
+					</li>
+					<li>
+						<defName>CreepyBreathing</defName>
+					</li>
+					<li>
+						<defName>Gay</defName>
+					</li>
+					<li>
+						<defName>Bisexual</defName>
+					</li>
+					<li>
+						<defName>Asexual</defName>
+					</li>
+					<li>
+						<defName>DrugDesire</defName>
+					</li>
+					<li>
+						<defName>Abrasive</defName>
+					</li>
+					<li>
+						<defName>Greedy</defName>
+					</li>
+					<li>
+						<defName>Jealous</defName>
+					</li>
+					<li>
+						<defName>Recluse</defName>
+					</li>
+				</disallowedTraits>
 			</generalSettings>
 			<graphicPaths>
-				<li>
-					<headOffset>(0,	-0.1)</headOffset>
-					<head>VoidSpawn/Head/</head>
-					<body>VoidSpawn/Body/</body>
-					<!--<skull>Things/Creature/Dessicated/skull/moonjelly_skull</skull>-->
-					<!--<skinShader>Transparent</skinShader>-->
-				</li>
+				<body>VoidSpawn/Body/</body>
+				<head>VoidSpawn/Head/</head>
+				<skinShader>Cutout</skinShader>
 			</graphicPaths>
 			<styleSettings>
 				<li>
@@ -235,6 +229,16 @@
 					<li>AteWithoutTable</li>
 					<li>SoakingWet</li>
 				</cannotReceiveThoughts>
+				<replacerList>
+					<li>
+						<original>AteNightmare</original>
+						<replacer>VoidSpawnAteNightmare</replacer>
+					</li>
+					<li>
+						<original>AteNightmareCooked</original>
+						<replacer>VoidSpawnAteNightmareCooked</replacer>
+					</li>
+				</replacerList>
 			</thoughtSettings>
 			<relationSettings>
 				<relationChanceModifierLover>0</relationChanceModifierLover>
@@ -252,7 +256,7 @@
 				<petList>
 					<!--<li>Void_Ouroboros</li>-->
 				</petList>
-				<researchList>
+				<!--<researchList>
 					<li>
 						<projects>
 							<li>VoidDimensionControl</li>
@@ -260,7 +264,29 @@
 						<apparelList>
 						</apparelList>
 					</li>
-				</researchList>
+				</researchList>-->
+				<blackEndoCategories>
+					<li>HairColor</li>
+					<li>Ears</li>
+					<li>Nose</li>
+					<li>Jaw</li>
+					<li>Hands</li>
+					<li>Headbone</li>
+					<li>Head</li>
+					<li>BodyType</li>
+					<li>Voice</li>
+				</blackEndoCategories>
+				<recipeList>
+					<li>VoidSpawnMakeDoppelganger</li>
+				</recipeList>
+				<!--<blackEndoCategories>
+					<li>HairColor</li>
+					<li>BodyType</li>
+				</blackEndoCategories>
+				<geneList>
+					<li>Skin_Sirenidae</li>
+				</geneList>
+				<onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>-->
 			</raceRestriction>
 		</alienRace>
 
@@ -274,14 +300,15 @@
 			<makesFootprints>false</makesFootprints>
 			<!--<nameGenerator>NamerPersonMoonjelly</nameGenerator>-->
 			<lifeExpectancy>666</lifeExpectancy>
-			<bloodDef>Filth_Slime</bloodDef>
+			<bloodDef>Filth_Sirenidae</bloodDef>
 			<useMeatFrom>Human</useMeatFrom>
 			<leatherDef>Leather_Human</leatherDef>
-			<nameCategory>HumanStandard</nameCategory>
+			<nameGenerator>NamerAnimalGenericFemale</nameGenerator>
+			<!--<nameGenerator MayRequire="Ludeon.RimWorld.Biotech">NamerMech</nameGenerator>-->
 			<body>VoidSpawn</body>
 			<baseHealthScale>0.5</baseHealthScale>
 			<baseHungerRate>0</baseHungerRate>
-			<foodType>None</foodType>
+			<foodType>OmnivoreHuman</foodType>
 			<gestationPeriodDays>20</gestationPeriodDays>
 
 			<litterSizeCurve>
@@ -297,21 +324,21 @@
 				<!--<li>
 					<def>HumanlikeBaby</def>
 					<minAge>0</minAge>
-				</li>
-				<li>
-					<def>HumanlikeToddler</def>
-					<minAge>2</minAge>
+					<soundWounded>Pawn_GuineaPig_Wounded</soundWounded>
+					<soundDeath>Pawn_GuineaPig_Death</soundDeath>
+					<soundCall>Pawn_GuineaPig_Call</soundCall>
+					<soundAngry>Pawn_GuineaPig_Angry</soundAngry>
 				</li>
 				<li>
 					<def>HumanlikeChild</def>
-					<minAge>12</minAge>
-				</li>
-				<li>
-					<def>HumanlikeTeenager</def>
-					<minAge>13</minAge>
+					<minAge>1</minAge>
+					<soundWounded>Pawn_GuineaPig_Wounded</soundWounded>
+					<soundDeath>Pawn_GuineaPig_Death</soundDeath>
+					<soundCall>Pawn_GuineaPig_Call</soundCall>
+					<soundAngry>Pawn_GuineaPig_Angry</soundAngry>
 				</li>-->
 				<li>
-					<def>HumanlikeAdult</def>
+					<def>MechanoidFullyFormed</def>
 					<minAge>0</minAge>
 					<soundWounded>Pawn_GuineaPig_Wounded</soundWounded>
 					<soundDeath>Pawn_GuineaPig_Death</soundDeath>
@@ -326,10 +353,11 @@
 
 			<ageGenerationCurve>
 				<points>
-					<li>(12,0)</li>
-					<li>(14,30)</li>
-					<li>(16,100)</li>
 					<li>(18,0)</li>
+					<li>(20,30)</li>
+					<li>(24,100)</li>
+					<li>(28,40)</li>
+					<li>(30,0)</li>
 					<!--<li>(70,18)</li>
                 <li>(80,10)</li>
                 <li>(90,3)</li>

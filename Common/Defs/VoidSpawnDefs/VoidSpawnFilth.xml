@@ -1,0 +1,21 @@
+<Defs>
+	<ThingDef ParentName="BaseFilth">
+		<defName>Filth_Sirenidae</defName>
+		<label>immoral fluid</label>
+		<statBases Inherit="false">
+			<Beauty>-10</Beauty>
+			<Cleanliness>5</Cleanliness>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Filth/Spatter</texPath>
+			<color>(0, 0, 0, 180)</color>
+		</graphicData>
+		<filth>
+			<ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+			<rainWashes>false</rainWashes>
+			<cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+			<canFilthAttach>true</canFilthAttach>
+			<cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+		</filth>
+	</ThingDef>
+</Defs>

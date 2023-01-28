@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,15 +28,46 @@ namespace InTheDark
             //Log.Message($"void spawn learning detected, xp: {xp}");
             if (__instance.passion == Passion.None)
             {
-                xp = 0;
+                xp = -666;
                 return;
             }
             if(xp < 0)
             {
-                xp /= 2;
+                xp /= 4;
             }
         }
+        //[HarmonyPatch(typeof(Pawn_IdeoTracker))]
+        //[HarmonyPatch("CertaintyChangeFactor", MethodType.Getter)]
+        //[HarmonyPrefix]
+        //public static bool DoNotCheckVoidSpawnCertaintyLifeStage(Pawn_IdeoTracker __instance, ref float __result)
+        //{
+        //    Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+        //    if (VoidSpawnCollectionClass.void_spawns.Contains(pawn))
+        //    {
+        //        __result = 1f;
+        //        return false;
+        //    }
+
+        //    return true;
+        //    //__instance.pawnAgeCertaintyCurve
+        //}
+        [HarmonyPatch(typeof(Pawn_AgeTracker))]
+        [HarmonyPatch("LifeStageMinAge")]
+        [HarmonyPatch(new Type[] { typeof(LifeStageDef) })]
+        [HarmonyPrefix]
+        public static bool DoNotCheckVoidSpawnLifeStageMinAge(Pawn_AgeTracker __instance, ref float __result)
+        {
+            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            if (VoidSpawnCollectionClass.void_spawns.Contains(pawn) || pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                __result = 0f;
+                return false;
+            }
+            return true;
+        }
     }
+
+    
     /*[HarmonyPatch(typeof(Pawn_NeedsTracker))]
     [HarmonyPatch("ShouldHaveNeed")]
     [HarmonyPatch(new Type[] { typeof(Pawn_NeedsTracker), typeof(NeedDef) })]

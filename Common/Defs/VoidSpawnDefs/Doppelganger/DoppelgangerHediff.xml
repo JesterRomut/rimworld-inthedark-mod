@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--Corruption-->
+	<HediffDef Name="VoidSpawnHediffCorruptionBase" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+	</HediffDef>
+	
+	<HediffDef ParentName="VoidSpawnHediffCorruptionBase">
+		<defName>VoidSpawnCorruption</defName>
+		<label>immoral corruption</label>
+		<!--<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>-->
+		<description>Body has been injected a void spawn's essence, this person will soonly be replaced by a doppelgänger. There may be chaotic thought patterns on the victim due to doppelgänger attack.\n\nThe worse the mood, the faster the doppelgänger corrupts.</description>
+		<descriptionShort>Body has been injected a void spawn's essence, this person will soonly be replaced by a doppelgänger.</descriptionShort>
+		<hediffClass>InTheDark.Hediff_VoidSpawnCorruption</hediffClass>
+		<!--<initialSeverity>0.001</initialSeverity>-->
+		<isBad>true</isBad>
+		<makesSickThought>true</makesSickThought>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<stages>
+			<li>
+				<label>inital</label>
+				<hungerRateFactorOffset>0.5</hungerRateFactorOffset>
+				<becomeVisible>true</becomeVisible>
+				<vomitMtbDays>4</vomitMtbDays>
+				
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>1</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.15</minSeverity>
+				<label>burning</label>
+				<hungerRateFactorOffset>1</hungerRateFactorOffset>
+				<forgetMemoryThoughtMtbDays>5</forgetMemoryThoughtMtbDays>
+				<mentalBreakMtbDays>6</mentalBreakMtbDays>
+				<painOffset>0.1</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.9</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.30</minSeverity>
+				<label>entanglement</label>
+				<hungerRateFactorOffset>1.3</hungerRateFactorOffset>
+				<forgetMemoryThoughtMtbDays>2</forgetMemoryThoughtMtbDays>
+				<mentalBreakMtbDays>3</mentalBreakMtbDays>
+				<painOffset>0.4</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.7</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.5</minSeverity>
+				<label>total</label>
+				<hungerRateFactorOffset>1.5</hungerRateFactorOffset>
+				<forgetMemoryThoughtMtbDays>2</forgetMemoryThoughtMtbDays>
+				<mentalBreakMtbDays>0.25</mentalBreakMtbDays>
+				<painOffset>0.6</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.1</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.95</minSeverity>
+				<label>wearing off</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.01</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="VoidSpawnHediffCorruptionBase">
+		<defName>VoidSpawnDoppelgangerWeakness</defName>
+		<label>newform weakness</label>
+		<description>Newform doppelgängers must take time to get fully formed. They are vulnerable by physical forces by this time.</description>
+		<descriptionShort>Newform doppelgängers must take time to get fully formed.</descriptionShort>
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>45000~120000</disappearsAfterTicks>
+				<showRemainingTime>false</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.8</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<IncomingDamageFactor>0.3</IncomingDamageFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>half</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.7</setMax>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<IncomingDamageFactor>1.3</IncomingDamageFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>newform</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.4</setMax>
+					</li>
+				</capMods>
+				<statOffsets>
+					<IncomingDamageFactor>2</IncomingDamageFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>
