@@ -37,4 +37,10 @@ namespace InTheDark
         public static HediffDef VoidSpawnEthereal;
         public static HediffDef VoidSpawnDoppelgangerWeakness;
     }
+
+    [DefOf]
+    public static class VoidSpawnThoughtDefOf
+    {
+        public static ThoughtDef VoidSpawnThoughtSync;
+    }
 }

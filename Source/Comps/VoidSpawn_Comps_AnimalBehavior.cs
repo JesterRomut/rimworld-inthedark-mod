@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace InTheDark
         public int gatheringIntervalTicks = 30000;
         public ThingDef productDef = null;
         public int productAmount = 1;
+        public ThoughtDef thought = null;
         public CompProperties_VoidSpawn()
         {
             this.compClass = typeof(CompVoidSpawn);
@@ -99,6 +101,65 @@ namespace InTheDark
 
             AddVoidHediffAndMore();
         }
+    }
+
+    public class ThoughtWorker_VoidSpawnThoughtSync : ThoughtWorker
+    {
+        float? average = null;
+        //float? strippedMood = null;
+        private float GetStrippedMood(Pawn p)
+        {
+            List<Thought> thoughts = new List<Thought>();
+            //p.needs.mood.thoughts.situational.AppendMoodThoughts(thoughts);
+            p.needs.mood.thoughts.GetAllMoodThoughts(thoughts);
+            float totalMood = 0f;
+            foreach(Thought t in thoughts)
+            {
+                if (t.def == VoidSpawnThoughtDefOf.VoidSpawnThoughtSync)
+                {
+                    continue;
+                }
+                totalMood += t.MoodOffset();
+            }
+            //if (p.IsColonist || p.IsPrisonerOfColony)
+            //{
+            //    totalMood += Find.Storyteller.difficulty.colonistMoodOffset;
+            //}
+            return totalMood / 100f;
+        }
+
+        //public override string PostProcessDescription(Pawn p, string description)
+        //{
+        //    return base.PostProcessDescription(p, description) + string.Concat("stripped: ", GetStrippedMood(p), " average: ", average.Value);
+        //}
+        protected override ThoughtState CurrentStateInternal(Pawn p)
+        {
+            //Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
+            if (p.def != VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                return ThoughtState.Inactive;
+            }
+            return true;
+        }
+        public override float MoodMultiplier(Pawn p)
+        {
+            if (!p.IsHashIntervalTick(200) && average != null)
+            {
+                return average.Value - GetStrippedMood(p);
+            }
+            HashSet<Thing> voidSpawns = VoidSpawnCollectionClass.void_spawns;
+            float total = 0f;
+            foreach (Pawn siren in voidSpawns)
+            {
+                total += GetStrippedMood(siren);
+            }
+            average = total / voidSpawns.Count;
+            
+            float final = average.Value - GetStrippedMood(p);
+
+            return final ;
+        }
+
     }
 
 }

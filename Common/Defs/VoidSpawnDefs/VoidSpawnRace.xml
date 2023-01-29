@@ -76,6 +76,7 @@
 				<gatheringIntervalTicks>60000</gatheringIntervalTicks>
 				<productDef>VoidNightmareFuel</productDef>
 				<productAmount>3</productAmount>
+				<thought>VoidSpawnThoughtSync</thought>
 				<immnunity>
 					<li>GutWorms</li>
 					<li>MuscleParasites</li>
@@ -223,7 +224,6 @@
 				<cannotReceiveThoughts>
 					<li>Pain</li>
 					<li>EnvironmentDark</li>
-					<li>ApparelDamaged</li>
 					<li>Sick</li>
 					<li>Naked</li>
 					<li>AteWithoutTable</li>
@@ -353,8 +353,8 @@
 
 			<ageGenerationCurve>
 				<points>
-					<li>(18,0)</li>
-					<li>(20,30)</li>
+					<li>(20,0)</li>
+					<li>(22,40)</li>
 					<li>(24,100)</li>
 					<li>(28,40)</li>
 					<li>(30,0)</li>
@@ -419,7 +419,17 @@
 		<combatLogRulesDodge>Maneuver_Poke_MeleeDodge</combatLogRulesDodge>
 	</ManeuverDef>
 
-
+	<ThoughtDef>
+		<defName>VoidSpawnThoughtSync</defName>
+		<workerClass>InTheDark.ThoughtWorker_VoidSpawnThoughtSync</workerClass>
+		<stages>
+			<li>
+				<label>thought sync</label>
+				<description>We are one. We are all.</description>
+				<baseMoodEffect>100</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 
 	<!--<tools>
 		<li>

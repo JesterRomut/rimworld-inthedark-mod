@@ -6,7 +6,7 @@
 
 ***
 TODO
-- [ ] Psychic Drone Weakness
+- [x] Thought Sync
 - [x] Disease Immunity
-- [ ] Reproduction
+- [x] Reproduction
 - [ ] \(Maybe) new coooool item

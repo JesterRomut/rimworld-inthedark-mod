@@ -22,9 +22,11 @@
 			<li Class="HediffCompProperties">
 				<compClass>HediffComp_Invisibility</compClass>
 			</li>
-			<li Class="HediffCompProperties_PsychicHarmonizer">
+			<!--<li Class="HediffCompProperties_PsychicHarmonizer">
 				<range>30</range>
 				<thought>VoidSpawnThoughtSync</thought>
+			</li>-->
+			<li Class="InTheDark.HediffCompProperties_VoidSpawnEthereal">
 			</li>
 		</comps>
 		<stages>
@@ -40,17 +42,4 @@
 		</stages>
 	</HediffDef>
 
-	<ThoughtDef>
-		<defName>VoidSpawnThoughtSync</defName>
-		<thoughtClass>Thought_PsychicHarmonizer</thoughtClass>
-		<stackLimit>100</stackLimit>
-		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-		<stages>
-			<li>
-				<label>thought sync: {HARMONIZER_labelShort}</label>
-				<description>We are one. We are all.</description>
-				<baseMoodEffect>8</baseMoodEffect>
-			</li>
-		</stages>
-	</ThoughtDef>
 </Defs>
