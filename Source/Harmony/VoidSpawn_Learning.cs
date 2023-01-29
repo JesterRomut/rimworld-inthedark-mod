@@ -21,7 +21,7 @@ namespace InTheDark
         public static void DontLearnSkillWithoutPassionForVoidSpawns(SkillRecord __instance, ref float xp, bool direct/*, ref float __result*/)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (!VoidSpawnCollectionClass.void_spawns.Contains(pawn))
+            if (!(pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race))
             {
                 return;
             }
@@ -61,6 +61,20 @@ namespace InTheDark
             if (VoidSpawnCollectionClass.void_spawns.Contains(pawn) || pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
                 __result = 0f;
+                return false;
+            }
+            return true;
+        }
+
+        [HarmonyPatch(typeof(PawnUtility))]
+        [HarmonyPatch("IsInvisible")]
+        [HarmonyPatch(new Type[] { typeof(Pawn) })]
+        [HarmonyPrefix]
+        public static bool VoidSpawnInvisibility(ref Pawn pawn, ref bool __result)
+        {
+            if (VoidSpawnCollectionClass.void_spawns.Contains(pawn))
+            {
+                __result = true;
                 return false;
             }
             return true;

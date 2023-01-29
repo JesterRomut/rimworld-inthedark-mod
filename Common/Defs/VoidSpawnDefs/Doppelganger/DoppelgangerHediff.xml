@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!--Corruption-->
-	<HediffDef Name="VoidSpawnHediffCorruptionBase" Abstract="True">
-		<hediffClass>HediffWithComps</hediffClass>
-		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-		<initialSeverity>0.001</initialSeverity>
-		<maxSeverity>1</maxSeverity>
-	</HediffDef>
+	
 	
 	<HediffDef ParentName="VoidSpawnHediffCorruptionBase">
 		<defName>VoidSpawnCorruption</defName>
@@ -17,7 +12,7 @@
 		<hediffClass>InTheDark.Hediff_VoidSpawnCorruption</hediffClass>
 		<!--<initialSeverity>0.001</initialSeverity>-->
 		<isBad>true</isBad>
-		<makesSickThought>true</makesSickThought>
+		<makesSickThought>false</makesSickThought>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<stages>
 			<li>
@@ -143,7 +138,7 @@
 				</statOffsets>
 			</li>
 			<li>
-				<minSeverity>0.8</minSeverity>
+				<minSeverity>0.95</minSeverity>
 				<label>newform</label>
 				<capMods>
 					<li>
@@ -157,5 +152,18 @@
 			</li>
 		</stages>
 	</HediffDef>
-	
+
+	<ThoughtDef>
+		<defName>VoidSpawnCorruptionBadThought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>VoidSpawnCorruption</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>immoral corruption</label>
+				<description>Some MONSTER tried to replace me!</description>
+				<baseMoodEffect>-30</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>

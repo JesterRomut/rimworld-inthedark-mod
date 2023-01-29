@@ -16,7 +16,7 @@ namespace InTheDark
 
         {
 
-            if ((pawn.Map != null) && VoidSpawnCollectionClass.void_spawns.Contains(pawn))
+            if ((pawn.Map != null) && pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
 
                 int num;

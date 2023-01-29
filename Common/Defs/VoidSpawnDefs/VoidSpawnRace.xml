@@ -92,8 +92,8 @@
 					<li>ToxicBuildup</li>
 					<li>Pregnant</li>
 					<li>HeartAttack</li>
-					<li>ResurrectionPsychosis</li>
 					<li>VoidSpawnCorruption</li>
+					<li>VoidSpawnMemoryLeak</li>
 				</immnunity>
 			</li>
 		</comps>
@@ -381,8 +381,9 @@
 		<label>Tentacle Strike</label>
 		<additionalHediffs>
 			<li>
-				<hediff>Anesthetic</hediff>
+				<hediff>VoidSpawnMemoryLeak</hediff>
 				<severityPerDamageDealt>0.33</severityPerDamageDealt>
+				<victimSeverityScaling>MentalBreakThreshold</victimSeverityScaling>
 			</li>
 		</additionalHediffs>
 		<workerClass>DamageWorker_Scratch</workerClass>
@@ -422,6 +423,7 @@
 	<ThoughtDef>
 		<defName>VoidSpawnThoughtSync</defName>
 		<workerClass>InTheDark.ThoughtWorker_VoidSpawnThoughtSync</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
 		<stages>
 			<li>
 				<label>thought sync</label>

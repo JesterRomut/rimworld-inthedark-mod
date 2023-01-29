@@ -172,20 +172,11 @@ namespace InTheDark
             pawn.Destroy();
             if (doppelganger.Spawned)
             {
-                SpawnFilth(doppelganger, doppelganger.PositionHeld, VoidSpawnThingDefOf.Filth_Sirenidae, 2);
+                VoidSpawnUtilty.SpawnSirenidaeFilth(doppelganger, doppelganger.PositionHeld, 2);
             }
             if (doppelganger.caller != null)
             {
                 doppelganger.caller.DoCall();
-            }
-        }
-
-        private static void SpawnFilth(Pawn pawn, IntVec3 center, ThingDef filth, int radius)
-        {
-            int randomInRange = new IntRange(6, 10).RandomInRange;
-            for (int i = 0; i < randomInRange; i++)
-            {
-                FilthMaker.TryMakeFilth(CellFinder.RandomClosewalkCellNear(center, pawn.Map, radius), pawn.Map, filth, pawn.LabelIndefinite());
             }
         }
     }

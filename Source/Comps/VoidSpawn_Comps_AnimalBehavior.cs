@@ -25,6 +25,10 @@ namespace InTheDark
         private void AddVoidHediffAndMore()
         {
             Pawn pawn = this.parent as Pawn;
+            if (!pawn.Spawned)
+            {
+                return;
+            }
             //modify hediff
             if (pawn.health != null && pawn.health.hediffSet != null)
             {
@@ -47,6 +51,7 @@ namespace InTheDark
             //add ability
             pawn.abilities?.GainAbility(VoidSpawnAbilityDefOf.VoidSpawnSkip);
         }
+
         private void GatherProduct()
         {
             Pawn pawn = this.parent as Pawn;
@@ -59,6 +64,10 @@ namespace InTheDark
             }
             else
             {
+                if (pawn.Map == null)
+                {
+                    pawn.inventory.TryAddItemNotForSale(thing);
+                }
                 GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Near);
                 //pawn.inventory.TryAddItemNotForSale(thing);
             }
@@ -72,18 +81,18 @@ namespace InTheDark
         }
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            VoidSpawnCollectionClass.AddVoidSpawnToList(this.parent);
+            VoidSpawnCollectionClass.AddVoidSpawnToList(this.parent as Pawn);
             AddVoidHediffAndMore();
         }
 
-        public override void PostDeSpawn(Map map)
-        {
-            VoidSpawnCollectionClass.RemoveVoidSpawnToList(this.parent);
-        }
+        //public override void PostDeSpawn(Map map)
+        //{
+        //    VoidSpawnCollectionClass.RemoveVoidSpawnToList(this.parent as Pawn);
+        //}
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            VoidSpawnCollectionClass.RemoveVoidSpawnToList(this.parent);
+            VoidSpawnCollectionClass.RemoveVoidSpawnToList(this.parent as Pawn);
         }
         public override void CompTick()
         {
@@ -100,12 +109,14 @@ namespace InTheDark
             base.CompTickRare();
 
             AddVoidHediffAndMore();
+
+            VoidSpawnCollectionClass.AddVoidSpawnToList(this.parent as Pawn);
         }
     }
 
     public class ThoughtWorker_VoidSpawnThoughtSync : ThoughtWorker
     {
-        float? average = null;
+        private float? average = null;
         //float? strippedMood = null;
         private float GetStrippedMood(Pawn p)
         {
@@ -128,18 +139,41 @@ namespace InTheDark
             return totalMood / 100f;
         }
 
+        private void CalculateAverage(Pawn p, IEnumerable<Pawn> voidSpawns)
+        {
+            if(voidSpawns.Count() == 0)
+            {
+                average = 0f;
+            }
+            float total = 0f;
+            float count = 0f;
+            foreach (Pawn siren in voidSpawns)
+            {
+                if (siren.def != VoidSpawnThingDefOf.VoidSpawn_Race)
+                {
+                    continue;
+                }
+                if (siren.Faction == p.Faction) { 
+                    total += GetStrippedMood(siren);
+                    count++;
+                }
+            }
+            average = total / count;
+        }
+
         //public override string PostProcessDescription(Pawn p, string description)
         //{
-        //    return base.PostProcessDescription(p, description) + string.Concat("stripped: ", GetStrippedMood(p), " average: ", average.Value);
+        //    return base.PostProcessDescription(p, description) + string.Concat(" In collectionclass: ", VoidSpawnCollectionClass.void_spawns.Contains(p), " all in collection: ", string.Join(",", VoidSpawnCollectionClass.void_spawns));
         //}
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
             //Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
-            if (p.def != VoidSpawnThingDefOf.VoidSpawn_Race)
+            if (p.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
-                return ThoughtState.Inactive;
+                return true;
+                
             }
-            return true;
+            return ThoughtState.Inactive;
         }
         public override float MoodMultiplier(Pawn p)
         {
@@ -147,17 +181,16 @@ namespace InTheDark
             {
                 return average.Value - GetStrippedMood(p);
             }
-            HashSet<Thing> voidSpawns = VoidSpawnCollectionClass.void_spawns;
-            float total = 0f;
-            foreach (Pawn siren in voidSpawns)
-            {
-                total += GetStrippedMood(siren);
-            }
-            average = total / voidSpawns.Count;
-            
-            float final = average.Value - GetStrippedMood(p);
-
-            return final ;
+            //Caravan caravan = p.GetCaravan();
+            //if (caravan != null)
+            //{
+            //    List<Pawn> pawns = VoidSpawnCollectionClass.void_spawns.Concat(caravan.pawns.InnerListForReading).ToList();
+            //    Log.Message(string.Concat(pawns.Count));
+            //    CalculateAverage(p, pawns);
+            //    return average.Value - GetStrippedMood(p);
+            //}
+            CalculateAverage(p, VoidSpawnCollectionClass.void_spawns);
+            return average.Value - GetStrippedMood(p);
         }
 
     }

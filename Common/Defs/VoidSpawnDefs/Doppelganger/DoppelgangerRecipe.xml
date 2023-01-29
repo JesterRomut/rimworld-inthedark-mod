@@ -21,7 +21,7 @@
 						<li>VoidNightmareFuel</li>
 					</thingDefs>
 				</filter>
-				<count>6</count>
+				<count>60</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
