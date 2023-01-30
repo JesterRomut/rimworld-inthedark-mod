@@ -79,6 +79,19 @@ namespace InTheDark
             }
             return true;
         }
+
+        [HarmonyPatch(typeof(Pawn_GeneTracker))]
+        [HarmonyPatch("AffectedByDarkness", MethodType.Getter)]
+        [HarmonyPrefix]
+        public static bool VoidSpawnShouldNotAffectedByDarkness(Pawn_GeneTracker __instance, ref bool __result)
+        {
+            if (__instance.pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
     }
 
     

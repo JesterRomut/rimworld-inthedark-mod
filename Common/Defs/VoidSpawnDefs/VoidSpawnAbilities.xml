@@ -27,8 +27,8 @@
 			<Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>-->
 		</statBases>
 		<verbProperties>
-			<warmupTime>0</warmupTime>
-			<range>30</range>
+			<warmupTime>0.5</warmupTime>
+			<range>40</range>
 			<targetParams>
 				<canTargetPawns>False</canTargetPawns>
 				<canTargetBuildings>False</canTargetBuildings>
@@ -39,13 +39,13 @@
 			<li Class = "InTheDark.CompProperties_AbilityVoidSpawnTeleport">
 				<!--<compClass>InTheDark.CompAbilityEffect_VoidSpawnTeleport</compClass>-->
 				<destination>Caster</destination>
-				<requiresLineOfSight>False</requiresLineOfSight>
-				<range>30</range>
+				<requiresLineOfSight>true</requiresLineOfSight>
+				<range>40</range>
 				<clamorType>Ability</clamorType>
 				<clamorRadius>10</clamorRadius>
 				<destClamorType>Ability</destClamorType>
 				<destClamorRadius>10</destClamorRadius>
-				<applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+				<applyGoodwillImpactToLodgers>false</applyGoodwillImpactToLodgers>
 			</li>
 		</comps>
 	</AbilityDef>

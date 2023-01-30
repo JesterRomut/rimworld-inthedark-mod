@@ -84,7 +84,8 @@ namespace InTheDark
 		//}
 		public override bool CanHitTarget(LocalTargetInfo target)
 		{
-			return base.CanPlaceSelectedTargetAt(target) && base.CanHitTarget(target);
+
+			return CanTeleportThingTo(target, this.parent.pawn.Map) && base.CanHitTarget(target);
 		}
 	}
 	
