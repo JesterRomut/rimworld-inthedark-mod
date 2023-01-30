@@ -6,7 +6,7 @@
 		<li>1.4</li>
 	</supportedVersions>
 	<description>IMMORAL FABRICATIONS</description>
-	<url>https://steamcommunity.com/id/jester-romut</url>
+	<url>https://github.com/JesterRomut/rimworld-inthedark-mod</url>
 	<modDependencies>
 		<li>
 			<packageId>erdelf.HumanoidAlienRaces</packageId>

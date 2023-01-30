@@ -11,7 +11,7 @@
 			<ComfyTemperatureMax>6666</ComfyTemperatureMax>
 			<MeleeDodgeChance>666</MeleeDodgeChance>
 			<MeleeHitChance>666</MeleeHitChance>
-			<MarketValue>0</MarketValue>
+			<MarketValue>100</MarketValue>
 			<Mass>0</Mass>
 			<MoveSpeed>12</MoveSpeed>
 			<Flammability>0</Flammability>
