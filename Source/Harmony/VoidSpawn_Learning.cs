@@ -58,7 +58,7 @@ namespace InTheDark
         public static bool DoNotCheckVoidSpawnLifeStageMinAge(Pawn_AgeTracker __instance, ref float __result)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (VoidSpawnCollectionClass.void_spawns.Contains(pawn) || pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            if (VoidSpawnCollectionClass.voidSpawns.Contains(pawn) || pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
                 __result = 0f;
                 return false;
@@ -72,7 +72,7 @@ namespace InTheDark
         [HarmonyPrefix]
         public static bool VoidSpawnInvisibility(ref Pawn pawn, ref bool __result)
         {
-            if (VoidSpawnCollectionClass.void_spawns.Contains(pawn))
+            if (VoidSpawnCollectionClass.voidSpawns.Contains(pawn))
             {
                 __result = true;
                 return false;
@@ -86,6 +86,20 @@ namespace InTheDark
         public static bool VoidSpawnShouldNotAffectedByDarkness(Pawn_GeneTracker __instance, ref bool __result)
         {
             if (__instance.pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+
+        [HarmonyPatch(typeof(AbilityUtility))]
+        [HarmonyPatch("ValidateMustBeHumanOrWildMan")]
+        [HarmonyPatch(new Type[] { typeof(Pawn), typeof(bool), typeof(Ability) })]
+        [HarmonyPrefix]
+        public static bool VoidSpawnAbilityFix(ref bool __result, Pawn targetPawn, bool showMessage, Ability ability)
+        {
+            if (targetPawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
                 __result = false;
                 return false;

@@ -5,6 +5,8 @@ using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
+using static HarmonyLib.Code;
 
 namespace InTheDark
 {
@@ -68,7 +70,11 @@ namespace InTheDark
                 {
                     pawn.inventory.TryAddItemNotForSale(thing);
                 }
-                GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                else
+                {
+                    GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                }
+
                 //pawn.inventory.TryAddItemNotForSale(thing);
             }
         }
@@ -81,7 +87,15 @@ namespace InTheDark
         }
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            VoidSpawnCollectionClass.AddVoidSpawnToList(this.parent as Pawn);
+            Pawn pawn = this.parent as Pawn;
+            if (pawn.Faction == Faction.OfPlayer)
+            {
+                if (VoidSpawnGroupManager.Main.GetControlGroup(pawn) == null)
+                {
+                    VoidSpawnGroupManager.Main.ControlGroups[0].Assign(pawn);
+                }
+            }
+            VoidSpawnCollectionClass.AddVoidSpawnToList(pawn);
             AddVoidHediffAndMore();
         }
 
@@ -92,7 +106,9 @@ namespace InTheDark
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            VoidSpawnCollectionClass.RemoveVoidSpawnToList(this.parent as Pawn);
+            Pawn pawn = this.parent as Pawn;
+            VoidSpawnGroupManager.Main.GetControlGroup(pawn)?.TryUnassign(pawn);
+            VoidSpawnCollectionClass.RemoveVoidSpawnToList(pawn);
         }
         public override void CompTick()
         {
@@ -112,87 +128,34 @@ namespace InTheDark
 
             VoidSpawnCollectionClass.AddVoidSpawnToList(this.parent as Pawn);
         }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            Pawn pawn = this.parent as Pawn;
+            if (pawn.Faction == Faction.OfPlayer)
+            {
+                yield return new VoidSpawnControlGroupGizmo(pawn);
+                //Command_Action command_Action = new Command_Action();
+                //command_Action.defaultLabel = "CommandCancelLoad".Translate();
+                //command_Action.defaultDesc = "CommandCancelLoadDesc".Translate();
+                //RenderTexture image = PortraitsCache.Get(pawn, default(Vector2), Rot4.East, default(Vector3), pawn.kindDef.controlGroupPortraitZoom);
+                //command_Action.icon = image;
+                //command_Action.action = delegate
+                //{
+
+                //};
+                //yield return command_Action;
+            }
+
+            foreach (Gizmo item in base.CompGetGizmosExtra())
+            {
+                yield return item;
+            }
+
+            yield break;
+        }
     }
 
-    public class ThoughtWorker_VoidSpawnThoughtSync : ThoughtWorker
-    {
-        private float? average = null;
-        //float? strippedMood = null;
-        private float GetStrippedMood(Pawn p)
-        {
-            List<Thought> thoughts = new List<Thought>();
-            //p.needs.mood.thoughts.situational.AppendMoodThoughts(thoughts);
-            p.needs.mood.thoughts.GetAllMoodThoughts(thoughts);
-            float totalMood = 0f;
-            foreach(Thought t in thoughts)
-            {
-                if (t.def == VoidSpawnThoughtDefOf.VoidSpawnThoughtSync)
-                {
-                    continue;
-                }
-                totalMood += t.MoodOffset();
-            }
-            //if (p.IsColonist || p.IsPrisonerOfColony)
-            //{
-            //    totalMood += Find.Storyteller.difficulty.colonistMoodOffset;
-            //}
-            return totalMood / 100f;
-        }
-
-        private void CalculateAverage(Pawn p, IEnumerable<Pawn> voidSpawns)
-        {
-            if(voidSpawns.Count() == 0)
-            {
-                average = 0f;
-            }
-            float total = 0f;
-            float count = 0f;
-            foreach (Pawn siren in voidSpawns)
-            {
-                if (siren.def != VoidSpawnThingDefOf.VoidSpawn_Race)
-                {
-                    continue;
-                }
-                if (siren.Faction == p.Faction) { 
-                    total += GetStrippedMood(siren);
-                    count++;
-                }
-            }
-            average = total / count;
-        }
-
-        //public override string PostProcessDescription(Pawn p, string description)
-        //{
-        //    return base.PostProcessDescription(p, description) + string.Concat(" In collectionclass: ", VoidSpawnCollectionClass.void_spawns.Contains(p), " all in collection: ", string.Join(",", VoidSpawnCollectionClass.void_spawns));
-        //}
-        protected override ThoughtState CurrentStateInternal(Pawn p)
-        {
-            //Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
-            if (p.def == VoidSpawnThingDefOf.VoidSpawn_Race)
-            {
-                return true;
-                
-            }
-            return ThoughtState.Inactive;
-        }
-        public override float MoodMultiplier(Pawn p)
-        {
-            if (!p.IsHashIntervalTick(200) && average != null)
-            {
-                return average.Value - GetStrippedMood(p);
-            }
-            //Caravan caravan = p.GetCaravan();
-            //if (caravan != null)
-            //{
-            //    List<Pawn> pawns = VoidSpawnCollectionClass.void_spawns.Concat(caravan.pawns.InnerListForReading).ToList();
-            //    Log.Message(string.Concat(pawns.Count));
-            //    CalculateAverage(p, pawns);
-            //    return average.Value - GetStrippedMood(p);
-            //}
-            CalculateAverage(p, VoidSpawnCollectionClass.void_spawns);
-            return average.Value - GetStrippedMood(p);
-        }
-
-    }
+    
 
 }

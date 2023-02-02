@@ -59,7 +59,7 @@ namespace InTheDark
             Dictionary<Ideo, int> allIdeos = new Dictionary<Ideo, int>();
             Dictionary<Faction, int> allFactions = new Dictionary<Faction, int>();
             //int compare = 0;
-            foreach (Pawn voidspawn in VoidSpawnCollectionClass.void_spawns)
+            foreach (Pawn voidspawn in VoidSpawnCollectionClass.voidSpawns)
             {
                 Ideo currentIdeo = voidspawn.Ideo;
                 if (!allIdeos.ContainsKey(currentIdeo))

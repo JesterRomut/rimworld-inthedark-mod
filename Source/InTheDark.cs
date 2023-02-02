@@ -17,19 +17,19 @@ namespace InTheDark
 
     public class VoidSpawnCollectionClass
     {
-        public static HashSet<Pawn> void_spawns = new HashSet<Pawn>();
+        public static HashSet<Pawn> voidSpawns = new HashSet<Pawn>();
         public static void AddVoidSpawnToList(Pawn thing)
         {
-            if(!void_spawns.Contains(thing))
+            if(!voidSpawns.Contains(thing))
             {
-                void_spawns.Add(thing);
+                voidSpawns.Add(thing);
             }
         }
         public static void RemoveVoidSpawnToList(Pawn thing)
         {
-            if(void_spawns.Contains(thing))
+            if(voidSpawns.Contains(thing))
             {
-                void_spawns.Remove(thing);
+                voidSpawns.Remove(thing);
             }
         }
     }
