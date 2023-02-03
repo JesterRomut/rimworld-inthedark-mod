@@ -8,4 +8,5 @@
 	<CommandVoidSpawnGroupCreateTemplate>Assign to new group...</CommandVoidSpawnGroupCreateTemplate>
 	<CommandVoidSpawnGroupCannotTemplate>Cannot assign to {0}</CommandVoidSpawnGroupCannotTemplate>
 	<CommandVoidSpawnGroupAlreadyAssigned>Already assigned</CommandVoidSpawnGroupAlreadyAssigned>
+	<UseBedAsVoidSpawn>Force rest (as Void Spawn)</UseBedAsVoidSpawn>
 </LanguageData>

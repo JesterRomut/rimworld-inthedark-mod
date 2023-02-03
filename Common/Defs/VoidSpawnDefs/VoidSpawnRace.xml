@@ -99,17 +99,6 @@
 		</comps>
 		<alienRace>
 			<generalSettings>
-				<factionRelations>
-					<li>
-						<factions>
-							<li>Empire</li>
-						</factions>
-						<goodwill>
-							<min>-100</min>
-							<max>-100</max>
-						</goodwill>
-					</li>
-				</factionRelations>
 				<growthAges>
 					<li>1</li>
 					<li>3</li>
@@ -136,8 +125,9 @@
 					<colorChannels Inherit="false">
 						<li>
 							<name>skin</name>
-							<first Class="ColorGenerator_Single">
-								<color>RGBA(1.000, 1.000, 1.000, 0.850)</color>
+							<first Class="AlienRace.ColorGenerator_SkinColorMelanin">
+								<minMelanin>0</minMelanin>
+								<maxMelanin>0</maxMelanin>
 							</first>
 							<second Class="ColorGenerator_Single">
 								<color>RGBA(1.000, 1.000, 1.000, 0.850)</color>

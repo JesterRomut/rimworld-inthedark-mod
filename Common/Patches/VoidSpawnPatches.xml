@@ -15,4 +15,10 @@
 			</requiredBackstoriesAny>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName = "Empire"]/permanentEnemyToEveryoneExcept</xpath>
+		<value>
+			<li>PlayerGestaltVoid</li>
+		</value>
+	</Operation>
 </Patch>
