@@ -132,19 +132,9 @@ namespace InTheDark
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             Pawn pawn = this.parent as Pawn;
-            if (pawn.Faction == Faction.OfPlayer)
+            if (pawn != null && (pawn.Faction ?? null) == Faction.OfPlayer)
             {
                 yield return new VoidSpawnControlGroupGizmo(pawn);
-                //Command_Action command_Action = new Command_Action();
-                //command_Action.defaultLabel = "CommandCancelLoad".Translate();
-                //command_Action.defaultDesc = "CommandCancelLoadDesc".Translate();
-                //RenderTexture image = PortraitsCache.Get(pawn, default(Vector2), Rot4.East, default(Vector3), pawn.kindDef.controlGroupPortraitZoom);
-                //command_Action.icon = image;
-                //command_Action.action = delegate
-                //{
-
-                //};
-                //yield return command_Action;
             }
 
             foreach (Gizmo item in base.CompGetGizmosExtra())

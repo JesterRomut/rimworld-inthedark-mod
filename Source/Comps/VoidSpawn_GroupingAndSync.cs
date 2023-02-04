@@ -174,15 +174,19 @@ namespace InTheDark
         public VoidSpawnControlGroup controlGroup = null;
         public Pawn pawn = null;
 
-        public override IEnumerable<FloatMenuOption> RightClickFloatMenuOptions => GetControlGroupOptions(pawn);
+        public override IEnumerable<FloatMenuOption> RightClickFloatMenuOptions => pawn != null ? GetControlGroupOptions(pawn) : null;
 
         public VoidSpawnControlGroupGizmo(Pawn pawn)
         {
-            controlGroup = VoidSpawnGroupManager.Main.GetControlGroup(pawn);
-            this.pawn = pawn;
-            this.icon = PortraitsCache.Get(pawn, new Vector2(75f, 75f), Rot4.East, default(Vector3), pawn.kindDef.controlGroupPortraitZoom);
-            this.defaultLabel = controlGroup.Name;
-            this.defaultDesc = "CommandVoidSpawnGroupingDesc".Translate();
+            if (pawn != null)
+            {
+                this.pawn = pawn;
+                controlGroup = VoidSpawnGroupManager.Main.GetControlGroup(pawn);
+                this.icon = PortraitsCache.Get(pawn, new Vector2(75f, 75f), Rot4.East, default(Vector3), pawn.kindDef.controlGroupPortraitZoom);
+                this.defaultLabel = controlGroup.Name;
+                this.defaultDesc = "CommandVoidSpawnGroupingDesc".Translate();
+            }
+            
         }
         public override void ProcessInput(Event ev)
         { // 0 left 1 right
@@ -341,7 +345,12 @@ namespace InTheDark
             {
                 return ThoughtState.Inactive;
             }
-            HashSet<Pawn> set = VoidSpawnGroupManager.Main.GetControlGroup(p).PawnsForReading;
+            VoidSpawnControlGroup group = VoidSpawnGroupManager.Main.GetControlGroup(p);
+            if (group == null)
+            {
+                return ThoughtState.Inactive;
+            }
+            HashSet<Pawn> set = group.PawnsForReading;
             //Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
             if (set.Count() > 1 && set.Contains(p))
             {
@@ -352,21 +361,13 @@ namespace InTheDark
         }
         public override float MoodMultiplier(Pawn p)
         {
-            //if (!p.IsHashIntervalTick(200) && average != null)
-            //{
-            //    return average.Value - GetStrippedMood(p);
-            //}
-            //Caravan caravan = p.GetCaravan();
-            //if (caravan != null)
-            //{
-            //    List<Pawn> pawns = VoidSpawnCollectionClass.void_spawns.Concat(caravan.pawns.InnerListForReading).ToList();
-            //    Log.Message(string.Concat(pawns.Count));
-            //    CalculateAverage(p, pawns);
-            //    return average.Value - GetStrippedMood(p);
-            //}
+            VoidSpawnControlGroup group = VoidSpawnGroupManager.Main.GetControlGroup(p);
+            if (group == null)
+            {
+                return 0f;
+            }
 
-
-            average = CalculateAverage(p, VoidSpawnGroupManager.Main.GetControlGroup(p).PawnsForReading);
+            average = CalculateAverage(p, group.PawnsForReading);
             return average.Value - GetStrippedMood(p);
         }
 

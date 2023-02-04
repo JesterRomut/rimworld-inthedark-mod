@@ -218,6 +218,9 @@
 					<li>Naked</li>
 					<li>AteWithoutTable</li>
 					<li>SoakingWet</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">AgeReversalDemanded</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">LookChangeDesired</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
 				</cannotReceiveThoughts>
 				<replacerList>
 					<li>
