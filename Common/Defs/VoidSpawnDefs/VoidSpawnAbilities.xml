@@ -6,6 +6,8 @@
 		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		<targetRequired>True</targetRequired>
+		<level>0</level>
+		<groupAbility>false</groupAbility>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>-1</range>
@@ -17,11 +19,12 @@
 		<defName>VoidSpawnSkip</defName>
 		<label>teleport</label>
 		<description>Teleport self to a desired position.</description>
-		<level>0</level>
+		
 		<iconPath>UI/Abilities/Skip</iconPath>
 		<writeCombatLog>True</writeCombatLog>
 		<showPsycastEffects>False</showPsycastEffects>
 		<hotKey>Misc9</hotKey>
+		
 		<statBases>
 			<!--<Ability_EntropyGain>25</Ability_EntropyGain>
 			<Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>-->

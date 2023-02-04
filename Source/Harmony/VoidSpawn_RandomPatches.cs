@@ -73,7 +73,7 @@ namespace InTheDark
             {
                 yield return item;
             }
-            if (myPawn.def == VoidSpawnThingDefOf.VoidSpawn_Race && __instance.Medical)
+            if (myPawn.def == VoidSpawnThingDefOf.VoidSpawn_Race && !__instance.Medical)
             {
 
 
