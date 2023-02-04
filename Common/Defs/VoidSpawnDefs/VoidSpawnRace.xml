@@ -4,7 +4,7 @@
 	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
 		<defName>VoidSpawn_Race</defName>
 		<label>Void Spawn</label>
-		<description>//IMMORAL FABRICATIONS//\n\nA sirenidae-like race. Originally controlled by a gestalt consciousness who want to replace human by creating doppelgängers.\n\n They are pure spiritualized entities and don't affect by physical forces, and they can only learn skill with passion.</description>
+		<description>//IMMORAL FABRICATIONS//\n\nA sirenidae-like race. Originally controlled by a gestalt consciousness who want to replace human by creating doppelgĂ¤ngers.\n\n They are pure spiritualized entities and don't affect by physical forces, and they can only learn skill with passion.</description>
 		<statBases>
 			<PsychicSensitivity>2</PsychicSensitivity>
 			<ComfyTemperatureMin>-6666</ComfyTemperatureMin>
@@ -220,6 +220,7 @@
 					<li>SoakingWet</li>
 					<li MayRequire="Ludeon.RimWorld.Ideology">AgeReversalDemanded</li>
 					<li MayRequire="Ludeon.RimWorld.Ideology">LookChangeDesired</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">HasNoProsthetic_Disapproved</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
 				</cannotReceiveThoughts>
 				<replacerList>

@@ -57,6 +57,11 @@ namespace InTheDark
         private void GatherProduct()
         {
             Pawn pawn = this.parent as Pawn;
+            if (pawn.needs?.mood?.CurLevel / pawn.needs?.mood?.MaxLevel < 0.5f)
+            {
+                // only gather above 50% mood
+                return;
+            }
             Thing thing = ThingMaker.MakeThing(Props.productDef);
             thing.stackCount = Props.productAmount;
             if (pawn.IsCaravanMember())
