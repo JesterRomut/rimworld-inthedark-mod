@@ -17,10 +17,10 @@
 	</AbilityDef>
 	<AbilityDef ParentName="VoidSpawnAbilityBase">
 		<defName>VoidSpawnSkip</defName>
-		<label>teleport</label>
-		<description>Teleport self to a desired position.</description>
+		<label>dimension cutter</label>
+		<description>An essential skill of all void spawns. Teleport self to a desired position.</description>
 		
-		<iconPath>UI/Abilities/Skip</iconPath>
+		<iconPath>UI/Abilities/VoidSpawnDimensionCutter</iconPath>
 		<writeCombatLog>True</writeCombatLog>
 		<showPsycastEffects>False</showPsycastEffects>
 		<hotKey>Misc9</hotKey>

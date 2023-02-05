@@ -4,7 +4,7 @@
 		<defName>BaseVoidSpawn</defName>
 		<title>Immoral Fabrication</title>
 		<titleShort>Sirenidae</titleShort>
-		<baseDesc>[PAWN_nameDef] is a void spawn. The source of [PAWN_nameDef] has been forgotten.</baseDesc>
+		<baseDesc>[PAWN_nameDef] is a void spawn. The source of [PAWN_nameDef] has been forgotten in myth.</baseDesc>
 
 		<slot>Childhood</slot>
 		<spawnCategories>
@@ -44,5 +44,19 @@
 		<title>Burning Aches</title>
 		<titleShort>Graviton</titleShort> <!--无名画家的劣等造物-->
 		<baseDesc>"A inferior fabrication by nameless painters"\n\nA nameless painter looked at [PAWN_nameDef] and said: All works which not famous, are just wastepapers... Then he commited suicide.</baseDesc>
+	</AlienRace.AlienBackstoryDef>
+	<AlienRace.AlienBackstoryDef ParentName="VoidSpawnAdulthoodBackstoryBase">
+		<defName>VoidSpawnPhoton</defName>
+		<title>Raging Battle</title>
+		<titleShort>Photon</titleShort>
+		<!--失败的战斗正在怒吼-->
+		<baseDesc>"A lost battle is raging"\n\n[PAWN_nameDef] is always struggle with something which mankind don't understand. [PAWN_nameDef] is always a photon ripper...</baseDesc>
+	</AlienRace.AlienBackstoryDef>
+	<AlienRace.AlienBackstoryDef ParentName="VoidSpawnAdulthoodBackstoryBase">
+		<defName>VoidSpawnNeutrino</defName>
+		<title>Uninteractable Despair</title>
+		<titleShort>Neutrino</titleShort>
+		<!--3000年未曾被发现的尸体-->
+		<baseDesc>"A rotten corpse which not ever be seen by 3,000 years"\n\nNo one know [PAWN_nameDef]. No one will remember [PAWN_nameDef] when it die. No one will even notice its death except his best friend, maggots and flies.</baseDesc>
 	</AlienRace.AlienBackstoryDef>
 </Defs>

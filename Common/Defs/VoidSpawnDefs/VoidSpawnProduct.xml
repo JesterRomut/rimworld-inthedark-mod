@@ -1,63 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	  <ThingDef ParentName="OrganicProductBase">
-			<defName>VoidNightmareFuel</defName>
-			<label>Immoral essence</label>
-			<description>A twisted thing which creeps around the air who deserves all bad memories in the world... \n\nDisappears quickly when exposed outdoors.</description>
-			<graphicData>
-				<texPath>Things/Item/SirenidaeProduct</texPath>
-				<graphicClass>Graphic_StackCount</graphicClass>
-			</graphicData>
-			<socialPropernessMatters>true</socialPropernessMatters>
-			<rotatable>false</rotatable>
-            <statBases>
-              <MarketValue>6.6</MarketValue>
-              <Mass>0.0000001</Mass>
-              <MaxHitPoints>10</MaxHitPoints>
-              <Nutrition>0.6</Nutrition>
-              <Flammability>0</Flammability>
-	          <DeteriorationRate>160</DeteriorationRate>
-	          <FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
-            </statBases>
-	        <tradeability>Sellable</tradeability>
-            <comps>
-            </comps>
-            <ingestible>
-              <preferability>RawTasty</preferability>
-              <foodType>AnimalProduct, Fluid</foodType>
-				<babiesCanIngest>true</babiesCanIngest>
-				<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
-              <joyKind>Gluttonous</joyKind>
-              <joy>0.08</joy>
-              <tasteThought>AteNightmare</tasteThought>
-              <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
-              <chairSearchRadius>21</chairSearchRadius>
-              <ingestHoldUsesTable>true</ingestHoldUsesTable>
-              <optimalityOffsetFeedingAnimals>-3</optimalityOffsetFeedingAnimals>
-              <specialThoughtAsIngredient>AteNightmareCooked</specialThoughtAsIngredient>
-              <outcomeDoers>
-                <li Class="IngestionOutcomeDoer_OffsetNeed">
-                  <need>Rest</need>
-                  <offset>0.2</offset>
-                </li>
-              </outcomeDoers>
-            </ingestible>
-            <thingCategories>
-              <li>AnimalProductRaw</li>
-            </thingCategories>
-  </ThingDef>
-    <ThoughtDef>
-    <defName>AteNightmare</defName>
-    <durationDays>0.7</durationDays>
-    <stackLimit>1</stackLimit>
-    <stages>
-        <li>
-        <label>Internal emptiness</label>
-        <description>Sometimes we must forget those catastrophic memories...</description>
-        <baseMoodEffect>-2</baseMoodEffect>
-        </li>
-    </stages>
-    </ThoughtDef>
+	<ThingDef ParentName="MedicineBase">
+		<defName>VoidNightmareFuel</defName>
+		<label>Immoral essence</label>
+		<description>A twisted thing which creeps around the air who deserves all bad memories in the world... \n\nDisappears quickly when exposed outdoors.</description>
+		<orderedTakeGroup>Medicine</orderedTakeGroup>
+		<techLevel>Neolithic</techLevel>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<graphicData>
+
+
+			<texPath>Things/Item/SirenidaeProduct</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MarketValue>6.6</MarketValue>
+			<Mass>0.0000001</Mass>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Nutrition>0.3</Nutrition>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>160</DeteriorationRate>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+			<MedicalPotency>0.40</MedicalPotency>
+			<MedicalQualityMax>1.3</MedicalQualityMax>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<comps>
+		</comps>
+		<ingestible>
+			<preferability>RawTasty</preferability>
+			<foodType>AnimalProduct, Fluid</foodType>
+			<babiesCanIngest>true</babiesCanIngest>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+			<joyKind>Gluttonous</joyKind>
+			<joy>0.08</joy>
+			<tasteThought>AteNightmare</tasteThought>
+			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+			<chairSearchRadius>21</chairSearchRadius>
+			<ingestHoldUsesTable>true</ingestHoldUsesTable>
+			<optimalityOffsetFeedingAnimals>-3</optimalityOffsetFeedingAnimals>
+			<specialThoughtAsIngredient>AteNightmareCooked</specialThoughtAsIngredient>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_OffsetNeed">
+					<need>Rest</need>
+					<offset>0.2</offset>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<thingCategories Inherit="False">
+			<li>AnimalProductRaw</li>
+			<li>Medicine</li>
+		</thingCategories>
+	</ThingDef>
+	<ThoughtDef>
+		<defName>AteNightmare</defName>
+		<durationDays>0.7</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Internal emptiness</label>
+				<description>Sometimes we must forget those catastrophic memories...</description>
+				<baseMoodEffect>-2</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VoidSpawnAteNightmare</defName>
 		<durationDays>0.7</durationDays>
@@ -70,18 +78,18 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-      <ThoughtDef>
-        <defName>AteNightmareCooked</defName>
-        <durationDays>1</durationDays>
-        <stackLimit>6</stackLimit>
-        <stages>
-          <li>
-            <label>Ate deactivated bad memories</label>
-            <description>Yes, those deactivated memories make me more relaxed.</description>
-            <baseMoodEffect>4</baseMoodEffect>
-          </li>
-        </stages>
-      </ThoughtDef>
+	<ThoughtDef>
+		<defName>AteNightmareCooked</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>6</stackLimit>
+		<stages>
+			<li>
+				<label>Ate deactivated bad memories</label>
+				<description>Yes, those deactivated memories make me more relaxed.</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VoidSpawnAteNightmareCooked</defName>
 		<durationDays>1</durationDays>

@@ -20,7 +20,7 @@ namespace InTheDark
         public static bool DoNotCheckVoidSpawnLifeStageMinAge(Pawn_AgeTracker __instance, ref float __result)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (VoidSpawnCollectionClass.voidSpawns.Contains(pawn) || pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
                 __result = 0f;
                 return false;
@@ -34,7 +34,7 @@ namespace InTheDark
         [HarmonyPostfix]
         public static void VoidSpawnInvisibility(ref Pawn pawn, ref bool __result)
         {
-            if (VoidSpawnCollectionClass.voidSpawns.Contains(pawn))
+            if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)// && !pawn.Drafted)
             {
                 __result = true;
             }
@@ -114,5 +114,20 @@ namespace InTheDark
             }
             return true;
         }
+        [HarmonyPatch(typeof(PawnBreathMoteMaker))]
+        [HarmonyPatch("TryMakeBreathMote")]
+        [HarmonyPatch(new Type[] { })]
+        [HarmonyPrefix]
+        public static bool AVoidSpawnDoesNotFear(PawnBreathMoteMaker __instance)
+        {
+            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                return false;
+            }
+            return true;
+        }
     }
+
+    
 }

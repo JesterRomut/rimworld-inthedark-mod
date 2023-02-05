@@ -17,6 +17,17 @@ namespace InTheDark
     {
         private static VoidSpawnGroupManager _instance;
         private List<VoidSpawnControlGroup> controlGroups = new List<VoidSpawnControlGroup>();
+        public HashSet<Pawn> AllVoidSpawns
+        {
+            get
+            {
+                HashSet<Pawn> allVoidSpawns = new HashSet<Pawn>();
+                foreach (VoidSpawnControlGroup controlGroup in controlGroups) {
+                    allVoidSpawns.Concat(controlGroup.PawnsForReading);
+                }
+                return allVoidSpawns;
+            }
+        }
         public List<VoidSpawnControlGroup> ControlGroups
         {
             get { return controlGroups; }

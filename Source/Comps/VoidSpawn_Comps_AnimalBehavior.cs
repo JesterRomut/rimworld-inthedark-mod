@@ -52,6 +52,9 @@ namespace InTheDark
             }
             //add ability
             pawn.abilities?.GainAbility(VoidSpawnAbilityDefOf.VoidSpawnSkip);
+
+            //modify skin color
+            pawn.story.skinColorOverride = new Color(1f, 1f, 1f, 0.85f);
         }
 
         private void GatherProduct()
@@ -100,7 +103,7 @@ namespace InTheDark
                     VoidSpawnGroupManager.Main.ControlGroups[0].Assign(pawn);
                 }
             }
-            VoidSpawnCollectionClass.AddVoidSpawnToList(pawn);
+            //VoidSpawnCollectionClass.AddVoidSpawnToList(pawn);
             AddVoidHediffAndMore();
         }
 
@@ -113,7 +116,7 @@ namespace InTheDark
         {
             Pawn pawn = this.parent as Pawn;
             VoidSpawnGroupManager.Main.GetControlGroup(pawn)?.TryUnassign(pawn);
-            VoidSpawnCollectionClass.RemoveVoidSpawnToList(pawn);
+            //VoidSpawnCollectionClass.RemoveVoidSpawnToList(pawn);
         }
         public override void CompTick()
         {
@@ -131,7 +134,7 @@ namespace InTheDark
 
             AddVoidHediffAndMore();
 
-            VoidSpawnCollectionClass.AddVoidSpawnToList(this.parent as Pawn);
+            //VoidSpawnCollectionClass.AddVoidSpawnToList(this.parent as Pawn);
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

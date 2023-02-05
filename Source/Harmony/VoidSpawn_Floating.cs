@@ -80,7 +80,7 @@ namespace InTheDark
                 //Log.Message("caravan is null");
                 return;
             }
-            List<Pawn> humanlikePawnsList = caravan.PawnsListForReading.FindAll((Pawn p) => p.RaceProps.Humanlike);
+            List<Pawn> humanlikePawnsList = caravan.PawnsListForReading.FindAll((Pawn p) => p.RaceProps.Humanlike && !p.IsPrisoner && !p.Downed);
             if (humanlikePawnsList == null || !humanlikePawnsList.Any())
             {
                 //Log.Message(string.Concat(string.Join(",", humanlikePawnsList), "not valid"));

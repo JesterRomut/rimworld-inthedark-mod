@@ -11,28 +11,28 @@ namespace InTheDark
         static Startup()
         {
             HarmonyPatches.Init();
-            Log.Message("In the Dark Mod loaded.");
+            Log.Message("In the Dark Mod loaded. Ready to get new endless & emptiness experience.");
         }
     }
 
-    public class VoidSpawnCollectionClass
-    {
-        public static HashSet<Pawn> voidSpawns = new HashSet<Pawn>();
-        public static void AddVoidSpawnToList(Pawn thing)
-        {
-            if(!voidSpawns.Contains(thing))
-            {
-                voidSpawns.Add(thing);
-            }
-        }
-        public static void RemoveVoidSpawnToList(Pawn thing)
-        {
-            if(voidSpawns.Contains(thing))
-            {
-                voidSpawns.Remove(thing);
-            }
-        }
-    }
+    //public class VoidSpawnCollectionClass
+    //{
+    //    public static HashSet<Pawn> voidSpawns = new HashSet<Pawn>();
+    //    public static void AddVoidSpawnToList(Pawn thing)
+    //    {
+    //        if(!voidSpawns.Contains(thing))
+    //        {
+    //            voidSpawns.Add(thing);
+    //        }
+    //    }
+    //    public static void RemoveVoidSpawnToList(Pawn thing)
+    //    {
+    //        if(voidSpawns.Contains(thing))
+    //        {
+    //            voidSpawns.Remove(thing);
+    //        }
+    //    }
+    //}
 
     public class VoidSpawnUtilty
     {
