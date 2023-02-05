@@ -1,48 +1,55 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <FactionDef ParentName="FactionBase" Abstract="True" Name="FactionVoidSpawnBase">
-    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
-    <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
-    <colorSpectrum>
-      <li>(0.33,0.33,0.33)</li>
-    </colorSpectrum>
-  </FactionDef>
-  
-  <FactionDef ParentName="FactionVoidSpawnBase">
-    <defName>PlayerGestaltVoid</defName>
-    <label>New Gestalt</label>
-    <description>A gestalt of recently-arrived void spawns.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>VoidSpawnColonist</basicMemberKind>
-    <pawnSingular>drone</pawnSingular>
-    <pawnsPlural>drones</pawnsPlural>
-    <techLevel>Ultra</techLevel>
-    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
-    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
-    <allowedCultures><li>Astropolitan</li></allowedCultures>
-    <backstoryFilters>
-      <li>
-        <categories>
-          <li>VoidSpawn</li>
-        </categories>
-      </li>
-    </backstoryFilters>
-    <factionIconPath>World/WorldObjects/Expanding/Insects</factionIconPath>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-	  <!--<li>VoidSpawnStart</li>-->
-    </startingResearchTags>
-    <startingTechprintsResearchTags>
-      <li>ClassicStart</li>
-	  <!--<li>VoidSpawnStart</li>-->
-      <li>ClassicStartTechprints</li>
-    </startingTechprintsResearchTags>
-    <apparelStuffFilter>
-      <thingDefs>
-        <li>Synthread</li>
-      </thingDefs>
-    </apparelStuffFilter>
-  </FactionDef>
+	<FactionDef ParentName="FactionBase" Abstract="True" Name="FactionVoidSpawnBase">
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<colorSpectrum>
+			<li>(0.33,0.33,0.33)</li>
+		</colorSpectrum>
+		<xenotypeSet Inherit="False">
+			<xenotypeChances>
+				<Baseliner>999</Baseliner>
+			</xenotypeChances>
+		</xenotypeSet>
+	</FactionDef>
+
+	<FactionDef ParentName="FactionVoidSpawnBase">
+		<defName>PlayerGestaltVoid</defName>
+		<label>New Gestalt</label>
+		<description>A gestalt of recently-arrived void spawns.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>VoidSpawnColonist</basicMemberKind>
+		<pawnSingular>drone</pawnSingular>
+		<pawnsPlural>drones</pawnsPlural>
+		<techLevel>Ultra</techLevel>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<allowedCultures>
+			<li>Astropolitan</li>
+		</allowedCultures>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>VoidSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<factionIconPath>World/WorldObjects/Expanding/Insects</factionIconPath>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+			<!--<li>VoidSpawnStart</li>-->
+		</startingResearchTags>
+		<startingTechprintsResearchTags>
+			<li>ClassicStart</li>
+			<!--<li>VoidSpawnStart</li>-->
+			<li>ClassicStartTechprints</li>
+		</startingTechprintsResearchTags>
+		<apparelStuffFilter>
+			<thingDefs>
+				<li>Synthread</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
 
 </Defs>

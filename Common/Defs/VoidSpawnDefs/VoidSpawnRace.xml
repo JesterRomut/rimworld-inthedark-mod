@@ -5,7 +5,7 @@
 		<defName>VoidSpawn_Race</defName>
 		<label>Void Spawn</label>
 		<!--<description>//IMMORAL FABRICATIONS//\n\nA sirenidae-like race. Originally controlled by a gestalt consciousness who want to replace human by creating doppelgĂ¤ngers.\n\n They are pure spiritualized entities and don't affect by physical forces, and they can only learn skill with passion.</description>-->
-		<description>A mysterious race. No one knows these creatures come from, no one know their existence are true or not. They only emerge for their trusts, but others cannot see them and think they are all illusion, ghost or god.\n\nMankind only know they are powerful entities as no one can survive from an angry void spawn.</description>
+		<description>A mysterious race. No one knows these creatures come from, no one know their existence are true or not. They only emerge for their trusts, but others cannot see them and think they are all illusion.\n\nMankind only know they are powerful entities as no one can survive from an angry void spawn.</description>
 			<statBases>
 			<PsychicSensitivity>2</PsychicSensitivity>
 			<ComfyTemperatureMin>-6666</ComfyTemperatureMin>
@@ -197,6 +197,15 @@
 					</li>
 					<li>
 						<defName>Recluse</defName>
+					</li>
+					<li>
+						<defName>DislikesMen</defName>
+					</li>
+					<li>
+						<defName>DislikesMen</defName>
+					</li>
+					<li>
+						<defName>DislikesWomen</defName>
 					</li>
 				</disallowedTraits>
 			</generalSettings>

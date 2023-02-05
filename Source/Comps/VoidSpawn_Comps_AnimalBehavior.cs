@@ -74,7 +74,7 @@ namespace InTheDark
             }
             else
             {
-                if (pawn.Map == null)
+                if (pawn.inventory != null)
                 {
                     pawn.inventory.TryAddItemNotForSale(thing);
                 }

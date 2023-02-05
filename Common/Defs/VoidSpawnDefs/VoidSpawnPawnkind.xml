@@ -16,6 +16,11 @@
 			<min>0</min>
 			<max>0</max>
 		</apparelMoney>
+		<xenotypeSet Inherit="False">
+			<xenotypeChances>
+				<Baseliner>999</Baseliner>
+			</xenotypeChances>
+		</xenotypeSet>
 		
 		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
 
@@ -33,7 +38,7 @@
 	
 	<PawnKindDef ParentName="VoidSpawnPawnKindBase">
 		<defName>VoidSpawnColonist</defName>
-		<label>Void Spawn</label>
+		<label>void spawn</label>
 		<defaultFactionType>PlayerGestaltVoid</defaultFactionType>
 	</PawnKindDef>
 

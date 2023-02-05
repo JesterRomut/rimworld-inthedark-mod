@@ -17,11 +17,11 @@ namespace InTheDark
         [HarmonyPatch(typeof(SkillRecord))]
         [HarmonyPatch("Learn")]
         [HarmonyPatch(new Type[] { typeof(float), typeof(bool) })]
-        [HarmonyPostfix]
+        [HarmonyPrefix]
         public static void DontLearnSkillWithoutPassionForVoidSpawns(SkillRecord __instance, ref float xp, bool direct/*, ref float __result*/)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (!(pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race))
+            if (pawn.def != VoidSpawnThingDefOf.VoidSpawn_Race)
             {
                 return;
             }
@@ -31,7 +31,7 @@ namespace InTheDark
                 xp = -666;
                 return;
             }
-            if(xp < 0)
+            if (xp < 0)
             {
                 xp /= 4;
             }
