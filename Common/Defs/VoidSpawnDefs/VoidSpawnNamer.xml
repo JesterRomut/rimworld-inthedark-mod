@@ -1,0 +1,38 @@
+<Defs>
+	<RulePackDef>
+		<defName>VoidSpawnNamerUtility</defName>
+		<rulePack>
+			<rulesFiles>
+				<li>VSPrefix->Names/VoidSpawn/VoidSpawnRacePrefix</li>
+				<li>VSPrimary->Names/VoidSpawn/VoidSpawnRace</li>
+				<li>VSSuffix->Names/VoidSpawn/VoidSpawnRaceSuffix</li>
+				<li>VSDNum->Names/VoidSpawn/VoidSpawnDroneNumber</li>
+				<li>VSDAlpha->Names/VoidSpawn/VoidSpawnDroneAlphabet</li>
+				<li>VSDSuffix->Names/VoidSpawn/VoidSpawnDroneSuffix</li>
+			</rulesFiles>
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>Namer_VoidSpawnDroneCode</defName>
+		<include>
+			<li>VoidSpawnNamerUtility</li>
+		</include>
+		<rulePack>
+			<rulesStrings>
+				<li>VSCode->[VSPrefix]-[VSDAlpha][VSDAlpha][VSDNum][VSDNum]</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerVoidSpawnUniversal</defName>
+		<include>
+			<li>VoidSpawnNamerUtility</li>
+			<li>Namer_VoidSpawnDroneCode</li>
+		</include>
+		<rulePack>
+			<rulesStrings>
+				<li>r_name->[VSCode] '[VSPrimary]' [VSDSuffix]</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+</Defs>

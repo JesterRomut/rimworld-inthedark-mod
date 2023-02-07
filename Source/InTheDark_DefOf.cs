@@ -43,4 +43,10 @@ namespace InTheDark
     {
         public static ThoughtDef VoidSpawnThoughtSync;
     }
+
+    [DefOf]
+    public static class VoidSpawnRulePackDefOf
+    {
+        public static RulePackDef NamerVoidSpawnUniversal;
+    }
 }

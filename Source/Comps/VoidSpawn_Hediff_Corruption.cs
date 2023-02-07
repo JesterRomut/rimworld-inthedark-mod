@@ -110,8 +110,8 @@ namespace InTheDark
                 allowAddictions: false
             );
             Pawn doppelganger = PawnGenerator.GeneratePawn(request);
-            doppelganger.Name = new NameTriple(first: "",nick: ((NameTriple)pawn.Name).First ?? pawn.Name.ToStringShort, last: "");
-
+            doppelganger.Name = new NameTriple(first: ((NameTriple)doppelganger.Name).First,nick: ((NameTriple)pawn.Name).First ?? pawn.Name.ToStringShort, last: ((NameTriple)doppelganger.Name).Last);
+            //doppelganger.Name = NameTriple.FromString(NameGenerator.GenerateName(VoidSpawnRulePackDefOf.NamerVoidSpawnUniversal, (string x) => !NameTriple.FromString(x).UsedThisGame), true);
             // Extract story
             doppelganger.story.favoriteColor = pawn.story.favoriteColor;
 

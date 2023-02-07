@@ -7,6 +7,7 @@
 		<orderedTakeGroup>Medicine</orderedTakeGroup>
 		<techLevel>Neolithic</techLevel>
 		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
 		<graphicData>
 
 

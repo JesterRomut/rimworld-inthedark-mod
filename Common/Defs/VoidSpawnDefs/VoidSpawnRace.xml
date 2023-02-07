@@ -313,12 +313,11 @@
 			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
 			<intelligence>Humanlike</intelligence>
 			<makesFootprints>false</makesFootprints>
-			<!--<nameGenerator>NamerPersonMoonjelly</nameGenerator>-->
+			<nameGenerator>NamerVoidSpawnUniversal</nameGenerator>
 			<lifeExpectancy>666</lifeExpectancy>
 			<bloodDef>Filth_Sirenidae</bloodDef>
 			<useMeatFrom>Human</useMeatFrom>
 			<leatherDef>Leather_Human</leatherDef>
-			<nameGenerator>NamerAnimalGenericFemale</nameGenerator>
 			<!--<nameGenerator MayRequire="Ludeon.RimWorld.Biotech">NamerMech</nameGenerator>-->
 			<body>VoidSpawn</body>
 			<baseHealthScale>0.5</baseHealthScale>

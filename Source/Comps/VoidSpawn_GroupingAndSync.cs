@@ -23,7 +23,7 @@ namespace InTheDark
             {
                 HashSet<Pawn> allVoidSpawns = new HashSet<Pawn>();
                 foreach (VoidSpawnControlGroup controlGroup in controlGroups) {
-                    allVoidSpawns.Concat(controlGroup.PawnsForReading);
+                    allVoidSpawns.UnionWith(controlGroup.PawnsForReading);
                 }
                 return allVoidSpawns;
             }
