@@ -3,6 +3,7 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace InTheDark
 {
@@ -15,18 +16,20 @@ namespace InTheDark
 
             Log.Message("<color=#84FFF2>In the Dark Mod loaded. Ready to get new endless & emptiness experience.</color>");
 
-            //PickUpAndHaulPatch();
+            ModCompatibilityPatch();
         }
-        //public static void PickUpAndHaulPatch()
-        //{
-        //    Type pickupAndHaul = GenTypes.GetTypeInAnyAssembly("PickUpAndHaul.WorkGiver_HaulToInventory", (string)null);
-        //    if (pickupAndHaul != null)
-        //    {
-        //        WorkGiver_HaulGeneral haulWorkGiver = (WorkGiver_HaulGeneral)Activator.CreateInstance(pickupAndHaul);
-        //        VoidSpawnUtilty.HaulJobGlobalDelegate = (Pawn pawn, Thing thing, bool forced) => haulWorkGiver.ShouldSkip(pawn, forced) ? null : haulWorkGiver.JobOnThing(pawn, thing, forced);
-        //        Log.Message("In the Dark & Pick up and Haul compatibility applied.");
-        //    }
-        //}
+        public static void ModCompatibilityPatch()
+        {
+            Type CompHauledToInventory = GenTypes.GetTypeInAnyAssembly("PickUpAndHaul.CompHauledToInventory", (string)null);
+            if (CompHauledToInventory != null)
+            {
+                //object haulWorkGiver = Activator.CreateInstance(pickupAndHaul);
+                ModCompatibility.PickUpAndHaul.enabled = true;
+                ModCompatibility.PickUpAndHaul.CompHauledToInventory = CompHauledToInventory;
+                ModCompatibility.PickUpAndHaul.RegisterHauledItem = CompHauledToInventory.GetMethod("RegisterHauledItem");
+                Log.Message("In the Dark & Pick up and Haul compatibility applied.");
+            }
+        }
     }
 
     //public class VoidSpawnCollectionClass
@@ -47,6 +50,15 @@ namespace InTheDark
     //        }
     //    }
     //}
+    public static class ModCompatibility
+    {
+        public static class PickUpAndHaul
+        {
+            public static bool enabled = false;
+            public static Type CompHauledToInventory;
+            public static MethodInfo RegisterHauledItem;
+        }
+    }
 
     public class VoidSpawnUtilty
     {

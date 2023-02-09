@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
@@ -8,6 +9,7 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 using static HarmonyLib.Code;
+using static InTheDark.ModCompatibility;
 
 namespace InTheDark
 {
@@ -82,6 +84,12 @@ namespace InTheDark
                 if ((pawn.Drafted || pawn.Downed || !pawn.Position.Roofed(pawn.Map) || (pawn.GetRoom()?.UsesOutdoorTemperature ?? false)) && pawn.inventory != null)
                 {
                     pawn.inventory.TryAddItemNotForSale(thing);
+                    if (ModCompatibility.PickUpAndHaul.enabled)
+                    {
+                        //pawn.GetComp<ModCompatibility.PickUpAndHaul.CompHauledToInventory>();
+                        object comp = typeof(Pawn).GetMethod("GetComp").MakeGenericMethod(ModCompatibility.PickUpAndHaul.CompHauledToInventory).Invoke(pawn, null);
+                        ModCompatibility.PickUpAndHaul.RegisterHauledItem.Invoke(comp, parameters: new object[] { thing });
+                    }
                 }
                 else
                 {
@@ -98,7 +106,7 @@ namespace InTheDark
                     //    reasons.Add(e.ToString());
                     //}
 
-
+                    
                     //if (reasons.Any())
                     //{
                     //    //WorkGiver_HaulGeneral workGiver = new WorkGiver_HaulGeneral();
