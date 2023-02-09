@@ -79,32 +79,32 @@ namespace InTheDark
                 List<string> reasons = new List<string>();
                 //float rate = SteadyEnvironmentEffects.FinalDeteriorationRate(thing, pawn.Position.Roofed(pawn.Map), room?.UsesOutdoorTemperature ?? false, pawn.Position.GetTerrain(pawn.Map), reasons);
                 //Log.Message(string.Join(", ", reasons));
-                if ((pawn.Drafted || pawn.Downed) && pawn.inventory != null)
+                if ((pawn.Drafted || pawn.Downed || !pawn.Position.Roofed(pawn.Map) || (pawn.GetRoom()?.UsesOutdoorTemperature ?? false)) && pawn.inventory != null)
                 {
                     pawn.inventory.TryAddItemNotForSale(thing);
                 }
                 else
                 {
-                    Thing resultingThing;
-                    GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Direct, lastResultingThing: out resultingThing);
+                    //Thing resultingThing;
+                    GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Direct);
                     //Log.Message(string.Concat(resultingThing.Spawned, " ", resultingThing.Map.roofGrid.Roofed(resultingThing.PositionHeld), resultingThing.GetRoom()?.UsesOutdoorTemperature ?? false, resultingThing.Position.GetTerrain(resultingThing.Map)));
-                    try
-                    {
-                        SteadyEnvironmentEffects.FinalDeteriorationRate(resultingThing, reasons);
-                    }
-                    catch (NullReferenceException e)
-                    {
-                        reasons.Clear();
-                        reasons.Add(e.ToString());
-                    }
+                    //try
+                    //{
+                    //    SteadyEnvironmentEffects.FinalDeteriorationRate(resultingThing, reasons);
+                    //}
+                    //catch (NullReferenceException e)
+                    //{
+                    //    reasons.Clear();
+                    //    reasons.Add(e.ToString());
+                    //}
 
 
-                    if (reasons.Any())
-                    {
-                        //WorkGiver_HaulGeneral workGiver = new WorkGiver_HaulGeneral();
-                        //pawn.jobs.TryTakeOrderedJob(workGiver.JobOnThing(pawn, resultingThing));
-                        pawn.jobs.TryTakeOrderedJob(VoidSpawnUtilty.HaulJobGlobalDelegate(pawn, resultingThing, false));
-                    }
+                    //if (reasons.Any())
+                    //{
+                    //    //WorkGiver_HaulGeneral workGiver = new WorkGiver_HaulGeneral();
+                    //    //pawn.jobs.TryTakeOrderedJob(workGiver.JobOnThing(pawn, resultingThing));
+                    //    pawn.jobs.TryTakeOrderedJob(VoidSpawnUtilty.HaulJobGlobalDelegate(pawn, resultingThing, false));
+                    //}
                 }
                 //pawn.inventory.TryAddItemNotForSale(thing);
             }
