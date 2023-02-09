@@ -127,6 +127,23 @@ namespace InTheDark
             }
             return true;
         }
+        [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt))]
+        [HarmonyPatch("RandomSelectionWeight")]
+        [HarmonyPatch(new Type[] { typeof(Pawn), typeof(Pawn) })]
+        [HarmonyPostfix]
+        public static void VoidSpawnRomanceFix(ref float __result, Pawn initiator, Pawn recipient)
+        {
+            if (initiator.def != VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                return;
+            }
+
+            if (LovePartnerRelationUtility.HasAnyLovePartner(recipient))
+            {
+                __result = 0f;
+            }
+            
+        }
     }
 
     

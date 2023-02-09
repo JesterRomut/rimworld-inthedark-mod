@@ -25,5 +25,6 @@
 		<li>Ludeon.RimWorld.Royalty</li>
 		<li>brrainz.harmony</li>
 		<li>erdelf.HumanoidAlienRaces</li>
+		<li>mehni.pickupandhaul</li>
 	</loadAfter>
 </ModMetaData>

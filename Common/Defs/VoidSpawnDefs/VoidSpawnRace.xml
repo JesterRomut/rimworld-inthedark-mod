@@ -243,6 +243,11 @@
 					<li>Naked</li>
 					<li>AteWithoutTable</li>
 					<li>SoakingWet</li>
+					<li>SleepDisturbed</li>
+					<li>SleptOutside</li>
+					<li>SleptOnGround</li>
+					<li>PawnWithGoodOpinionDied</li>
+					<li>PawnWithGoodOpinionLost</li>
 					<li MayRequire="Ludeon.RimWorld.Ideology">AgeReversalDemanded</li>
 					<li MayRequire="Ludeon.RimWorld.Ideology">LookChangeDesired</li>
 					<li MayRequire="Ludeon.RimWorld.Ideology">HasNoProsthetic_Disapproved</li>
@@ -458,7 +463,18 @@
 			<cooldownTime>2.15</cooldownTime>
 		</li>
 	</tools>-->
-
+	<ThoughtDef>
+		<defName>VoidSpawnSameGroup</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>InTheDark.ThoughtWorker_VoidSpawnGestalt</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>thought connected</label>
+				<baseOpinionOffset>200</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>
 
 

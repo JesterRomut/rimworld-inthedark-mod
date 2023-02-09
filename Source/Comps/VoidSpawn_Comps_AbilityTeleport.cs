@@ -23,6 +23,18 @@ namespace InTheDark
 				return (CompProperties_AbilityVoidSpawnTeleport)this.props;
 			}
 		}
+		private void DoTeleport(Pawn pawn, IntVec3 destCell)
+		{
+            //this.parent.AddEffecterToMaintain(EffecterDefOf.Skip_Entry.Spawn(pawn.Position, pawn.Map, 1f), pawn.Position, 60, null);
+            //this.parent.AddEffecterToMaintain(EffecterDefOf.Skip_ExitNoDelay.Spawn(destCell, pawn.Map, 1f), destCell, 60, null);
+            VoidSpawnUtilty.SpawnSirenidaeFilth(pawn, pawn.Position, 1, new IntRange(3, 4));
+            VoidSpawnUtilty.SpawnSirenidaeFilth(pawn, destCell, 1, new IntRange(3, 4));
+            SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
+            SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(destCell, pawn.Map, false));
+            pawn.Position = destCell;
+            pawn.Notify_Teleported(false, true);
+        }
+
 		public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
 		{
             /*if (!dest.HasThing)
@@ -35,45 +47,22 @@ namespace InTheDark
 			//Log.Message($"{target.Cell} {dest.Cell}");
 			/*if (destination.IsValid)
 			{*/
+			if (!target.IsValid)
+			{
+				return;
+			}
+			//Log.Message(string.Concat(target.Pawn," ", target.Cell, " ", target.IsValid," ", target.HasThing));
 			Pawn pawn = this.parent.pawn;
-			IntVec3 destCell = target.Cell;
-            //this.parent.AddEffecterToMaintain(EffecterDefOf.Skip_Entry.Spawn(pawn.Position, pawn.Map, 1f), pawn.Position, 60, null);
-            //this.parent.AddEffecterToMaintain(EffecterDefOf.Skip_ExitNoDelay.Spawn(destCell, pawn.Map, 1f), destCell, 60, null);
-            VoidSpawnUtilty.SpawnSirenidaeFilth(pawn, pawn.Position, 1, new IntRange(3, 4));
-            VoidSpawnUtilty.SpawnSirenidaeFilth(pawn, destCell, 1, new IntRange(3, 4));
-            SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
-            SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(destCell, pawn.Map, false));
-   //         //GenRadial.RadialDistinctThingsAround
-   //         IEnumerable<Thing> thingsInRadius = GenRadial.RadialDistinctThingsAround(destCell, pawn.Map, 1, useCenter: true);
-			//foreach (Thing thing in thingsInRadius)
-			//{
-			//	if (!(thing is Pawn pawnInRadius))
-			//	{
-			//		continue;
-			//	}
-			//	if (pawnInRadius == pawn)
-			//	{
-			//		continue;
-			//	}
-			//	if (pawnInRadius.Dead || pawnInRadius.Downed)
-			//	{
-			//		continue;
-			//	}
-			//	if (pawnInRadius.Faction?.AllyOrNeutralTo(Faction.OfPlayer) ?? true)
-			//	{
-			//		continue;
-			//	}
-			//	DamageInfo damageInfo = new DamageInfo(VoidSpawnDamageDefOf.VoidSpawnDimensionCutter, 30f, 999f, -1f, null, null, null, DamageInfo.SourceCategory.Collapse, spawnFilth: false);
-   //             BattleLogEntry_DamageTaken log = new BattleLogEntry_DamageTaken(pawnInRadius, RulePackDefOf.DamageEvent_Ceiling);
-   //             damageInfo.SetIgnoreArmor(true);
-   //             damageInfo.SetBodyRegion(BodyPartHeight.Top, BodyPartDepth.Outside);
-
-   //             pawnInRadius.TakeDamage(damageInfo).AssociateWithLog(log);
-			//}
-            pawn.Position = destCell;
-			pawn.Notify_Teleported(true, true);
-			//}
-		}
+            //if (target.Pawn != null)
+            //{
+            //	DoTeleport(target.Pawn, pawn.PositionHeld);
+            //}
+            //else
+            //{
+            //	DoTeleport(pawn, target.Cell);
+            //         }
+            DoTeleport(pawn, target.Cell);
+        }
 		//public override IEnumerable<PreCastAction> GetPreCastActions()
 		//{
 		//	yield return new PreCastAction

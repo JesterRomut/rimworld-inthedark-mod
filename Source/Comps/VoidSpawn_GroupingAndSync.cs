@@ -383,4 +383,36 @@ namespace InTheDark
         }
 
     }
+
+    public class ThoughtWorker_VoidSpawnSocialBase : ThoughtWorker
+    {
+        protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
+        {
+            if (p.def != VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                return false;
+            }
+            if (p.def != other.def)
+            {
+                return false;
+            }
+            
+            return true;
+        }
+    }
+    public class ThoughtWorker_VoidSpawnGestalt: ThoughtWorker_VoidSpawnSocialBase
+    {
+        protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
+        {
+            if (!base.CurrentSocialStateInternal(p, other).Active)
+            {
+                return false;
+            }
+            if (VoidSpawnGroupManager.Main.GetControlGroup(p) != VoidSpawnGroupManager.Main.GetControlGroup(other))
+            {
+                return false;
+            }
+            return true;
+        }
+    }
 }

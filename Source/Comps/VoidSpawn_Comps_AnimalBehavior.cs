@@ -5,6 +5,7 @@ using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 using Verse.Sound;
 using static HarmonyLib.Code;
 
@@ -74,15 +75,28 @@ namespace InTheDark
             }
             else
             {
-                if (pawn.inventory != null)
+                //Room room = pawn.GetRoom();
+                List<string> reasons = new List<string>();
+                //float rate = SteadyEnvironmentEffects.FinalDeteriorationRate(thing, pawn.Position.Roofed(pawn.Map), room?.UsesOutdoorTemperature ?? false, pawn.Position.GetTerrain(pawn.Map), reasons);
+                //Log.Message(string.Join(", ", reasons));
+                if ((pawn.Drafted || pawn.Downed) && pawn.inventory != null)
                 {
                     pawn.inventory.TryAddItemNotForSale(thing);
                 }
                 else
                 {
-                    GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                    Thing resultingThing;
+                    GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Direct, lastResultingThing: out resultingThing);
+                    Log.Message(string.Concat(resultingThing.Spawned, " ", resultingThing.Map.roofGrid.Roofed(resultingThing.PositionHeld), resultingThing.GetRoom()?.UsesOutdoorTemperature ?? false, resultingThing.Position.GetTerrain(resultingThing.Map)));
+                    SteadyEnvironmentEffects.FinalDeteriorationRate(resultingThing, reasons);
+                    
+                    if (reasons.Any())
+                    {
+                        //WorkGiver_HaulGeneral workGiver = new WorkGiver_HaulGeneral();
+                        //pawn.jobs.TryTakeOrderedJob(workGiver.JobOnThing(pawn, resultingThing));
+                        pawn.jobs.TryTakeOrderedJob(VoidSpawnUtilty.HaulJobGlobalDelegate(pawn, resultingThing, false));
+                    }
                 }
-
                 //pawn.inventory.TryAddItemNotForSale(thing);
             }
         }
@@ -149,11 +163,21 @@ namespace InTheDark
             {
                 yield return item;
             }
+            if (DebugSettings.ShowDevGizmos)
+            {
+                Command_Action devGather = new Command_Action();
+                devGather.defaultLabel = "DEV: Gather Essence";
+                devGather.action = delegate
+                {
+                    this.GatherProduct();
+                };
+                yield return devGather;
+            }
 
             yield break;
         }
     }
 
-    
+
 
 }
