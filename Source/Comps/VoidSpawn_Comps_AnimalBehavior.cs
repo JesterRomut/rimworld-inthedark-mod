@@ -7,6 +7,7 @@ using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.Noise;
 using Verse.Sound;
 using static HarmonyLib.Code;
 using static InTheDark.ModCompatibility;
@@ -81,7 +82,7 @@ namespace InTheDark
                 List<string> reasons = new List<string>();
                 //float rate = SteadyEnvironmentEffects.FinalDeteriorationRate(thing, pawn.Position.Roofed(pawn.Map), room?.UsesOutdoorTemperature ?? false, pawn.Position.GetTerrain(pawn.Map), reasons);
                 //Log.Message(string.Join(", ", reasons));
-                if ((pawn.Drafted || pawn.Downed || !pawn.Position.Roofed(pawn.Map) || (pawn.GetRoom()?.UsesOutdoorTemperature ?? false)) && pawn.inventory != null)
+                if ((pawn.Drafted || pawn.Downed || !pawn.Position.Roofed(pawn.Map) || (pawn.GetRoom()?.UsesOutdoorTemperature ?? false || (pawn.Position.GetTerrain(pawn.Map)?.extraDeteriorationFactor ?? 0) != 0f)) && pawn.inventory != null)
                 {
                     pawn.inventory.TryAddItemNotForSale(thing);
                     if (ModCompatibility.PickUpAndHaul.enabled)
