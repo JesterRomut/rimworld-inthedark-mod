@@ -8,13 +8,13 @@
 		<techLevel>Neolithic</techLevel>
 		<healthAffectsPrice>false</healthAffectsPrice>
 		<alwaysHaulable>true</alwaysHaulable>
+		<socialPropernessMatters>false</socialPropernessMatters>
 		<graphicData>
 
 
 			<texPath>Things/Item/SirenidaeProduct</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
-		<socialPropernessMatters>true</socialPropernessMatters>
 		<rotatable>false</rotatable>
 		<statBases>
 			<MarketValue>6.6</MarketValue>
@@ -31,7 +31,7 @@
 		<comps>
 		</comps>
 		<ingestible>
-			<preferability>RawTasty</preferability>
+			<preferability>DesperateOnlyForHumanlikes</preferability>
 			<foodType>AnimalProduct, Fluid</foodType>
 			<babiesCanIngest>true</babiesCanIngest>
 			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>

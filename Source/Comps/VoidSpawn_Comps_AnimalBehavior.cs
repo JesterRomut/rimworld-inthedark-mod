@@ -87,7 +87,7 @@ namespace InTheDark
                 {
                     Thing resultingThing;
                     GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Direct, lastResultingThing: out resultingThing);
-                    Log.Message(string.Concat(resultingThing.Spawned, " ", resultingThing.Map.roofGrid.Roofed(resultingThing.PositionHeld), resultingThing.GetRoom()?.UsesOutdoorTemperature ?? false, resultingThing.Position.GetTerrain(resultingThing.Map)));
+                    //Log.Message(string.Concat(resultingThing.Spawned, " ", resultingThing.Map.roofGrid.Roofed(resultingThing.PositionHeld), resultingThing.GetRoom()?.UsesOutdoorTemperature ?? false, resultingThing.Position.GetTerrain(resultingThing.Map)));
                     SteadyEnvironmentEffects.FinalDeteriorationRate(resultingThing, reasons);
                     
                     if (reasons.Any())

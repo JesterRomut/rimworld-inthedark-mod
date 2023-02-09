@@ -144,6 +144,15 @@ namespace InTheDark
             }
             
         }
+
+        [HarmonyPatch(typeof(SocialProperness))]
+        [HarmonyPatch("IsSociallyProper")]
+        [HarmonyPatch(new Type[] { typeof(Thing), typeof(Pawn), typeof(bool), typeof(bool) })]
+        [HarmonyPostfix]
+        public static void VoidSpawnProductAlwaysHaulable(ref bool __result, Thing t, Pawn p, bool forPrisoner, bool animalsCare = false)
+        {
+            //Log.Message(string.Concat(t, p, forPrisoner, animalsCare));
+        }
     }
 
     
