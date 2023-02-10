@@ -28,9 +28,24 @@ namespace InTheDark
     }
     public class CompVoidSpawn : ThingComp
     {
+        //public VoidSpawn_FuelTracker fuel;
+        public Pawn pawn
+        {
+            get => this.parent as Pawn;
+        }
+
+        
+        public CompProperties_VoidSpawn Props
+        {
+            get
+            {
+                return (CompProperties_VoidSpawn)this.props;
+            }
+        }
+
         private void AddVoidHediffAndMore()
         {
-            Pawn pawn = this.parent as Pawn;
+            //Pawn pawn = this.parent as Pawn;
             if (!pawn.Spawned)
             {
                 return;
@@ -63,7 +78,7 @@ namespace InTheDark
 
         private void GatherProduct()
         {
-            Pawn pawn = this.parent as Pawn;
+            //Pawn pawn = this.parent as Pawn;
             if (pawn.needs?.mood?.CurLevel / pawn.needs?.mood?.MaxLevel < 0.5f)
             {
                 // only gather above 50% mood
@@ -107,7 +122,7 @@ namespace InTheDark
                     //    reasons.Add(e.ToString());
                     //}
 
-                    
+
                     //if (reasons.Any())
                     //{
                     //    //WorkGiver_HaulGeneral workGiver = new WorkGiver_HaulGeneral();
@@ -116,13 +131,6 @@ namespace InTheDark
                     //}
                 }
                 //pawn.inventory.TryAddItemNotForSale(thing);
-            }
-        }
-        public CompProperties_VoidSpawn Props
-        {
-            get
-            {
-                return (CompProperties_VoidSpawn)this.props;
             }
         }
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -146,7 +154,7 @@ namespace InTheDark
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            Pawn pawn = this.parent as Pawn;
+            //Pawn pawn = this.parent as Pawn;
             VoidSpawnGroupManager.Main.GetControlGroup(pawn)?.TryUnassign(pawn);
             //VoidSpawnCollectionClass.RemoveVoidSpawnToList(pawn);
         }
@@ -171,7 +179,7 @@ namespace InTheDark
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            Pawn pawn = this.parent as Pawn;
+            //Pawn pawn = this.parent as Pawn;
             if (pawn != null && (pawn.Faction ?? null) == Faction.OfPlayer)
             {
                 yield return new VoidSpawnControlGroupGizmo(pawn);

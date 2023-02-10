@@ -10,7 +10,7 @@ namespace InTheDark
 {
     public class Hediff_VoidSpawnCorruption : HediffWithComps
     {
-        public Pawn surgeon = null;
+        //public Pawn surgeon = null;
         public float TransformProgress
         {
             get

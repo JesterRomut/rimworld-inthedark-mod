@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HarmonyLib;
 using RimWorld;
 using Unity.Jobs;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -142,7 +143,7 @@ namespace InTheDark
             {
                 __result = 0f;
             }
-            
+
         }
 
         [HarmonyPatch(typeof(Recipe_ExtractHemogen))]
@@ -156,7 +157,41 @@ namespace InTheDark
                 __result = false;
             }
         }
+
+        [HarmonyPatch(typeof(Need))]
+        [HarmonyPatch("ShowOnNeedList", MethodType.Getter)]
+        //[HarmonyPatch(new Type[] { typeof(Rect), typeof(int), typeof(float), typeof(bool), typeof(bool), typeof(Rect?), typeof(bool) })]
+        [HarmonyPostfix]
+        public static void HideVoidSpawnsFoodBar(Need __instance, ref bool __result)
+        {
+            if (!(__instance is Need_Food food))
+            {
+                return;
+            }
+            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                //return false;
+                __result = false;
+            }
+            //return true;
+        }
+
+        //[HarmonyPatch(typeof(Need_Food))]
+        //[HarmonyPatch("ShowOnNeedList", MethodType.Getter)]
+        //[HarmonyPatch(new Type[] { })]
+        //[HarmonyPostfix]
+        //public static bool HideVoidSpawnsFoodBar(bool value, Need_Food __instance, ref bool __result)
+        //{
+        //    Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+        //    if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+        //    {
+        //        //__result = false;
+        //        return false;
+        //    }
+        //    return value;
+        //}
     }
 
-    
+
 }
