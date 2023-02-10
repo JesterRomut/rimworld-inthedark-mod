@@ -145,13 +145,16 @@ namespace InTheDark
             
         }
 
-        [HarmonyPatch(typeof(SocialProperness))]
-        [HarmonyPatch("IsSociallyProper")]
-        [HarmonyPatch(new Type[] { typeof(Thing), typeof(Pawn), typeof(bool), typeof(bool) })]
+        [HarmonyPatch(typeof(Recipe_ExtractHemogen))]
+        [HarmonyPatch("AvailableOnNow")]
+        [HarmonyPatch(new Type[] { typeof(Thing), typeof(BodyPartRecord) })]
         [HarmonyPostfix]
-        public static void VoidSpawnProductAlwaysHaulable(ref bool __result, Thing t, Pawn p, bool forPrisoner, bool animalsCare = false)
+        public static void VoidSpawnCannotExtractHemogen(ref bool __result, Thing thing)
         {
-            //Log.Message(string.Concat(t, p, forPrisoner, animalsCare));
+            if (thing is Pawn pawn && pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                __result = false;
+            }
         }
     }
 
