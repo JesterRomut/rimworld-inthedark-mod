@@ -37,7 +37,7 @@
 		<title>Blurring Nebula</title>
 		<titleShort>Tachyon</titleShort>
 		<!--一种超越光速的速度-->
-		<baseDesc>"A speed even further beyond light"\n\nWe have a internal craving of conquering more and more places. Soon [PAWN_nameDef] will fly, faster than light.</baseDesc>
+		<baseDesc>"A speed even further beyond light"\n\nWe have a internal fear of getting fall behind. Soon [PAWN_nameDef] will come and slaughter all people who fall behind, faster than light...</baseDesc>
 	</AlienRace.AlienBackstoryDef>
 	<AlienRace.AlienBackstoryDef ParentName="VoidSpawnAdulthoodBackstoryBase">
 		<defName>VoidSpawnGraviton</defName>
@@ -56,7 +56,7 @@
 		<defName>VoidSpawnNeutrino</defName>
 		<title>Uninteractable Despair</title>
 		<titleShort>Neutrino</titleShort>
-		<!--3000年未曾被发现的尸体-->
-		<baseDesc>"A rotten corpse which not ever be seen by 3,000 years"\n\nNo one know [PAWN_nameDef]. No one will remember [PAWN_nameDef] when it die. No one will even notice its death except his best friend, maggots and flies.</baseDesc>
+		<!--3000年未曾被发现的腐烂尸体-->
+		<baseDesc>"A rotten corpse which not ever be seen by 3000 years"\n\nNo one know [PAWN_nameDef]. No one will remember [PAWN_nameDef] when it die. No one will even notice its death except his best friend, maggots and flies.</baseDesc>
 	</AlienRace.AlienBackstoryDef>
 </Defs>

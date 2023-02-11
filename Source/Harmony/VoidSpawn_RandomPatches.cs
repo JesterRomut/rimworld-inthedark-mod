@@ -37,6 +37,11 @@ namespace InTheDark
         {
             if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)// && !pawn.Drafted)
             {
+                if (pawn.health?.hediffSet?.GetFirstHediffOfDef(VoidSpawnHediffDefOf.VoidSpawnDoppelgangerWeakness) != null)
+                {
+                    __result = false;
+                    return;
+                }
                 __result = true;
             }
         }
@@ -186,6 +191,17 @@ namespace InTheDark
             if (InTheDark_Settings.useDarkenBackground)
             {
                 ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = VoidSpawnUtility.BlackHoleEclipse;
+            }
+        }
+
+        [HarmonyPatch(typeof(Pawn_GeneTracker))]
+        [HarmonyPatch("GenesListForReading", MethodType.Getter)]
+        [HarmonyPostfix]
+        public static void HideVoidSpawnsGene(Pawn_GeneTracker __instance, ref List<Gene> __result)
+        {
+            if (__instance.pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                __result = new List<Gene>();
             }
         }
     }

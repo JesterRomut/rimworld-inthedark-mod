@@ -18,7 +18,7 @@
 	<AbilityDef ParentName="VoidSpawnAbilityBase">
 		<defName>VoidSpawnSkip</defName>
 		<label>dimension cutter</label>
-		<description>An essential skill of all void spawns. Teleport self to a desired position.</description>
+		<description>An essential skill of all void spawns. Teleport self to a desired position, leaving immoral fluid.</description>
 		
 		<iconPath>UI/Abilities/VoidSpawnDimensionCutter</iconPath>
 		<writeCombatLog>True</writeCombatLog>

@@ -206,7 +206,7 @@
 					<parts>
 						<li>
 							<def>VoidSpawnGill</def>
-							<customLabel>left external gill</customLabel>
+							<customLabel>left external gills</customLabel>
 							<coverage>0.07</coverage>
 							<groups>
 								<li>UpperHead</li>
@@ -215,7 +215,7 @@
 						</li>
 						<li>
 							<def>VoidSpawnGill</def>
-							<customLabel>right external gill</customLabel>
+							<customLabel>right external gills</customLabel>
 							<coverage>0.07</coverage>
 							<groups>
 								<li>UpperHead</li>
@@ -250,7 +250,7 @@
 					<height>Top</height>
 					<depth>Inside</depth>
 					<groups>
-						<li>Tentacles</li>
+						<li>VoidSpawnTentacles</li>
 						<li>Arms</li>
 					</groups>
 				</li>
@@ -261,7 +261,7 @@
 					<height>Top</height>
 					<depth>Inside</depth>
 					<groups>
-						<li>Tentacles</li>
+						<li>VoidSpawnTentacles</li>
 						<li>Arms</li>
 					</groups>
 				</li>
@@ -272,7 +272,7 @@
 					<height>Top</height>
 					<depth>Inside</depth>
 					<groups>
-						<li>Tentacles</li>
+						<li>VoidSpawnTentacles</li>
 						<li>Arms</li>
 					</groups>
 				</li>
@@ -283,7 +283,7 @@
 					<height>Top</height>
 					<depth>Inside</depth>
 					<groups>
-						<li>Tentacles</li>
+						<li>VoidSpawnTentacles</li>
 						<li>Arms</li>
 					</groups>
 				</li>

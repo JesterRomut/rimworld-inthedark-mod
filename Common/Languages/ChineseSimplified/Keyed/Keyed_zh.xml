@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<MessageVoidSpawnTransform>{0} 已经被转化成空心螈。</MessageVoidSpawnTransform>
+	<LabelVoidSpawnGroupDefault>默认</LabelVoidSpawnGroupDefault>
+	<LabelVoidSpawnGroupTemplate>同步组 {0}</LabelVoidSpawnGroupTemplate>
+	<CommandVoidSpawnGroupingDesc>(右键切换同步组)\n\n对空心螈来说，作为一个格式塔种族，思维同步是必不可少的。</CommandVoidSpawnGroupingDesc>
+	<CommandVoidSpawnGroupSelectTemplate>分配到 {0}</CommandVoidSpawnGroupSelectTemplate>
+	<CommandVoidSpawnGroupCreateTemplate>分配到新组...</CommandVoidSpawnGroupCreateTemplate>
+	<CommandVoidSpawnGroupCannotTemplate>无法分配到 {0}</CommandVoidSpawnGroupCannotTemplate>
+	<CommandVoidSpawnGroupAlreadyAssigned>已分配到该组</CommandVoidSpawnGroupAlreadyAssigned>
+	<UseBedAsVoidSpawn>强制睡眠 (作为空心螈)</UseBedAsVoidSpawn>
+	<VoidSpawnSettingUseDarkenBackground>是否使用空心螈的专用菜单背景</VoidSpawnSettingUseDarkenBackground>
+	<VoidSpawnSettingUseDarkenBackgroundTooltip>需要重启\n\n切换主菜单背景为mod的特有背景，名为"黑洞食"。这个选项可能跟别的修改主菜单背景的mod冲突。\n\n"厄厄，没有好画家 (也没有好程序员)"</VoidSpawnSettingUseDarkenBackgroundTooltip>
+</LanguageData>

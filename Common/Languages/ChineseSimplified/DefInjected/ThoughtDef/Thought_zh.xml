@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<VoidSpawnMemoryLeaked.stages.0.label>轻度记忆泄漏</VoidSpawnMemoryLeaked.stages.0.label>
+	<VoidSpawnMemoryLeaked.stages.0.description>我感觉有一点...混乱。</VoidSpawnMemoryLeaked.stages.0.description>
+	<VoidSpawnMemoryLeaked.stages.1.label>中度记忆泄漏</VoidSpawnMemoryLeaked.stages.1.label>
+	<VoidSpawnMemoryLeaked.stages.1.description>不行，我有太多不属于自己的想法了...</VoidSpawnMemoryLeaked.stages.1.description>
+	<VoidSpawnMemoryLeaked.stages.2.label>重度记忆泄漏</VoidSpawnMemoryLeaked.stages.2.label>
+	<VoidSpawnMemoryLeaked.stages.2.description>不，不，不！不！不！不！不！</VoidSpawnMemoryLeaked.stages.2.description>
+
+	<VoidSpawnCorruptionBadThought.stages.0.label>孽堕腐化</VoidSpawnCorruptionBadThought.stages.0.label>
+	<VoidSpawnCorruptionBadThought.stages.0.description>有些怪物正要取代我！</VoidSpawnCorruptionBadThought.stages.0.description>
+
+	<AteNightmare.stages.0.label>内在的空心</AteNightmare.stages.0.label>
+	<AteNightmare.stages.0.description>有时候我们必须强迫自己忘掉这些想法。</AteNightmare.stages.0.description>
+	<VoidSpawnAteNightmare.stages.0.label>补充了造孽精华</VoidSpawnAteNightmare.stages.0.label>
+	<VoidSpawnAteNightmare.stages.0.description>这些提纯后的记忆让我更加有动力。</VoidSpawnAteNightmare.stages.0.description>
+	<AteNightmareCooked.stages.0.label>吃了失效的造孽精华</AteNightmareCooked.stages.0.label>
+	<AteNightmareCooked.stages.0.description>这些失效的造孽精华已经失去了它原本的效果，吃起来也是愈发放心。</AteNightmareCooked.stages.0.description>
+	<VoidSpawnAteNightmareCooked.stages.0.label>补充了失效造孽精华</VoidSpawnAteNightmareCooked.stages.0.label>
+	<VoidSpawnAteNightmareCooked.stages.0.description>这些失效的记忆让我更加有动力。</VoidSpawnAteNightmareCooked.stages.0.description>
+
+	<VoidSpawnThoughtSync.stages.0.label>思维同步</VoidSpawnThoughtSync.stages.0.label>
+	<VoidSpawnThoughtSync.stages.0.description>我们是唯一。我们是一切。</VoidSpawnThoughtSync.stages.0.description>
+	<VoidSpawnSameGroup.stages.0.label>思维已连接</VoidSpawnSameGroup.stages.0.label>
+</LanguageData>

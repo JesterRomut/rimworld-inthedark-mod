@@ -3,7 +3,7 @@
 	<ThingDef ParentName="MedicineBase">
 		<defName>VoidNightmareFuel</defName>
 		<label>Immoral essence</label>
-		<description>A twisted thing which creeps around the air who deserves all bad memories in the world... \n\nDisappears quickly when exposed outdoors.</description>
+		<description>A twisted thing which creeps around the air which carries all bad memories in the world... \n\nDisappears quickly when exposed outdoors.</description>
 		<orderedTakeGroup>Medicine</orderedTakeGroup>
 		<techLevel>Neolithic</techLevel>
 		<healthAffectsPrice>false</healthAffectsPrice>
@@ -62,7 +62,7 @@
 		<stages>
 			<li>
 				<label>Internal emptiness</label>
-				<description>Sometimes we must forget those catastrophic memories...</description>
+				<description>Sometimes we must forcefully forget these catastrophic thoughts.</description>
 				<baseMoodEffect>-2</baseMoodEffect>
 			</li>
 		</stages>
@@ -74,7 +74,7 @@
 		<stages>
 			<li>
 				<label>Essence refueled</label>
-				<description>These pure memories make me more powered. I can taking speed EVEN FURTHER BEYOND!</description>
+				<description>These pure memories make me more powered.</description>
 				<baseMoodEffect>6</baseMoodEffect>
 			</li>
 		</stages>
@@ -85,8 +85,8 @@
 		<stackLimit>6</stackLimit>
 		<stages>
 			<li>
-				<label>Ate deactivated bad memories</label>
-				<description>Yes, those deactivated memories make me more relaxed.</description>
+				<label>Ate deactivated immoral essence</label>
+				<description>These deactivated memories has lost their original effects that make me more relaxed.</description>
 				<baseMoodEffect>4</baseMoodEffect>
 			</li>
 		</stages>
@@ -98,7 +98,7 @@
 		<stages>
 			<li>
 				<label>Deactivated essence refueled</label>
-				<description>These deactivated pure memories make me more powered. I can taking speed EVEN FURTHER BEYOND!</description>
+				<description>These deactivated pure memories make me more powered.</description>
 				<baseMoodEffect>2</baseMoodEffect>
 			</li>
 		</stages>

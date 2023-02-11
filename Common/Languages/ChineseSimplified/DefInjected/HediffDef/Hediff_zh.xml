@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<VoidSpawnEthereal.label>空心螈</VoidSpawnEthereal.label>
+	<VoidSpawnEthereal.description>空心</VoidSpawnEthereal.description>
+
+	<VoidSpawnMemoryLeak.label>记忆泄漏</VoidSpawnMemoryLeak.label>
+	<VoidSpawnMemoryLeak.description>被空心螈攻击会导致灾难性记忆的涌现。</VoidSpawnMemoryLeak.description>
+	<VoidSpawnMemoryLeak.descriptionShort>被空心螈攻击会导致灾难性记忆的涌现。</VoidSpawnMemoryLeak.descriptionShort>
+	<VoidSpawnMemoryLeak.stages.0.label>逐渐恢复</VoidSpawnMemoryLeak.stages.0.label>
+	<VoidSpawnMemoryLeak.stages.1.label>断片</VoidSpawnMemoryLeak.stages.1.label>
+	<VoidSpawnMemoryLeak.stages.2.label>瘫痪</VoidSpawnMemoryLeak.stages.2.label>
+
+	<VoidSpawnCorruption.label>孽堕腐化</VoidSpawnCorruption.label>
+	<VoidSpawnCorruption.description>身体被注射了一只空心螈的精华，该人不久后将会被一只双生螈取代。邪恶双生螈在最终取代前会不断折磨它的宿主，导致宿主的混乱的思维模式。\n\n宿主的心情越差，双生螈成长的就越快。</VoidSpawnCorruption.description>
+	<VoidSpawnCorruption.descriptionShort>身体被注射了一只空心螈的精华，该人不久后将会被一只双生螈取代。</VoidSpawnCorruption.descriptionShort>
+	<VoidSpawnCorruption.stages.0.label>早期</VoidSpawnCorruption.stages.0.label>
+	<VoidSpawnCorruption.stages.1.label>轻度</VoidSpawnCorruption.stages.1.label>
+	<VoidSpawnCorruption.stages.2.label>中度</VoidSpawnCorruption.stages.2.label>
+	<VoidSpawnCorruption.stages.3.label>严重</VoidSpawnCorruption.stages.3.label>
+	<VoidSpawnCorruption.stages.4.label>正在取代</VoidSpawnCorruption.stages.4.label>
+
+	<VoidSpawnDoppelgangerWeakness.label>新生虚弱</VoidSpawnDoppelgangerWeakness.label>
+	<VoidSpawnDoppelgangerWeakness.description>新生的空心螈必须花一段时间来完全成形。在这段时间里，他们极易受到物理伤害。</VoidSpawnDoppelgangerWeakness.description>
+	<VoidSpawnDoppelgangerWeakness.descriptionShort>新生的空心螈必须花一段时间来完全成形。</VoidSpawnDoppelgangerWeakness.descriptionShort>
+	<VoidSpawnDoppelgangerWeakness.stages.0.label>慢慢适应</VoidSpawnDoppelgangerWeakness.stages.0.label>
+	<VoidSpawnDoppelgangerWeakness.stages.1.label>半成</VoidSpawnDoppelgangerWeakness.stages.1.label>
+	<VoidSpawnDoppelgangerWeakness.stages.2.label>新生</VoidSpawnDoppelgangerWeakness.stages.2.label>
+</LanguageData>

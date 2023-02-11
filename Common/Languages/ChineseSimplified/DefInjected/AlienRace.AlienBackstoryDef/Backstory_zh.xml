@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<BaseVoidSpawn.title>造孽产物</BaseVoidSpawn.title>
+	<BaseVoidSpawn.titleShort>鳗螈</BaseVoidSpawn.titleShort>
+	<BaseVoidSpawn.baseDesc>[PAWN_nameDef]是一只空心螈。[PAWN_nameDef]的来源已被遗忘于空心之中。</BaseVoidSpawn.baseDesc>
+
+	<BaseVoidSpawnDoppelganger.title>造孽双生</BaseVoidSpawnDoppelganger.title>
+	<BaseVoidSpawnDoppelganger.titleShort>二重身</BaseVoidSpawnDoppelganger.titleShort>
+	<BaseVoidSpawnDoppelganger.baseDesc>[PAWN_nameDef]是一只邪恶双生螈，来自于一个可怜的被注入造孽精华的人。</BaseVoidSpawnDoppelganger.baseDesc>
+
+	<VoidSpawnKrypton.title>空虚的幸福</VoidSpawnKrypton.title>
+	<VoidSpawnKrypton.titleShort>氪子</VoidSpawnKrypton.titleShort>
+	<VoidSpawnKrypton.baseDesc>"超越这个世界的空虚快乐"\n\n当[PAWN_nameDef]为虚无之物付出时，它将触发它的深深的内在的空心。</VoidSpawnKrypton.baseDesc>
+
+	<VoidSpawnTachyon.title>模糊的星云</VoidSpawnTachyon.title>
+	<VoidSpawnTachyon.titleShort>快子</VoidSpawnTachyon.titleShort>
+	<VoidSpawnTachyon.baseDesc>"一种超越光的速度"\n\n我们的内心都害怕落后于大部队。很快[PAWN_nameDef]就会降临并屠杀所有落后的人，速度比光还快...</VoidSpawnTachyon.baseDesc>
+
+	<VoidSpawnGraviton.title>燃烧的痛楚</VoidSpawnGraviton.title>
+	<VoidSpawnGraviton.titleShort>引力子</VoidSpawnGraviton.titleShort>
+	<VoidSpawnGraviton.baseDesc>"无名画家的劣等造物"\n\n一个无名画家看着[PAWN_nameDef]，说：没名的画有什么用？一堆废纸罢了...之后他选择了自杀。</VoidSpawnGraviton.baseDesc>
+
+	<VoidSpawnPhoton.title>汹涌的战斗</VoidSpawnPhoton.title>
+	<VoidSpawnPhoton.titleShort>光子</VoidSpawnPhoton.titleShort>
+	<VoidSpawnPhoton.baseDesc>"失败的战斗正在怒吼"\n\n[PAWN_nameDef]总是纠缠于常人不能理解的事物，[PAWN_nameDef]一直是一个光子撕碎者...</VoidSpawnPhoton.baseDesc>
+
+	<VoidSpawnNeutrino.title>无法交互的绝望</VoidSpawnNeutrino.title>
+	<VoidSpawnNeutrino.titleShort>中微子</VoidSpawnNeutrino.titleShort>
+	<VoidSpawnNeutrino.baseDesc>"3000年未曾被发现的腐烂尸体"\n\n没人知道[PAWN_nameDef]。没人在它死后记得[PAWN_nameDef]。没人甚至能察觉到[PAWN_nameDef]的死亡，除了他最好的朋友，苍蝇和蛆。</VoidSpawnNeutrino.baseDesc>
+</LanguageData>

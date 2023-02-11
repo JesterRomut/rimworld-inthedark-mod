@@ -3,7 +3,7 @@
 
 	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
 		<defName>VoidSpawn_Race</defName>
-		<label>Void Spawn</label>
+		<label>void spawn</label>
 		<!--<description>//IMMORAL FABRICATIONS//\n\nA sirenidae-like race. Originally controlled by a gestalt consciousness who want to replace human by creating doppelgĂ¤ngers.\n\n They are pure spiritualized entities and don't affect by physical forces, and they can only learn skill with passion.</description>-->
 		<description>A mysterious race. No one knows these creatures come from, no one know their existence are true or not. They only emerge for their trusts, but others cannot see them and think they are all illusion.\n\nMankind only know they are powerful entities as no one can survive from an angry void spawn.</description>
 			<statBases>
@@ -29,12 +29,12 @@
 			<li>
 				<label>left tentacle</label>
 				<capacities>
-					<li>Void_Tentacletox</li>
+					<li>VoidTentacletox</li>
 				</capacities>
 				<power>1</power>
 				<armorPenetration>666</armorPenetration>
 				<cooldownTime>0.000001</cooldownTime>
-				<linkedBodyPartsGroup>Tentacles</linkedBodyPartsGroup>
+				<linkedBodyPartsGroup>VoidSpawnTentacles</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
@@ -47,12 +47,12 @@
 			<li>
 				<label>right tentacle</label>
 				<capacities>
-					<li>Void_Tentacletox</li>
+					<li>VoidTentacletox</li>
 				</capacities>
 				<power>1</power>
 				<armorPenetration>666</armorPenetration>
 				<cooldownTime>0.000001</cooldownTime>
-				<linkedBodyPartsGroup>Tentacles</linkedBodyPartsGroup>
+				<linkedBodyPartsGroup>VoidSpawnTentacles</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
@@ -301,9 +301,9 @@
 					<li>BodyType</li>
 					<li>Voice</li>
 				</blackEndoCategories>
-				<recipeList>
+				<!--<recipeList>
 					<li>VoidSpawnMakeDoppelganger</li>
-				</recipeList>
+				</recipeList>-->
 				<!--<geneList>
 					<li>Skin_Sirenidae</li>
 				</geneList>
@@ -396,8 +396,9 @@
 
 	</AlienRace.ThingDef_AlienRace>
 
-	<DamageDef Name="Void_TentacleStrikeDmg">
-		<defName>Void_TentacleStrikeDmg</defName>
+	<DamageDef>
+		<!--Name="Void_TentacleStrikeDamage"-->
+		<defName>VoidTentacleStrikeDamage</defName>
 		<label>Tentacle Strike</label>
 		<additionalHediffs>
 			<li>
@@ -421,17 +422,17 @@
 
 
 	<ToolCapacityDef>
-		<defName>Void_Tentacletox</defName>
+		<defName>VoidTentacletox</defName>
 		<label>tentacle strike</label>
 	</ToolCapacityDef>
 
 
 	<ManeuverDef>
-		<defName>Void_TentacleStrike</defName>
-		<requiredCapacity>Void_Tentacletox</requiredCapacity>
+		<defName>VoidTentacleStrike</defName>
+		<requiredCapacity>VoidTentacletox</requiredCapacity>
 		<verb>
 			<verbClass>Verb_MeleeAttackDamage</verbClass>
-			<meleeDamageDef>Void_TentacleStrikeDmg</meleeDamageDef>
+			<meleeDamageDef>VoidTentacleStrikeDamage</meleeDamageDef>
 		</verb>
 		<logEntryDef>MeleeAttack</logEntryDef>
 		<combatLogRulesHit>Maneuver_Poke_MeleeHit</combatLogRulesHit>

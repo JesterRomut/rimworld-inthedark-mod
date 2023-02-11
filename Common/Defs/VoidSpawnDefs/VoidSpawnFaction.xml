@@ -17,7 +17,7 @@
 	<FactionDef ParentName="FactionVoidSpawnBase">
 		<defName>PlayerGestaltVoid</defName>
 		<label>New Gestalt</label>
-		<description>A gestalt of recently-arrived void spawns.</description>
+		<description>A gestalt consciousness of recently-arrived void spawns.</description>
 		<isPlayer>true</isPlayer>
 		<basicMemberKind>VoidSpawnColonist</basicMemberKind>
 		<pawnSingular>drone</pawnSingular>

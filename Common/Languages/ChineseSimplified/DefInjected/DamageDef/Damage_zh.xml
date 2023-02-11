@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<VoidTentacleStrikeDamage.label>触手攻击</VoidTentacleStrikeDamage.label>
+	<VoidTentacleStrikeDamage.deathMessage>{0}被蛰死了。</VoidTentacleStrikeDamage.deathMessage>
+</LanguageData>

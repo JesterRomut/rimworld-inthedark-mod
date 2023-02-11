@@ -14,7 +14,7 @@
 		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
 		<initialSeverity>1</initialSeverity>
 		<label>void spawn</label>
-		<description>void spawn</description>
+		<description>void</description>
 		<maxSeverity>1.0</maxSeverity>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<isBad>false</isBad>
@@ -140,12 +140,12 @@
 		<stages>
 			<li>
 				<label>minor memory leak</label>
-				<description>I just feel a bit...confused.</description>
+				<description>I feel a bit...confused.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 			<li>
 				<label>major memory leak</label>
-				<description>NO, I have too much memories which not belong to myself...</description>
+				<description>NO, I have too much thoughts which not belong to myself...</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 			<li>

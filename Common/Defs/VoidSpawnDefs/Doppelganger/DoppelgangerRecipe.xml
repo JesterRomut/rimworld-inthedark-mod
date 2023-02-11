@@ -2,7 +2,7 @@
 	<RecipeDef ParentName="SurgeryFlesh">
 		<defName>VoidSpawnMakeDoppelganger</defName>
 		<label>inject immoral essence</label>
-		<description>Turn a human into a void spawn doppelgänger by injecting a void spawn's essence. This can only be done by a void spawn.</description>
+		<description>Turn a human into a void spawn doppelgänger by injecting a void spawn's essence.</description>
 		<workerClass>Recipe_AddHediff</workerClass>
 		<jobString>Injecting immoral essence.</jobString>
 		<workAmount>100</workAmount>

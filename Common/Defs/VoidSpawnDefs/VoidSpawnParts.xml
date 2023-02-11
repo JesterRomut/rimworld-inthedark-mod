@@ -26,7 +26,7 @@
 	</BodyPartDef>
 	<BodyPartDef>
 		<defName>VoidSpawnGill</defName>
-		<label>external gill</label>
+		<label>external gills</label>
 		<beautyRelated>true</beautyRelated>
 		<hitPoints>25</hitPoints>
 		<skinCovered>true</skinCovered>
@@ -58,7 +58,7 @@
 	</BodyPartDef>
 	
 	<BodyPartGroupDef>
-		<defName>Tentacles</defName>
+		<defName>VoidSpawnTentacles</defName>
 		<label>Tentacles</label>
 	</BodyPartGroupDef>
 	

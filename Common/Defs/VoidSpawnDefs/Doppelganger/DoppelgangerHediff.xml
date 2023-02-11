@@ -30,7 +30,7 @@
 			</li>
 			<li>
 				<minSeverity>0.15</minSeverity>
-				<label>burning</label>
+				<label>mild</label>
 				<hungerRateFactorOffset>1</hungerRateFactorOffset>
 				<forgetMemoryThoughtMtbDays>5</forgetMemoryThoughtMtbDays>
 				<mentalBreakMtbDays>6</mentalBreakMtbDays>
@@ -44,7 +44,7 @@
 			</li>
 			<li>
 				<minSeverity>0.30</minSeverity>
-				<label>entanglement</label>
+				<label>moderate</label>
 				<hungerRateFactorOffset>1.3</hungerRateFactorOffset>
 				<forgetMemoryThoughtMtbDays>2</forgetMemoryThoughtMtbDays>
 				<mentalBreakMtbDays>3</mentalBreakMtbDays>
@@ -58,7 +58,7 @@
 			</li>
 			<li>
 				<minSeverity>0.5</minSeverity>
-				<label>total</label>
+				<label>severe</label>
 				<hungerRateFactorOffset>1.5</hungerRateFactorOffset>
 				<forgetMemoryThoughtMtbDays>2</forgetMemoryThoughtMtbDays>
 				<mentalBreakMtbDays>0.25</mentalBreakMtbDays>
@@ -66,13 +66,13 @@
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
-						<setMax>0.1</setMax>
+						<setMax>0.5</setMax>
 					</li>
 				</capMods>
 			</li>
 			<li>
 				<minSeverity>0.95</minSeverity>
-				<label>wearing off</label>
+				<label>replacing</label>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -86,7 +86,7 @@
 	<HediffDef ParentName="VoidSpawnHediffCorruptionBase">
 		<defName>VoidSpawnDoppelgangerWeakness</defName>
 		<label>newform weakness</label>
-		<description>Newform doppelgängers must take time to get fully formed. They are vulnerable by physical forces by this time.</description>
+		<description>Newform doppelgängers must take time to get fully formed. They are extremely vulnerable by physical forces by this time.</description>
 		<descriptionShort>Newform doppelgängers must take time to get fully formed.</descriptionShort>
 		<isBad>false</isBad>
 		<initialSeverity>1</initialSeverity>
