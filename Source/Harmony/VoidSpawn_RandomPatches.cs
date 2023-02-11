@@ -37,6 +37,11 @@ namespace InTheDark
         {
             if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)// && !pawn.Drafted)
             {
+                //if (pawn.Drafted)
+                //{
+                //    __result = false;
+                //    return;
+                //}
                 if (pawn.health?.hediffSet?.GetFirstHediffOfDef(VoidSpawnHediffDefOf.VoidSpawnDoppelgangerWeakness) != null)
                 {
                     __result = false;
@@ -190,7 +195,7 @@ namespace InTheDark
         {
             if (InTheDark_Settings.useDarkenBackground)
             {
-                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = VoidSpawnUtility.BlackHoleEclipse;
+                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = Startup.BlackHoleEclipse;
             }
         }
 

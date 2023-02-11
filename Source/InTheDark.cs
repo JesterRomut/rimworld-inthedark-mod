@@ -12,7 +12,7 @@ namespace InTheDark
     [StaticConstructorOnStartup]
     public class Startup
     {
-
+        public static readonly Texture2D BlackHoleEclipse = ContentFinder<Texture2D>.Get("UI/BlackHoleEclipse");
         static Startup()
         {
             HarmonyPatches.Init();
@@ -85,7 +85,6 @@ namespace InTheDark
 
     public class VoidSpawnUtility
     {
-        public static readonly Texture2D BlackHoleEclipse = ContentFinder<Texture2D>.Get("UI/BlackHoleEclipse");
         public static void SpawnSirenidaeFilth(Pawn pawn, IntVec3 center, int radius, IntRange? amount = null)
         {
             int randomInRange = (amount ?? new IntRange(6, 10)).RandomInRange;

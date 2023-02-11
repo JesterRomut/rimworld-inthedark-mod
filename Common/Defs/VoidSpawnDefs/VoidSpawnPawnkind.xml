@@ -16,9 +16,9 @@
 			<min>0</min>
 			<max>0</max>
 		</apparelMoney>
-		<xenotypeSet Inherit="False">
+		<xenotypeSet Inherit="False" MayRequire="Ludeon.RimWorld.Biotech">
 			<xenotypeChances>
-				<Baseliner>999</Baseliner>
+				<Baseliner MayRequire="Ludeon.RimWorld.Biotech">999</Baseliner>
 			</xenotypeChances>
 		</xenotypeSet>
 		

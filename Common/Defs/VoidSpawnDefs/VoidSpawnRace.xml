@@ -19,10 +19,10 @@
 			<MeatAmount>0</MeatAmount>
 			<LeatherAmount>0</LeatherAmount>
 			<CarryingCapacity>40</CarryingCapacity>
-			<IncomingDamageFactor>0</IncomingDamageFactor>
+			<IncomingDamageFactor>0.2</IncomingDamageFactor>
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
-			<StaggerDurationFactor>0</StaggerDurationFactor>
+			<StaggerDurationFactor MayRequire="Ludeon.RimWorld.Biotech">0</StaggerDurationFactor>
 			<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0</PsychicEntropyGain>
 		</statBases>
 		<tools>
@@ -196,7 +196,7 @@
 					<li>
 						<defName>Jealous</defName>
 					</li>
-					<li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
 						<defName>Recluse</defName>
 					</li>
 					<li>

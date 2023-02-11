@@ -7,9 +7,9 @@
 		<colorSpectrum>
 			<li>(0.33,0.33,0.33)</li>
 		</colorSpectrum>
-		<xenotypeSet Inherit="False">
+		<xenotypeSet Inherit="False" MayRequire="Ludeon.RimWorld.Biotech">
 			<xenotypeChances>
-				<Baseliner>999</Baseliner>
+				<Baseliner MayRequire="Ludeon.RimWorld.Biotech">999</Baseliner>
 			</xenotypeChances>
 		</xenotypeSet>
 	</FactionDef>

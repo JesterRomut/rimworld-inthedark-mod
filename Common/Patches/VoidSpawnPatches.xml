@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/MeditationFocusDef[defName="Minimal"]</xpath>
-		<value>
-			<requiredBackstoriesAny>
-				<li>
-					<categoryName>VoidSpawn</categoryName>
-					<slot>Childhood</slot>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/MeditationFocusDef[defName="Minimal"]</xpath>
+					<value>
+						<requiredBackstoriesAny>
+							<li>
+								<categoryName>VoidSpawn</categoryName>
+								<slot>Childhood</slot>
+							</li>
+							<li>
+								<categoryName>VoidSpawnDoppelganger</categoryName>
+								<slot>Childhood</slot>
+							</li>
+						</requiredBackstoriesAny>
+					</value>
 				</li>
-				<li>
-					<categoryName>VoidSpawnDoppelganger</categoryName>
-					<slot>Childhood</slot>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/FactionDef[defName = "Empire"]/permanentEnemyToEveryoneExcept</xpath>
+					<value>
+						<li>PlayerGestaltVoid</li>
+					</value>
 				</li>
-			</requiredBackstoriesAny>
-		</value>
+			</operations>
+		</match>
 	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/FactionDef[defName = "Empire"]/permanentEnemyToEveryoneExcept</xpath>
-		<value>
-			<li>PlayerGestaltVoid</li>
-		</value>
-	</Operation>
+	
 </Patch>
