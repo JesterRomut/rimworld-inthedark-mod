@@ -10,5 +10,5 @@
 	<CommandVoidSpawnGroupAlreadyAssigned>已分配到该组</CommandVoidSpawnGroupAlreadyAssigned>
 	<UseBedAsVoidSpawn>强制睡眠 (作为空心螈)</UseBedAsVoidSpawn>
 	<VoidSpawnSettingUseDarkenBackground>是否使用空心螈的专用菜单背景</VoidSpawnSettingUseDarkenBackground>
-	<VoidSpawnSettingUseDarkenBackgroundTooltip>需要重启\n\n切换主菜单背景为mod的特有背景，名为"黑洞食"。这个选项可能跟别的修改主菜单背景的mod冲突。\n\n"厄厄，没有好画家 (也没有好程序员)"</VoidSpawnSettingUseDarkenBackgroundTooltip>
+	<VoidSpawnSettingUseDarkenBackgroundTooltip>需要重启\n\n切换主菜单背景为mod的特有背景。这个选项可能跟别的修改主菜单背景的mod冲突。\n\n"厄厄，没有好画家 (也没有好程序员)"</VoidSpawnSettingUseDarkenBackgroundTooltip>
 </LanguageData>
