@@ -164,7 +164,7 @@ namespace InTheDark
         [HarmonyPostfix]
         public static void HideVoidSpawnsFoodBar(Need __instance, ref bool __result)
         {
-            if (!(__instance is Need_Food food))
+            if (!(__instance is Need_Food))
             {
                 return;
             }
@@ -177,20 +177,17 @@ namespace InTheDark
             //return true;
         }
 
-        //[HarmonyPatch(typeof(Need_Food))]
-        //[HarmonyPatch("ShowOnNeedList", MethodType.Getter)]
-        //[HarmonyPatch(new Type[] { })]
-        //[HarmonyPostfix]
-        //public static bool HideVoidSpawnsFoodBar(bool value, Need_Food __instance, ref bool __result)
-        //{
-        //    Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-        //    if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
-        //    {
-        //        //__result = false;
-        //        return false;
-        //    }
-        //    return value;
-        //}
+        [HarmonyPatch(typeof(MainMenuDrawer))]
+        [HarmonyPatch("Init")]
+        [HarmonyPatch(new Type[] { })]
+        [HarmonyPostfix]
+        public static void ApplyDarkenBackground()
+        {
+            if (InTheDark_Settings.useDarkenBackground)
+            {
+                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = VoidSpawnUtility.BlackHoleEclipse;
+            }
+        }
     }
 
 

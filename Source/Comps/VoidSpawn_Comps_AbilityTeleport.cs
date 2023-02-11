@@ -27,8 +27,8 @@ namespace InTheDark
 		{
             //this.parent.AddEffecterToMaintain(EffecterDefOf.Skip_Entry.Spawn(pawn.Position, pawn.Map, 1f), pawn.Position, 60, null);
             //this.parent.AddEffecterToMaintain(EffecterDefOf.Skip_ExitNoDelay.Spawn(destCell, pawn.Map, 1f), destCell, 60, null);
-            VoidSpawnUtilty.SpawnSirenidaeFilth(pawn, pawn.Position, 1, new IntRange(3, 4));
-            VoidSpawnUtilty.SpawnSirenidaeFilth(pawn, destCell, 1, new IntRange(3, 4));
+            VoidSpawnUtility.SpawnSirenidaeFilth(pawn, pawn.Position, 1, new IntRange(3, 4));
+            VoidSpawnUtility.SpawnSirenidaeFilth(pawn, destCell, 1, new IntRange(3, 4));
             SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
             SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(destCell, pawn.Map, false));
             pawn.Position = destCell;

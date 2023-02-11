@@ -4,12 +4,15 @@ using Verse;
 using Verse.AI;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEngine;
+using System.Runtime;
 
 namespace InTheDark
 {
     [StaticConstructorOnStartup]
     public class Startup
     {
+
         static Startup()
         {
             HarmonyPatches.Init();
@@ -32,24 +35,44 @@ namespace InTheDark
         }
     }
 
-    //public class VoidSpawnCollectionClass
-    //{
-    //    public static HashSet<Pawn> voidSpawns = new HashSet<Pawn>();
-    //    public static void AddVoidSpawnToList(Pawn thing)
-    //    {
-    //        if(!voidSpawns.Contains(thing))
-    //        {
-    //            voidSpawns.Add(thing);
-    //        }
-    //    }
-    //    public static void RemoveVoidSpawnToList(Pawn thing)
-    //    {
-    //        if(voidSpawns.Contains(thing))
-    //        {
-    //            voidSpawns.Remove(thing);
-    //        }
-    //    }
-    //}
+    public class InTheDark_Mod : Mod
+    {
+
+        private static InTheDark_Mod _instance;
+        public static InTheDark_Settings modSettings;
+
+        public static InTheDark_Mod Main
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    throw new NullReferenceException("Accessing InTheDarkMod before it was constructed.");
+                }
+                return _instance;
+            }
+        }
+
+        public InTheDark_Mod(ModContentPack content) : base(content)
+        {
+            _instance = this;
+            Log.Message("<color=#84FFF2>In the Dark @build-2023210</color>");
+            base.GetSettings<InTheDark_Settings>();
+        }
+
+        public override string SettingsCategory()
+        {
+            return "<color=#84FFF2>In The Dark</color>";
+        }
+
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+
+            InTheDark_Settings.DoSettingsWindowContents(inRect);
+        }
+
+    }
+
     public static class ModCompatibility
     {
         public static class PickUpAndHaul
@@ -60,10 +83,9 @@ namespace InTheDark
         }
     }
 
-    public class VoidSpawnUtilty
+    public class VoidSpawnUtility
     {
-        //public delegate Job HaulJobGlobal(Pawn pawn, Thing t, bool forced);
-        //public static HaulJobGlobal HaulJobGlobalDelegate = (Pawn pawn, Thing t, bool forced) => HaulAIUtility.HaulToStorageJob(pawn, t);
+        public static readonly Texture2D BlackHoleEclipse = ContentFinder<Texture2D>.Get("UI/BlackHoleEclipse");
         public static void SpawnSirenidaeFilth(Pawn pawn, IntVec3 center, int radius, IntRange? amount = null)
         {
             int randomInRange = (amount ?? new IntRange(6, 10)).RandomInRange;

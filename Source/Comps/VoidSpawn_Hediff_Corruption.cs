@@ -172,7 +172,7 @@ namespace InTheDark
             pawn.Destroy();
             if (doppelganger.Spawned)
             {
-                VoidSpawnUtilty.SpawnSirenidaeFilth(doppelganger, doppelganger.PositionHeld, 2);
+                VoidSpawnUtility.SpawnSirenidaeFilth(doppelganger, doppelganger.PositionHeld, 2);
             }
             if (doppelganger.caller != null)
             {
