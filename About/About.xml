@@ -1,7 +1,7 @@
 <ModMetaData>
 	<name>In The Dark</name>
 	<author>Jester Romut</author>
-    <packageId>JesterRomut.InTheDark.Mod</packageId>
+    <packageId>JesterRomut.InTheDark.Dev</packageId>
 	<supportedVersions>
 		<li>1.4</li>
 	</supportedVersions>

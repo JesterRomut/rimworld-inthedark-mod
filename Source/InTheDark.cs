@@ -56,7 +56,7 @@ namespace InTheDark
         public InTheDark_Mod(ModContentPack content) : base(content)
         {
             _instance = this;
-            Log.Message("<color=#84FFF2>In the Dark @build-2023210</color>");
+            //Log.Message("<color=#84FFF2>In the Dark @build-2023210</color>");
             base.GetSettings<InTheDark_Settings>();
         }
 

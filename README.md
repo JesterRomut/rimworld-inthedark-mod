@@ -11,4 +11,3 @@ TODO
 - [x] Thought Sync
 - [x] Disease Immunity
 - [x] Reproduction
-- [ ] \(Maybe) new coooool item
