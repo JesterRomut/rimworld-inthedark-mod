@@ -8,6 +8,17 @@ using System.Linq;
 
 namespace InTheDark
 {
+    public class Recipe_MakeDoppelganger: Recipe_AddHediff
+    {
+        public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
+        {
+            if (thing.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                return false;
+            }
+            return base.AvailableOnNow(thing, part);
+        }
+    }
     public class Hediff_VoidSpawnCorruption : HediffWithComps
     {
         //public Pawn surgeon = null;

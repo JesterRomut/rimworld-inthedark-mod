@@ -3,7 +3,7 @@
 		<defName>VoidSpawnMakeDoppelganger</defName>
 		<label>inject immoral essence</label>
 		<description>Turn a human into a void spawn doppelgänger by injecting a void spawn's essence.</description>
-		<workerClass>Recipe_AddHediff</workerClass>
+		<workerClass>InTheDark.Recipe_MakeDoppelganger</workerClass>
 		<jobString>Injecting immoral essence.</jobString>
 		<workAmount>100</workAmount>
 		<hideBodyPartNames>true</hideBodyPartNames>
