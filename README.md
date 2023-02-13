@@ -11,4 +11,5 @@ TODO
 - [x] Thought Sync
 - [x] Reproduction (Corruption)
 - [ ] Storyteller
-- [ ] Scenario
+- [x] Scenario
+- [ ] i.essence's side effects
