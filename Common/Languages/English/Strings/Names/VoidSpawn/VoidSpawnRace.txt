@@ -11,7 +11,7 @@ Azure
 Beta
 Bullseye
 Byte
-Calamita
+Calamity
 Callosotomy
 Cataclysm
 Catalina
@@ -144,8 +144,12 @@ Vortex
 War
 Web
 Worm
+Wyrm
 Zeta
 Erika
 Leviathan
 Catalyze
 Catalase
+Scourge
+Providence
+Eidolon

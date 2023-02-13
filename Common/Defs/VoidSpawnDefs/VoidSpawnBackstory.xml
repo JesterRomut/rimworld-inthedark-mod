@@ -50,7 +50,7 @@
 		<title>Raging Battle</title>
 		<titleShort>Photon</titleShort>
 		<!--失败的战斗正在怒吼-->
-		<baseDesc>"A lost battle is raging"\n\n[PAWN_nameDef] is always struggle with something which mankind don't understand. [PAWN_nameDef] is always a photon ripper...</baseDesc>
+		<baseDesc>"A lost battle is raging"\n\nLong times ago, [PAWN_nameDef]'s ship suddenly capsized by unknown reason, but no one rescued them. All people just waited and watched, until those students died in despair.</baseDesc>
 	</AlienRace.AlienBackstoryDef>
 	<AlienRace.AlienBackstoryDef ParentName="VoidSpawnAdulthoodBackstoryBase">
 		<defName>VoidSpawnNeutrino</defName>

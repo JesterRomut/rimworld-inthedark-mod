@@ -22,7 +22,7 @@
 
 	<VoidSpawnPhoton.title>汹涌的战斗</VoidSpawnPhoton.title>
 	<VoidSpawnPhoton.titleShort>光子</VoidSpawnPhoton.titleShort>
-	<VoidSpawnPhoton.baseDesc>"失败的战斗正在怒吼"\n\n[PAWN_nameDef]总是纠缠于常人不能理解的事物，[PAWN_nameDef]一直是一个光子撕碎者...</VoidSpawnPhoton.baseDesc>
+	<VoidSpawnPhoton.baseDesc>"失败的战斗正在怒吼"\n\n很久很久以前，[PAWN_nameDef]的船不知道为什么突然侧翻，但是没人选择营救他们。所有高层的人只是等待和观望，直到那些学生在绝望中死去。</VoidSpawnPhoton.baseDesc>
 
 	<VoidSpawnNeutrino.title>无法交互的绝望</VoidSpawnNeutrino.title>
 	<VoidSpawnNeutrino.titleShort>中微子</VoidSpawnNeutrino.titleShort>
