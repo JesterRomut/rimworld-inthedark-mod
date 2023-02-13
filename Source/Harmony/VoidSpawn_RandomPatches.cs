@@ -149,10 +149,11 @@ namespace InTheDark
                 return;
             }
 
-            if (LovePartnerRelationUtility.HasAnyLovePartner(recipient))
-            {
-                __result = 0f;
-            }
+            //if (LovePartnerRelationUtility.HasAnyLovePartner(recipient))
+            //{
+            //    __result = 0f;
+            //}
+            __result = 0f;
 
         }
 
@@ -207,6 +208,17 @@ namespace InTheDark
             if (__instance.pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
                 __result = new List<Gene>();
+            }
+        }
+
+        [HarmonyPatch(typeof(Pawn_GeneTracker))]
+        [HarmonyPatch("GetMelaninGene")]
+        [HarmonyPostfix]
+        public static void GetMelaninGenePatch(Pawn_GeneTracker __instance, ref GeneDef __result)
+        {
+            if (__instance.pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                __result = VoidSpawnGeneDefOf.Skin_Melanin1;
             }
         }
     }

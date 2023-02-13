@@ -49,4 +49,10 @@ namespace InTheDark
     {
         public static RulePackDef NamerVoidSpawnUniversal;
     }
+
+    [DefOf]
+    public static class VoidSpawnGeneDefOf
+    {
+        public static GeneDef Skin_Melanin1;
+    }
 }

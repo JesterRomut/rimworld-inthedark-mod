@@ -9,5 +9,7 @@
 ***
 TODO
 - [x] Thought Sync
-- [x] Disease Immunity
-- [x] Reproduction
+- [x] Reproduction (Corruption)
+- [ ] Storyteller
+- [x] Scenario
+- [ ] i.essence's side effects

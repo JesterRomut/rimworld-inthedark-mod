@@ -5,7 +5,7 @@
 		<defName>VoidSpawn_Race</defName>
 		<label>void spawn</label>
 		<!--<description>//IMMORAL FABRICATIONS//\n\nA sirenidae-like race. Originally controlled by a gestalt consciousness who want to replace human by creating doppelgĂ¤ngers.\n\n They are pure spiritualized entities and don't affect by physical forces, and they can only learn skill with passion.</description>-->
-		<description>A mysterious race. No one knows these creatures come from, no one know their existence are true or not. They only emerge for their trusts, but others cannot see them and think they are all illusion.\n\nMankind only know they are powerful entities as no one can survive from an angry void spawn.</description>
+		<description>A black sirenidae-like amorphous race. No one knows these creatures come from, no one know their existence are true or not as most of them are roaming in the space. There are some evidence suggests that they were the real reason of spaceship crashing, therefore they are called "cosmic scourge" among the captains.\n\nMankind only knows they are powerful entities as no one can survive from an angry void spawn.</description>
 			<statBases>
 			<PsychicSensitivity>2</PsychicSensitivity>
 			<ComfyTemperatureMin>-6666</ComfyTemperatureMin>
@@ -415,6 +415,7 @@
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<impactSoundType>Toxic</impactSoundType>
 		<armorCategory>Blunt</armorCategory>
+		<buildingDamageFactor>6</buildingDamageFactor>
 		<overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
 		<scratchSplitPercentage>0.67</scratchSplitPercentage>
 	</DamageDef>
