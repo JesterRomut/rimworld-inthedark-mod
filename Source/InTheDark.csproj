@@ -66,6 +66,8 @@
 		<Compile Include="Comps\VoidSpawn_GroupingAndSync.cs" />
 		<Compile Include="Comps\VoidSpawn_Hediff_Corruption.cs" />
 		<Compile Include="Comps\VoidSpawn_Hediff_VoidSpawnEthereal.cs" />
+		<Compile Include="Comps\VoidSpawn_ScenParts.cs" />
+		<Compile Include="Comps\VoidSpawn_Storyteller.cs" />
 		<Compile Include="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

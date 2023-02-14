@@ -4,11 +4,23 @@
 
 ![Sirenidae.png](About/Preview.png)
 
-- Do not use any design (textures/characters/backstories/etc.) unless my permit! These are my oc, you can't steal them.
+
+Added void spawns, powerful "sea monsters of the cosmos".
+
+
+We already know RimWorld is based on the Age of Discovery therefore having some mysterious sea monsters is very reasonable.
+<br/>
+Therefore I created a mass of human parts, tentacles, sirens (a type of aquatic salamander), shadow creatures and nanobots
+
+
+- Do not use any design (textures/characters/backstories/etc.)
 
 ***
 TODO
 - [x] Thought Sync
-- [x] Disease Immunity
-- [x] Reproduction
-- [ ] \(Maybe) new coooool item
+- [x] Reproduction (Corruption)
+- [ ] Storyteller
+- [x] Scenario
+- [ ] i.essence's side effects
+- [ ] Apparel
+- [ ] upload to workshop

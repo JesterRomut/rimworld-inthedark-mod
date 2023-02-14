@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ScenPartDef>
+		<defName>ConfigurePawnsVoidSpawn</defName>
+		<label>starting void spawn</label>
+		<scenPartClass>InTheDark.ScenPart_ConfigPage_ConfigureStartingPawns_VoidSpawnWithInjured</scenPartClass>
+		<selectionWeight>0</selectionWeight>
+		<pageClass>Page_ConfigureStartingPawns</pageClass>
+		<summaryPriority>500</summaryPriority>
+		<category>Fixed</category>
+	</ScenPartDef>
+
+	<ScenarioDef>
+		<defName>VoidSpawnCosmicScourge</defName>
+		<label>The Cosmic Scourge</label>
+		<description>For as long as you can remember, you have been a void spawn - "cosmic scourge" who roam in the boundless space for thousands of years. You followed your group consciousness, shared thoughts with other void spawns. Now, your group let you split and build a new consciousness on nearby planets. Then you disconnected with your group, intercepted a human spaceship, controlled it to fell into this unknown rimworld.\n\nNote: Since one of your starting character will be heavily injured, this is a difficult scenario.</description>
+		<scenario>
+			<summary>One void spawn attempt to build new consciousness, and one injured human colonist.</summary>
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>PlayerGestaltVoid</factionDef>
+			</playerFaction>
+			<parts>
+				<li Class="ScenPart_GameStartDialog">
+					<def>GameStartDialog</def>
+					<text>The ship fell apart upon the atmosphere. You grabbed a ripped metal, safely landed on the surface of high gravity.\n\nYou noticed the human who crashed with you, maybe you should protect them.</text>
+					<closeSound>GameStartSting</closeSound>
+				</li>
+
+				<li Class="InTheDark.ScenPart_ConfigPage_ConfigureStartingPawns_VoidSpawnWithInjured">
+					<def>ConfigurePawnsVoidSpawn</def>
+					<sirenCount>1</sirenCount>
+					<injuredCount>1</injuredCount>
+					<pawnChoiceCount>6</pawnChoiceCount>
+					<customSummary>Start with one void spawn and one injured human colonist.</customSummary>
+				</li>
+
+				<!-- Config pages -->
+				<!--<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+					<def>ConfigPage_ConfigureStartingPawns</def>
+					<pawnCount>1</pawnCount>
+					<pawnChoiceCount>8</pawnChoiceCount>
+				</li>-->
+				
+
+				<!-- Player starting stuff spawn method-->
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<visible>false</visible>
+					<method>DropPods</method>
+				</li>
+
+				<li Class="ScenPart_NoPossessions">
+					<def>NoPossessions</def>
+				</li>
+
+				<!-- Player starting things -->
+				<!--<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Steel</thingDef>
+					<count>30</count>
+				</li>-->
+
+				<li Class="ScenPart_ScatterThingsAnywhere">
+					<def>ScatterThingsAnywhere</def>
+					<thingDef>ChunkSlagSteel</thingDef>
+					<count>30</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsAnywhere">
+					<def>ScatterThingsAnywhere</def>
+					<thingDef>ShipChunk</thingDef>
+					<count>3</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+
+				<!-- Game start dialog -->
+				
+
+			</parts>
+		</scenario>
+	</ScenarioDef>
+</Defs>
