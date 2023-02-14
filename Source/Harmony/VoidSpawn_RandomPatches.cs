@@ -196,7 +196,7 @@ namespace InTheDark
         {
             if (InTheDark_Settings.useDarkenBackground)
             {
-                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = Startup.BlackHoleEclipse;
+                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = Startup.Textures.BlackHoleEclipse;
             }
         }
 
@@ -213,12 +213,32 @@ namespace InTheDark
 
         [HarmonyPatch(typeof(Pawn_GeneTracker))]
         [HarmonyPatch("GetMelaninGene")]
+        [HarmonyPatch(new Type[] { })]
         [HarmonyPostfix]
         public static void GetMelaninGenePatch(Pawn_GeneTracker __instance, ref GeneDef __result)
         {
             if (__instance.pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
                 __result = VoidSpawnGeneDefOf.Skin_Melanin1;
+            }
+        }
+
+        [HarmonyPatch(typeof(Pawn_HealthTracker))]
+        [HarmonyPatch("AddHediff")]
+        [HarmonyPatch(new Type[] { typeof(Hediff), typeof(BodyPartRecord), typeof(DamageInfo?), typeof(DamageWorker.DamageResult) })]
+        [HarmonyPostfix]
+        public static void VoidSpawnImmunityPatch(Pawn_HealthTracker __instance)
+        {
+            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            if(pawn.def != VoidSpawnThingDefOf.VoidSpawn_Race)
+            {
+                return;
+            }
+
+            CompVoidSpawn comp = pawn.GetComp<CompVoidSpawn>();
+            if (comp != null)
+            {
+                comp.RemoveUnnessaryHediff();
             }
         }
     }

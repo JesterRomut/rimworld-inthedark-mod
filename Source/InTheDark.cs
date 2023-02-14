@@ -12,7 +12,13 @@ namespace InTheDark
     [StaticConstructorOnStartup]
     public class Startup
     {
-        public static readonly Texture2D BlackHoleEclipse = ContentFinder<Texture2D>.Get("UI/BlackHoleEclipse");
+        [StaticConstructorOnStartup]
+        public static class Textures
+        {
+            public static readonly Texture2D BlackHoleEclipse = ContentFinder<Texture2D>.Get("UI/BlackHoleEclipse");
+            public static readonly Texture2D VoidSpawnControlGroupGizmo = ContentFinder<Texture2D>.Get("UI/Abilities/VoidSpawnControlGroupGizmo");
+        }
+        
         static Startup()
         {
             HarmonyPatches.Init();

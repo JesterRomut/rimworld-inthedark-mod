@@ -103,4 +103,8 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+
+	<HediffDef ParentName="VoidSpawnHediffCorruptionBase">
+		<defName>VoidSpawnEssenceSideEffect</defName>
+	</HediffDef>
 </Defs>

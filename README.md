@@ -23,4 +23,5 @@ TODO
 - [x] Scenario
 - [ ] i.essence's side effects
 - [ ] Apparel
+- [ ] Endgame
 - [ ] upload to workshop
