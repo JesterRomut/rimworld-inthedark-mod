@@ -8,13 +8,27 @@ using Verse;
 
 namespace InTheDark
 {
-    public class ScenPart_ConfigPage_ConfigureStartingPawns_VoidSpawnWithInjured: ScenPart_ConfigPage_ConfigureStartingPawnsBase
+    public class ScenPart_ConfigPage_ConfigureStartingPawns_VoidSpawnWithInjured : ScenPart_ConfigPage_ConfigureStartingPawnsBase
     {
         public int sirenCount = 1;
         private string sirenCountBuffer;
         public int injuredCount = 1;
         private string injuredCountBuffer;
-        public PawnKindDef injuredPawnKindDef = PawnKindDefOf.SpaceRefugee;
+
+        private PawnKindDef injuredPawnKindDef;
+        public PawnKindDef InjuredPawnKindDef
+        {
+            get
+            {
+                return injuredPawnKindDef ?? PawnKindDefOf.SpaceRefugee;
+            }
+            set
+            {
+                injuredPawnKindDef = value;
+            }
+        }
+
+        private IEnumerable<PawnKindDef> AvailableKinds => DefDatabase<PawnKindDef>.AllDefs.Where((PawnKindDef x) => x.RaceProps.Humanlike && x.race != VoidSpawnThingDefOf.VoidSpawn_Race && x.defaultFactionType != null && x.defaultFactionType.isPlayer);
 
         private string pawnCountChoiceBuffer;
 
@@ -36,13 +50,29 @@ namespace InTheDark
             Text.Anchor = TextAnchor.UpperRight;
             Rect rect = new Rect(scenPartRect.x - 200f, scenPartRect.y + ScenPart.RowHeight, 200f, ScenPart.RowHeight);
             rect.xMax -= 4f;
-            Widgets.Label(rect, "ScenPart_StartWithPawns_OutOf".Translate());
-            Text.Anchor = TextAnchor.UpperLeft;
+            //Widgets.Label(rect, "ScenPart_StartWithPawns_OutOf".Translate());
+            //Text.Anchor = TextAnchor.UpperLeft;
             Widgets.TextFieldNumeric(scenPartRect, ref sirenCount, ref sirenCountBuffer, 1f, 10f);
             scenPartRect.y += ScenPart.RowHeight;
             Widgets.TextFieldNumeric(scenPartRect, ref injuredCount, ref injuredCountBuffer, 1f, 10f);
             scenPartRect.y += ScenPart.RowHeight;
             Widgets.TextFieldNumeric(scenPartRect, ref pawnChoiceCount, ref pawnCountChoiceBuffer, TotalPawnCount, 10f);
+            if (Widgets.ButtonText(rect, InjuredPawnKindDef.LabelCap))
+            {
+                List<FloatMenuOption> list = new List<FloatMenuOption>();
+                foreach (PawnKindDef availableKind in AvailableKinds)
+                {
+                    PawnKindDef localKind = availableKind;
+                    list.Add(new FloatMenuOption(localKind.LabelCap, delegate
+                    {
+                        InjuredPawnKindDef = localKind;
+                    }));
+                }
+                if (list.Any())
+                {
+                    Find.WindowStack.Add(new FloatMenu(list));
+                }
+            }
         }
 
         protected override void GenerateStartingPawns()
@@ -57,10 +87,6 @@ namespace InTheDark
                 {
                     PawnGenerationRequest generationRequest = StartingPawnUtility.GetGenerationRequest(idx);
                     generationRequest.KindDef = VoidSpawnPawnKindDefOf.VoidSpawnColonist;
-                    if (ModsConfig.BiotechActive)
-                    {
-                        generationRequest.ForcedXenotype = XenotypeDefOf.Baseliner;
-                    }
                     StartingPawnUtility.SetGenerationRequest(idx, generationRequest);
                     StartingPawnUtility.AddNewPawn(idx);
                     idx++;
@@ -68,18 +94,7 @@ namespace InTheDark
                 for (int i = 0; i < injuredCount; i++)
                 {
                     PawnGenerationRequest generationRequest = StartingPawnUtility.GetGenerationRequest(idx);
-                    generationRequest.KindDef = injuredPawnKindDef;
-                    if (ModsConfig.BiotechActive)
-                    {
-                        if (injuredPawnKindDef.xenotypeSet != null)
-                        {
-                            generationRequest.ForcedXenotype = null;
-                        }
-                        else
-                        {
-                            generationRequest.ForcedXenotype = XenotypeDefOf.Baseliner;
-                        }
-                    }
+                    generationRequest.KindDef = InjuredPawnKindDef;
                     StartingPawnUtility.SetGenerationRequest(idx, generationRequest);
                     StartingPawnUtility.AddNewPawn(idx);
                     idx++;
@@ -96,7 +111,7 @@ namespace InTheDark
 
             foreach (Pawn p in Find.GameInitData.startingAndOptionalPawns)
             {
-                if(p.def == VoidSpawnThingDefOf.VoidSpawn_Race)
+                if (p.def == VoidSpawnThingDefOf.VoidSpawn_Race)
                 {
                     continue;
                 }

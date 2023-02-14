@@ -33,6 +33,7 @@
 					<injuredCount>1</injuredCount>
 					<pawnChoiceCount>6</pawnChoiceCount>
 					<customSummary>Start with one void spawn and one injured human colonist.</customSummary>
+					<injuredPawnKindDef>SpaceRefugee</injuredPawnKindDef>
 				</li>
 
 				<!-- Config pages -->
