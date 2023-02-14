@@ -25,4 +25,12 @@
 	<VoidSpawnDoppelgangerWeakness.stages.0.label>慢慢适应</VoidSpawnDoppelgangerWeakness.stages.0.label>
 	<VoidSpawnDoppelgangerWeakness.stages.1.label>半成</VoidSpawnDoppelgangerWeakness.stages.1.label>
 	<VoidSpawnDoppelgangerWeakness.stages.2.label>新生</VoidSpawnDoppelgangerWeakness.stages.2.label>
+
+	<VoidSpawnEssenceSideEffect.label>造孽精华</VoidSpawnEssenceSideEffect.label>
+	<VoidSpawnEssenceSideEffect.description>吃太多造孽精华可能会导致未知并发症。</VoidSpawnEssenceSideEffect.description>
+	<VoidSpawnEssenceSideEffect.stages.0.label>轻</VoidSpawnEssenceSideEffect.stages.0.label>
+	<VoidSpawnEssenceSideEffect.stages.1.label>中</VoidSpawnEssenceSideEffect.stages.1.label>
+	<VoidSpawnEssenceSideEffect.stages.2.label>重</VoidSpawnEssenceSideEffect.stages.2.label>
+	<VoidSpawnEssenceSideEffect.stages.3.label>极重</VoidSpawnEssenceSideEffect.stages.3.label>
+
 </LanguageData>

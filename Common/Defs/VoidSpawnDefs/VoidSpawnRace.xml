@@ -96,6 +96,7 @@
 					<li>BloodLoss</li>
 					<li>VoidSpawnCorruption</li>
 					<li>VoidSpawnMemoryLeak</li>
+					<li>VoidSpawnEssenceSideEffect</li>
 				</immnunity>
 			</li>
 		</comps>

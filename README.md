@@ -21,7 +21,7 @@ TODO
 - [x] Reproduction (Corruption)
 - [ ] Storyteller
 - [x] Scenario
-- [ ] i.essence's side effects
+- [x] i.essence's side effects
 - [ ] Apparel
 - [ ] Endgame
 - [ ] upload to workshop
