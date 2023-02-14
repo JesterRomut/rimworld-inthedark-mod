@@ -37,6 +37,7 @@
 			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
 			<joyKind>Gluttonous</joyKind>
 			<joy>0.08</joy>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
 			<tasteThought>AteNightmare</tasteThought>
 			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
 			<chairSearchRadius>21</chairSearchRadius>
@@ -47,6 +48,10 @@
 				<li Class="IngestionOutcomeDoer_OffsetNeed">
 					<need>Rest</need>
 					<offset>0.1</offset>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>VoidSpawnEssenceSideEffect</hediffDef>
+					<severity>0.06</severity>
 				</li>
 			</outcomeDoers>
 		</ingestible>
@@ -106,5 +111,43 @@
 
 	<HediffDef ParentName="VoidSpawnHediffCorruptionBase">
 		<defName>VoidSpawnEssenceSideEffect</defName>
+		<description>Ingest too much immoral essence may cause unknown side effects.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.020</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<label>small</label>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>7</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+			<li>
+				<minSeverity>0.50</minSeverity>
+				<label>large</label>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>2</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+			<li>
+				<minSeverity>0.80</minSeverity>
+				<label>massive</label>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>0.5</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+		</stages>
 	</HediffDef>
 </Defs>

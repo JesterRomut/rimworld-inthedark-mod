@@ -193,7 +193,7 @@ namespace InTheDark
             {
                 this.pawn = pawn;
                 controlGroup = VoidSpawnGroupManager.Main.GetControlGroup(pawn);
-                this.icon = PortraitsCache.Get(pawn, new Vector2(75f, 75f), Rot4.East, default(Vector3), pawn.kindDef.controlGroupPortraitZoom);
+                this.icon = Startup.Textures.VoidSpawnControlGroupGizmo;
                 this.defaultLabel = controlGroup.Name;
                 this.defaultDesc = "CommandVoidSpawnGroupingDesc".Translate();
             }
