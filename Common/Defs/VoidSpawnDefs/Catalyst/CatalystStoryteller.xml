@@ -3,7 +3,7 @@
 	<StorytellerDef ParentName="BaseStoryteller">
 		<defName>VoidSpawnCatalyst</defName>
 		<label>Catalyst Cataclysm</label>
-		<description>Catalyst is a void spawn. It will first place some tempting goodies as a bait, and generate hyper-scaled threat if you claimed these awards - that's the way of survival in the deep ocean.</description>
+		<description>Catalyst is a void spawn. It will first place some tempting goodies as a bait, and generate hyper-scaled threat if you claimed these awards - that's the way of survival in the deep space.</description>
 		<portraitLarge>UI/Storytellers/CatalystLarge</portraitLarge>
 		<portraitTiny>UI/Storytellers/CatalystTiny</portraitTiny>
 		<listOrder>66</listOrder>
@@ -29,7 +29,7 @@
 				</categoryWeights>
 			</li>
 			<li Class="StorytellerCompProperties_SingleOnceFixed">
-				<fireAfterDaysPassed>1</fireAfterDaysPassed>
+				<fireAfterDaysPassed>0.3</fireAfterDaysPassed>
 				<incident>GiveQuest_CatalystBait</incident>
 				<allowedTargetTags>
 					<li>World</li>
