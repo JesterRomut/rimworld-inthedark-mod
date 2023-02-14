@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IncidentDef ParentName="GiveQuestBase">
+		<defName>GiveQuest_CatalystBait</defName>
+		<label>quest</label>
+		<baseChance>0</baseChance>
+		<workerClass>IncidentWorker_GiveQuest</workerClass>
+		<letterLabel>Quest available</letterLabel>
+	</IncidentDef>
+</Defs>
