@@ -33,7 +33,7 @@
 				</capacities>
 				<power>1</power>
 				<armorPenetration>666</armorPenetration>
-				<cooldownTime>0.000001</cooldownTime>
+				<cooldownTime>0.1</cooldownTime>
 				<linkedBodyPartsGroup>VoidSpawnTentacles</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
@@ -51,7 +51,7 @@
 				</capacities>
 				<power>1</power>
 				<armorPenetration>666</armorPenetration>
-				<cooldownTime>0.000001</cooldownTime>
+				<cooldownTime>0.1</cooldownTime>
 				<linkedBodyPartsGroup>VoidSpawnTentacles</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
