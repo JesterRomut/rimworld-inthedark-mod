@@ -13,7 +13,7 @@ We already know RimWorld is based on the Age of Discovery therefore having some 
 Therefore I created a mass of human parts, tentacles, sirens (a type of aquatic salamander), shadow creatures and nanobots
 
 
-- Do not use any design (textures/characters/backstories/etc.)
+- You can use my code, but do not use any design (textures/characters/backstories/etc.)
 
 ***
 TODO
@@ -27,3 +27,5 @@ TODO
 - [ ] limited ability use
 - [ ] new execution
 - [ ] upload to workshop
+- [ ] force harvest essence
+- [ ] background selection menu
