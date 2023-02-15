@@ -102,6 +102,7 @@
 		</comps>
 		<alienRace>
 			<generalSettings>
+				
 				<growthAges>
 					<li>1</li>
 					<li>3</li>
@@ -120,6 +121,7 @@
 				<humanRecipeImport>true</humanRecipeImport>
 				<allowHumanBios>false</allowHumanBios>
 				<alienPartGenerator>
+					<atlasScale>2</atlasScale>
 					<colorChannels Inherit="false">
 						<li>
 							<name>skin</name>
@@ -141,12 +143,26 @@
 								<options>
 									<li>
 										<weight>10</weight>
-										<only>RGBA(1.000, 1.000, 1.000, 0.850)</only>
+										<only>RGBA(1.000, 1.000, 1.000, 0.50)</only>
 									</li>
 								</options>
 							</first>
 							<second Class="ColorGenerator_Single">
-								<color>RGBA(1.000, 1.000, 1.000, 0.850)</color>
+								<color>RGBA(1.000, 1.000, 1.000, 0.50)</color>
+							</second>
+						</li>
+						<li>
+							<name>membrane</name>
+							<first Class="ColorGenerator_Options">
+								<options>
+									<li>
+										<weight>10</weight>
+										<only>RGBA(1.000, 1.000, 1.000, 0.50)</only>
+									</li>
+								</options>
+							</first>
+							<second Class="ColorGenerator_Single">
+								<color>RGBA(1.000, 1.000, 1.000, 0.50)</color>
 							</second>
 						</li>
 					</colorChannels>
@@ -169,9 +185,12 @@
 						<li>
 							<debug>true</debug>
 							<path>VoidSpawn/Head/VoidSpawnMembrane</path>
-							<bodyPart>VoidSpawnCore</bodyPart>
-							<defaultOffset>Tail</defaultOffset>
 							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<layerInvert>false</layerInvert>
+							<colorChannel>membrane</colorChannel>
+							<alignWithHead>true</alignWithHead>
+							<defaultOffset>Center</defaultOffset>
+							<shaderType>Transparent</shaderType>
 						</li>
 						
 					</bodyAddons>
