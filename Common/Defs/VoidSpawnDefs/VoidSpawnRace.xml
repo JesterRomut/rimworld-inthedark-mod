@@ -121,6 +121,7 @@
 				<humanRecipeImport>true</humanRecipeImport>
 				<allowHumanBios>false</allowHumanBios>
 				<alienPartGenerator>
+					<borderScale>1.5</borderScale>
 					<atlasScale>2</atlasScale>
 					<colorChannels Inherit="false">
 						<li>
@@ -183,7 +184,6 @@
 					<bodyAddons>
 						<!-- Body addons are listed here -->
 						<li>
-							<debug>true</debug>
 							<path>VoidSpawn/Head/VoidSpawnMembrane</path>
 							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
 							<layerInvert>false</layerInvert>
@@ -191,8 +191,25 @@
 							<alignWithHead>true</alignWithHead>
 							<defaultOffset>Center</defaultOffset>
 							<shaderType>Transparent</shaderType>
+							<drawnInBed>true</drawnInBed>
 						</li>
-						
+						<li>
+							<path>VoidSpawn/Tail/Sirenidae</path>
+							<inFrontOfBody>false</inFrontOfBody>
+							<colorChannel>skin</colorChannel>
+							<defaultOffset>Tail</defaultOffset>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<drawnInBed>false</drawnInBed>
+						</li>
+						<li>
+							<path>VoidSpawn/Tail/TailMembrane</path>
+							<inFrontOfBody>false</inFrontOfBody>
+							<colorChannel>membrane</colorChannel>
+							<defaultOffset>Tail</defaultOffset>
+							<shaderType>Transparent</shaderType>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<drawnInBed>false</drawnInBed>
+						</li>
 					</bodyAddons>
 					
 				</alienPartGenerator>

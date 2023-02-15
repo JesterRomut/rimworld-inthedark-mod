@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Reflection;
 using RimWorld;
 using RimWorld.Planet;
@@ -82,6 +83,17 @@ namespace InTheDark
             pawn.story.skinColorOverride = new Color(1f, 1f, 1f, 1f);
         }
 
+        private void HoldProductInInventory(Thing thing)
+        {
+            pawn.inventory.TryAddItemNotForSale(thing);
+            if (ModCompatibility.PickUpAndHaul.enabled)
+            {
+                //pawn.GetComp<ModCompatibility.PickUpAndHaul.CompHauledToInventory>();
+                object comp = typeof(Pawn).GetMethod("GetComp").MakeGenericMethod(ModCompatibility.PickUpAndHaul.CompHauledToInventory).Invoke(pawn, null);
+                ModCompatibility.PickUpAndHaul.RegisterHauledItem.Invoke(comp, parameters: new object[] { thing });
+            }
+        }
+
         private void GatherProduct()
         {
             //Pawn pawn = this.parent as Pawn;
@@ -99,19 +111,17 @@ namespace InTheDark
             }
             else
             {
+                if (pawn.Map == null)
+                {
+                    return;
+                }
                 //Room room = pawn.GetRoom();
                 List<string> reasons = new List<string>();
                 //float rate = SteadyEnvironmentEffects.FinalDeteriorationRate(thing, pawn.Position.Roofed(pawn.Map), room?.UsesOutdoorTemperature ?? false, pawn.Position.GetTerrain(pawn.Map), reasons);
                 //Log.Message(string.Join(", ", reasons));
                 if ((pawn.Drafted || pawn.Downed || !pawn.Position.Roofed(pawn.Map) || (pawn.GetRoom()?.UsesOutdoorTemperature ?? false || (pawn.Position.GetTerrain(pawn.Map)?.extraDeteriorationFactor ?? 0) != 0f)) && pawn.inventory != null)
                 {
-                    pawn.inventory.TryAddItemNotForSale(thing);
-                    if (ModCompatibility.PickUpAndHaul.enabled)
-                    {
-                        //pawn.GetComp<ModCompatibility.PickUpAndHaul.CompHauledToInventory>();
-                        object comp = typeof(Pawn).GetMethod("GetComp").MakeGenericMethod(ModCompatibility.PickUpAndHaul.CompHauledToInventory).Invoke(pawn, null);
-                        ModCompatibility.PickUpAndHaul.RegisterHauledItem.Invoke(comp, parameters: new object[] { thing });
-                    }
+                    HoldProductInInventory(thing);
                 }
                 else
                 {
