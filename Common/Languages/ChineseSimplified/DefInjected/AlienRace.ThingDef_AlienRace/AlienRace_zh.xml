@@ -2,4 +2,6 @@
 <LanguageData>
 	<VoidSpawn_Race.label>空心螈</VoidSpawn_Race.label>
 	<VoidSpawn_Race.description>黑色的鳗螈种族。它们通常都在太空游荡，因此没人知道它们从何而来，没人知道它们的存在是否是真的。一些证据表明它们是导致飞船坠毁的罪魁祸首，所以在舰长中，它们被叫做"宇宙之鞭"。\n\n人类只知道它们是强力的实体，因为没人可以从愤怒的空心螈手中逃脱。</VoidSpawn_Race.description>
+	<VoidSpawn_Race.tools.0.label>左触手</VoidSpawn_Race.tools.0.label>
+	<VoidSpawn_Race.tools.1.label>右触手</VoidSpawn_Race.tools.1.label>
 </LanguageData>

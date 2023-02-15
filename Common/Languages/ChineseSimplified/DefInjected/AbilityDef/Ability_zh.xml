@@ -2,4 +2,7 @@
 <LanguageData>
 	<VoidSpawnSkip.label>次元切割器</VoidSpawnSkip.label>
 	<VoidSpawnSkip.description>所有空心螈的通用技能。传送自己到一个想要的位置，并留下造孽油。</VoidSpawnSkip.description>
+	
+	<VoidSpawnBeckon.label>魅惑</VoidSpawnBeckon.label>
+	<VoidSpawnBeckon.description>所有空心螈的通用技能。使用特殊的声波魅惑目标，迫使目标靠近施法者。</VoidSpawnBeckon.description>
 </LanguageData>

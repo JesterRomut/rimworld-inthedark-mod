@@ -76,6 +76,7 @@ namespace InTheDark
             }
             //add ability
             pawn.abilities?.GainAbility(VoidSpawnAbilityDefOf.VoidSpawnSkip);
+            pawn.abilities?.GainAbility(VoidSpawnAbilityDefOf.VoidSpawnBeckon);
 
             //modify skin color
             pawn.story.skinColorOverride = new Color(1f, 1f, 1f, 0.85f);

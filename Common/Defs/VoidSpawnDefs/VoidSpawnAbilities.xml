@@ -50,6 +50,46 @@
 				<destClamorRadius>10</destClamorRadius>
 				<applyGoodwillImpactToLodgers>false</applyGoodwillImpactToLodgers>
 			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+			</li>
+		</comps>
+		
+	</AbilityDef>
+
+	<AbilityDef ParentName="VoidSpawnAbilityBase">
+		<defName>VoidSpawnBeckon</defName>
+		<label>charm</label>
+		<description>Charm the target using a special sound wave, force the target to approach the caster.</description>
+		<iconPath>UI/Abilities/VoidSpawnCharm</iconPath>
+		<writeCombatLog>True</writeCombatLog>
+		<hotKey>Misc6</hotKey>
+		<statBases>
+			<!--<Ability_EntropyGain>20</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0.01</Ability_PsyfocusCost>-->
+			<Ability_Duration>6</Ability_Duration>
+			<Ability_EffectRadius>1.2</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0.8</warmupTime>
+			<range>19.9</range>
+			<targetParams>
+				<canTargetAnimals>True</canTargetAnimals>
+				<neverTargetIncapacitated>True</neverTargetIncapacitated>
+				<canTargetLocations>True</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class = "CompProperties_AbilityForceJob">
+				<compClass>CompAbilityEffect_ForceJob</compClass>
+				<jobDef>GotoMindControlled</jobDef>
+				<destination>Caster</destination>
+				<!--<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				<psychic>True</psychic>-->
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+			</li>
 		</comps>
 	</AbilityDef>
 </Defs>

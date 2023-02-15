@@ -23,7 +23,7 @@
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 			<StaggerDurationFactor MayRequire="Ludeon.RimWorld.Biotech">0</StaggerDurationFactor>
-			<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0</PsychicEntropyGain>
+			<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0.6</PsychicEntropyGain>
 		</statBases>
 		<tools>
 			<li>
@@ -33,7 +33,7 @@
 				</capacities>
 				<power>1</power>
 				<armorPenetration>666</armorPenetration>
-				<cooldownTime>0.1</cooldownTime>
+				<cooldownTime>0.05</cooldownTime>
 				<linkedBodyPartsGroup>VoidSpawnTentacles</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
@@ -51,7 +51,7 @@
 				</capacities>
 				<power>1</power>
 				<armorPenetration>666</armorPenetration>
-				<cooldownTime>0.1</cooldownTime>
+				<cooldownTime>0.05</cooldownTime>
 				<linkedBodyPartsGroup>VoidSpawnTentacles</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>

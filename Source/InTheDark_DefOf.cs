@@ -9,6 +9,7 @@ namespace InTheDark
     public static class VoidSpawnAbilityDefOf
     {
         public static AbilityDef VoidSpawnSkip;
+        public static AbilityDef VoidSpawnBeckon;
     }
 
     [DefOf]
@@ -51,7 +52,7 @@ namespace InTheDark
     }
 
     [DefOf]
-    public static class VoidSpawnGeneDefOf
+    public static class MelaninGeneDefOf
     {
         public static GeneDef Skin_Melanin1;
     }

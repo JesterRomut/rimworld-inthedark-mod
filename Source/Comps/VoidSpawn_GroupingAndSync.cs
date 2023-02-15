@@ -228,6 +228,7 @@ namespace InTheDark
 
         public static IEnumerable<FloatMenuOption> GetControlGroupOptions(Pawn pawn)
         {
+            VoidSpawnGroupManager.Main.PurgeControlGroups();
             foreach (VoidSpawnControlGroup cg in VoidSpawnGroupManager.Main.ControlGroups)
             {
                 if (cg == VoidSpawnGroupManager.Main.GetControlGroup(pawn))
@@ -238,7 +239,7 @@ namespace InTheDark
                 
                 FloatMenuOption tmpSelectGroup = new FloatMenuOption("CommandVoidSpawnGroupSelectTemplate".Translate(cg.Name), delegate
                 {
-                    cg.Assign(pawn);
+                    cg?.Assign(pawn);
                 });
                 //floatMenuOption.tooltip = new TipSignal(wm.description, cg.GetIndex() ^ 0xDFE6666);
                 yield return tmpSelectGroup;

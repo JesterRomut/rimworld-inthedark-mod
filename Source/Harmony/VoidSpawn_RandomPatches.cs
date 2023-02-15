@@ -219,7 +219,7 @@ namespace InTheDark
         {
             if (__instance.pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
             {
-                __result = VoidSpawnGeneDefOf.Skin_Melanin1;
+                __result = MelaninGeneDefOf.Skin_Melanin1;
             }
         }
 

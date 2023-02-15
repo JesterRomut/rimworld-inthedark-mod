@@ -24,4 +24,6 @@ TODO
 - [x] i.essence's side effects
 - [ ] Apparel
 - [ ] Endgame
+- [ ] limited ability use
+- [ ] new execution
 - [ ] upload to workshop
