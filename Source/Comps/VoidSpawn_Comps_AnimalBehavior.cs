@@ -79,7 +79,7 @@ namespace InTheDark
             pawn.abilities?.GainAbility(VoidSpawnAbilityDefOf.VoidSpawnBeckon);
 
             //modify skin color
-            pawn.story.skinColorOverride = new Color(1f, 1f, 1f, 0.85f);
+            pawn.story.skinColorOverride = new Color(1f, 1f, 1f, 1f);
         }
 
         private void GatherProduct()

@@ -106,35 +106,20 @@
 					<li>1</li>
 					<li>3</li>
 				</growthAges>
+				<lovinIntervalHoursFromAge>
+					<points>
+						<li>(16, 12)</li>
+						<li>(20, 0.5)</li>
+						<li>(30, 0.5)</li>
+						<li>(50, 0.5)</li>
+						<li>(75, 0.5)</li>
+					</points>
+				</lovinIntervalHoursFromAge>
 				<immuneToAge>true</immuneToAge>
-				<maxDamageForSocialfight>1</maxDamageForSocialfight>
+				<maxDamageForSocialfight>0.5</maxDamageForSocialfight>
 				<humanRecipeImport>true</humanRecipeImport>
 				<allowHumanBios>false</allowHumanBios>
 				<alienPartGenerator>
-					<!--<customDrawSize>(0.7,0.7)</customDrawSize>-->
-					<customHeadDrawSize>(1,1)</customHeadDrawSize>
-					<customPortraitHeadDrawSize>(1, 1)</customPortraitHeadDrawSize>
-					<!--<customPortraitDrawSize>(0.7, 0.7)</customPortraitDrawSize>-->
-					<bodyTypes>
-						<li>Thin</li>
-						<!--<li MayRequire="Ludeon.RimWorld.Biotech">Baby</li>
-						<li MayRequire="Ludeon.RimWorld.Biotech">Child</li>-->
-					</bodyTypes>
-					<headOffset>(0,	-0.1)</headOffset>
-					<headTypes>
-						<!--<li>VoidSpawnBald</li>-->
-						<li>Sirenidae_Common</li>
-					</headTypes>
-					<bodyAddons>
-						<!-- Body addons are listed here -->
-						<!--<li>
-							<path>VoidSpawn/Head/VoidSpawnCommon</path>
-							<alignWithHead>true</alignWithHead>
-							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
-							<defaultOffset>Head</defaultOffset>
-							<colorChannel>hair</colorChannel>
-						</li>-->
-					</bodyAddons>
 					<colorChannels Inherit="false">
 						<li>
 							<name>skin</name>
@@ -142,7 +127,7 @@
 								<options>
 									<li>
 										<weight>1</weight>
-										<only>RGBA(1.0,1.0,1.0,0.85)</only>
+										<only>RGBA(1.0,1.0,1.0,1.0)</only>
 									</li>
 								</options>
 							</first>
@@ -165,6 +150,32 @@
 							</second>
 						</li>
 					</colorChannels>
+					<!--<customDrawSize>(0.7,0.7)</customDrawSize>-->
+					<customHeadDrawSize>(1,1)</customHeadDrawSize>
+					<customPortraitHeadDrawSize>(1, 1)</customPortraitHeadDrawSize>
+					<!--<customPortraitDrawSize>(0.7, 0.7)</customPortraitDrawSize>-->
+					<bodyTypes>
+						<li>Thin</li>
+						<!--<li MayRequire="Ludeon.RimWorld.Biotech">Baby</li>
+						<li MayRequire="Ludeon.RimWorld.Biotech">Child</li>-->
+					</bodyTypes>
+					<headOffset>(0,	-0.1)</headOffset>
+					<headTypes>
+						<!--<li>VoidSpawnBald</li>-->
+						<li>Sirenidae_Common</li>
+					</headTypes>
+					<bodyAddons>
+						<!-- Body addons are listed here -->
+						<li>
+							<debug>true</debug>
+							<path>VoidSpawn/Head/VoidSpawnMembrane</path>
+							<bodyPart>VoidSpawnCore</bodyPart>
+							<defaultOffset>Tail</defaultOffset>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+						</li>
+						
+					</bodyAddons>
+					
 				</alienPartGenerator>
 				<reproduction>
 					<!-- Reproduction settings are listed here -->
@@ -215,7 +226,7 @@
 				<body>VoidSpawn/Body/</body>
 				<head>VoidSpawn/Head/</head>
 				<skinShader>Cutout</skinShader>
-				<skinColor>(1,1,1,0.85)</skinColor>
+				<skinColor>(1,1,1,1)</skinColor>
 			</graphicPaths>
 			<styleSettings>
 				<li>

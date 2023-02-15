@@ -16,6 +16,7 @@ namespace InTheDark
         public static class Textures
         {
             public static readonly Texture2D BlackHoleEclipse = ContentFinder<Texture2D>.Get("UI/BlackHoleEclipse");
+            public static readonly Texture2D InTheDark = ContentFinder<Texture2D>.Get("UI/InTheDark");
             public static readonly Texture2D VoidSpawnControlGroupGizmo = ContentFinder<Texture2D>.Get("UI/Abilities/VoidSpawnControlGroupGizmo");
         }
         
@@ -23,7 +24,7 @@ namespace InTheDark
         {
             HarmonyPatches.Init();
 
-            Log.Message("<color=#84FFF2>In the Dark Mod loaded. Ready to get new endless & emptiness experience.</color>");
+            Log.Message("<color=#84FFF2>In the Dark Mod loaded.</color>");
 
             ModCompatibilityPatch();
         }
@@ -98,6 +99,11 @@ namespace InTheDark
             {
                 FilthMaker.TryMakeFilth(CellFinder.RandomClosewalkCellNear(center, pawn.Map, radius), pawn.Map, VoidSpawnThingDefOf.Filth_Sirenidae, pawn.LabelIndefinite());
             }
+        }
+
+        public static bool IsInvisible(Pawn pawn)
+        {
+            return !pawn.Drafted && pawn.health?.hediffSet?.GetFirstHediffOfDef(VoidSpawnHediffDefOf.VoidSpawnDoppelgangerWeakness) == null;
         }
     }
 

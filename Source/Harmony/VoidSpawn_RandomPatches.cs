@@ -37,17 +37,8 @@ namespace InTheDark
         {
             if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)// && !pawn.Drafted)
             {
-                //if (pawn.Drafted)
-                //{
-                //    __result = false;
-                //    return;
-                //}
-                if (pawn.health?.hediffSet?.GetFirstHediffOfDef(VoidSpawnHediffDefOf.VoidSpawnDoppelgangerWeakness) != null)
-                {
-                    __result = false;
-                    return;
-                }
-                __result = true;
+                
+                __result = VoidSpawnUtility.IsInvisible(pawn);
             }
         }
 
@@ -129,7 +120,7 @@ namespace InTheDark
         [HarmonyPatch("TryMakeBreathMote")]
         [HarmonyPatch(new Type[] { })]
         [HarmonyPrefix]
-        public static bool AVoidSpawnDoesNotFear(PawnBreathMoteMaker __instance)
+        public static bool AVoidSpawnDoesNotBreath(PawnBreathMoteMaker __instance)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
             if (pawn.def == VoidSpawnThingDefOf.VoidSpawn_Race)
@@ -196,7 +187,7 @@ namespace InTheDark
         {
             if (InTheDark_Settings.useDarkenBackground)
             {
-                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = Startup.Textures.BlackHoleEclipse;
+                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = Startup.Textures.InTheDark;
             }
         }
 
