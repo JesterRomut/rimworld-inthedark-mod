@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	
+	<InTheDark.ArtworkDef>
+		<defName>BlackHoleEclipse</defName>
+		<label>Black Hole Eclipse</label>
+		<description>11</description>
+		<artworkPath>UI/Artworks/BlackHoleEclipse</artworkPath>
+	</InTheDark.ArtworkDef>
+	<InTheDark.ArtworkDef>
+		<defName>InTheDarkArtwork</defName>
+		<label>In the Dark</label>
+		<description>11</description>
+		<artworkPath>UI/Artworks/InTheDark</artworkPath>
+	</InTheDark.ArtworkDef>
 </Defs>

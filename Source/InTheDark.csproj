@@ -57,10 +57,7 @@
 		<Compile Include="InTheDark.cs" />
 		<Compile Include="InTheDark_DefOf.cs" />
 		<Compile Include="InTheDark_Settings.cs" />
-		<Compile Include="Harmony\Harmony_Main.cs" />
-		<Compile Include="Harmony\VoidSpawn_Learning.cs" />
-		<Compile Include="Harmony\VoidSpawn_Floating.cs" />
-		<Compile Include="Harmony\VoidSpawn_RandomPatches.cs" />
+
 		<Compile Include="Comps\VoidSpawn_Comps_AbilityTeleport.cs" />
 		<Compile Include="Comps\VoidSpawn_Comps_AnimalBehavior.cs" />
 		<Compile Include="Comps\VoidSpawn_GroupingAndSync.cs" />
@@ -68,6 +65,14 @@
 		<Compile Include="Comps\VoidSpawn_Hediff_VoidSpawnEthereal.cs" />
 		<Compile Include="Comps\VoidSpawn_ScenParts.cs" />
 		<Compile Include="Comps\VoidSpawn_Storyteller.cs" />
+
+		<Compile Include="Defs\ArtworkDef.cs" />
+		
+		<Compile Include="Harmony\Harmony_Main.cs" />
+		<Compile Include="Harmony\VoidSpawn_Learning.cs" />
+		<Compile Include="Harmony\VoidSpawn_Floating.cs" />
+		<Compile Include="Harmony\VoidSpawn_RandomPatches.cs" />
+		
 		<Compile Include="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

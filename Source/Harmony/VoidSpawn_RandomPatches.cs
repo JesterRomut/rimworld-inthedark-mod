@@ -185,9 +185,12 @@ namespace InTheDark
         [HarmonyPostfix]
         public static void ApplyDarkenBackground()
         {
-            if (InTheDark_Settings.useDarkenBackground)
+            if (InTheDark_Settings.useDarkenBackground && (InTheDark_Settings.artworkRandomList?.Any() ?? false))
             {
-                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = Startup.Textures.InTheDark;
+                //((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = Startup.Textures.InTheDark;
+                string pickedName = InTheDark_Settings.artworkRandomList.RandomElement();
+                ArtworkDef picked = DefDatabase<ArtworkDef>.GetNamed(pickedName);
+                ((UI_BackgroundMain)UIMenuBackgroundManager.background).overrideBGImage = ContentFinder<Texture2D>.Get(picked.artworkPath);
             }
         }
 

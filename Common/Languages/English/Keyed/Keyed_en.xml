@@ -11,4 +11,6 @@
 	<UseBedAsVoidSpawn>Force rest (as Void Spawn)</UseBedAsVoidSpawn>
 	<VoidSpawnSettingUseDarkenBackground>Should use In the Dark's background planet</VoidSpawnSettingUseDarkenBackground>
 	<VoidSpawnSettingUseDarkenBackgroundTooltip>Needs restart\n\nChanges the background planet to our own planet. This option may conflict with other mods which change background.\n\n"No, we don't have any good artist (and programmer) (and english speaker)"</VoidSpawnSettingUseDarkenBackgroundTooltip>
+	<VoidSpawnArtworkListAvaliable>Avaliable artworks:</VoidSpawnArtworkListAvaliable>
+	<VoidSpawnArtworkListInRandom>Currently using:</VoidSpawnArtworkListInRandom>
 </LanguageData>

@@ -1,5 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using Verse;
+
 namespace InTheDark
 {
-    public class AbilityDef : Def
-    { }
+    public class ArtworkDef : Def
+    {
+        [NoTranslate]
+        public string artworkPath;
+    }
 }
