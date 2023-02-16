@@ -3,13 +3,13 @@
 	<InTheDark.ArtworkDef>
 		<defName>BlackHoleEclipse</defName>
 		<label>Black Hole Eclipse</label>
-		<description>11</description>
+		<description>May the darkness swallow all around you</description>
 		<artworkPath>UI/Artworks/BlackHoleEclipse</artworkPath>
 	</InTheDark.ArtworkDef>
 	<InTheDark.ArtworkDef>
 		<defName>InTheDarkArtwork</defName>
 		<label>In the Dark</label>
-		<description>11</description>
+		<description>I'm alone in the dark...</description>
 		<artworkPath>UI/Artworks/InTheDark</artworkPath>
 	</InTheDark.ArtworkDef>
 </Defs>

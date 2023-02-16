@@ -17,6 +17,7 @@ namespace InTheDark
     {
         public static ThingDef Filth_Sirenidae;
         public static ThingDef VoidSpawn_Race;
+        public static ThingDef VoidSpawnCharmMote;
     }
 
     [DefOf]
@@ -43,12 +44,6 @@ namespace InTheDark
     public static class VoidSpawnThoughtDefOf
     {
         public static ThoughtDef VoidSpawnThoughtSync;
-    }
-
-    [DefOf]
-    public static class VoidSpawnRulePackDefOf
-    {
-        public static RulePackDef NamerVoidSpawnUniversal;
     }
 
     [DefOf]

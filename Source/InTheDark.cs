@@ -7,6 +7,7 @@ using System.Reflection;
 using UnityEngine;
 using System.Runtime;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace InTheDark
 {
@@ -78,6 +79,18 @@ namespace InTheDark
             return "<color=#84FFF2>In The Dark</color>";
         }
 
+        private void DrawRow(Rect rowRect, ArtworkDef def)
+        {
+            Widgets.DrawHighlightIfMouseover(rect: rowRect);
+            TooltipHandler.TipRegion(rowRect, def.description);
+            if (def == leftSelectedDef)
+            {
+                Widgets.DrawHighlightSelected(rect: rowRect);
+            }
+            Widgets.Label(rect: rowRect, label: def.LabelCap.RawText ?? def.defName);
+            
+        }
+
         public override void DoSettingsWindowContents(Rect inRect)
         {
 
@@ -106,12 +119,8 @@ namespace InTheDark
                     foreach (ArtworkDef def in found)
                     {
                         Rect rowRect = new Rect(x: 5, y: num, width: leftRect.width - 6, height: 30);
-                        Widgets.DrawHighlightIfMouseover(rect: rowRect);
-                        if (def == leftSelectedDef)
-                        {
-                            Widgets.DrawHighlightSelected(rect: rowRect);
-                        }
-                        Widgets.Label(rect: rowRect, label: def.LabelCap.RawText ?? def.defName);
+                        
+                        DrawRow(rowRect, def);
                         if (Widgets.ButtonInvisible(butRect: rowRect))
                         {
                             leftSelectedDef = def;
@@ -140,12 +149,7 @@ namespace InTheDark
                             continue;
                         }
                         Rect rowRect = new Rect(x: 5, y: num, width: leftRect.width - 6, height: 30);
-                        Widgets.DrawHighlightIfMouseover(rect: rowRect);
-                        if (def == rightSelectedDef)
-                        {
-                            Widgets.DrawHighlightSelected(rect: rowRect);
-                        }
-                        Widgets.Label(rect: rowRect, label: def.LabelCap.RawText ?? def.defName);
+                        DrawRow(rowRect, def);
                         if (Widgets.ButtonInvisible(butRect: rowRect))
                         {
                             rightSelectedDef = def;
