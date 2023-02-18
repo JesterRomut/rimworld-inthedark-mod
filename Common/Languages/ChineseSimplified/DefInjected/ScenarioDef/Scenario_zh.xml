@@ -2,9 +2,9 @@
 <LanguageData>
 	<VoidSpawnCosmicScourge.label>宇宙之鞭</VoidSpawnCosmicScourge.label>
 	<VoidSpawnCosmicScourge.scenario.name>宇宙之鞭</VoidSpawnCosmicScourge.scenario.name>
-	<VoidSpawnCosmicScourge.description>自从记事以来，你就是一只在无边宇宙游荡千年的空心螈 - "宇宙之鞭"，随集群意志而行动。而现在，你的集群任命你在附近的星球建立新分群。于是你断开了和大群的连接，拦截了一艘人类飞船，控制着它坠入了这个未知的边缘世界。\n\n注意：空心螈是一个超模的种族，请搭配高难度使用来获得最爽的游戏体验。</VoidSpawnCosmicScourge.description>
-	<VoidSpawnCosmicScourge.scenario.description>自从记事以来，你就是一只在无边宇宙游荡千年的空心螈 - "宇宙之鞭"，随集群意志而行动。而现在，你的集群任命你在附近的星球建立新分群。于是你断开了和大群的连接，拦截了一艘人类飞船，控制着它坠入了这个未知的边缘世界。\n\n注意：空心螈是一个超模的种族，请搭配高难度使用来获得最爽的游戏体验。</VoidSpawnCosmicScourge.scenario.description>
+	<VoidSpawnCosmicScourge.description>自从记事以来，你就是一只在无边宇宙游荡千年的空心螈 - "宇宙之鞭"，随集群意志而行动。而现在，你的集群任命你在附近的星球建立新分群。于是你断开了和大群的连接，拦截了一艘人类飞船，控制着它坠入了这个未知的边缘世界。\n\n注意：由于你的其中一个角色会受重伤，这是一个困难的剧本。</VoidSpawnCosmicScourge.description>
+	<VoidSpawnCosmicScourge.scenario.description>自从记事以来，你就是一只在无边宇宙游荡千年的空心螈 - "宇宙之鞭"，随集群意志而行动。而现在，你的集群任命你在附近的星球建立新分群。于是你断开了和大群的连接，拦截了一艘人类飞船，控制着它坠入了这个未知的边缘世界。\n\n注意：由于你的其中一个角色会受重伤，这是一个困难的剧本。</VoidSpawnCosmicScourge.scenario.description>
 	<VoidSpawnCosmicScourge.scenario.summary>一只空心螈，正要构建新格式塔意识，和一个受伤的迫降生还者。</VoidSpawnCosmicScourge.scenario.summary>
 	<VoidSpawnCosmicScourge.scenario.parts.0.text>飞船已经在大气层散架。你抓着一片掉落的金属，安然无恙的降落在了这个高重力环境的地面上。\n\n你注意到和你一起迫降的人类，也许你应该保护好他。</VoidSpawnCosmicScourge.scenario.parts.0.text>
-	<VoidSpawnCosmicScourge.scenario.parts.customSummary>从一只空心螈和一个受伤殖民者一同开始。</VoidSpawnCosmicScourge.scenario.parts.customSummary>
+	<VoidSpawnCosmicScourge.scenario.parts.1.customSummary>从一只空心螈和一个受伤殖民者一同开始。</VoidSpawnCosmicScourge.scenario.parts.1.customSummary>
 </LanguageData>
